@@ -1,3 +1,60 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.app-navigation {
+  list-style: none;
+}
+
+.app-navigation li {
+  display: inline;
+  padding: 5px;
+}
+
+.app-navigation li a {
+  text-decoration: none;
+  color: #000;
+}
+
+.app-navigation li a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.app-navigation li a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+.content-cards {
+ display: flex;
+ flex-direction: column;
+}
+
+.content-cards-item {
+  display: flex;
+  border: 1px solid #000;
+  border-radius: 20px;
+  flex-direction: column;
+  margin: 5px 10px;
+  padding: 5px;
+}
+.person-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.person-card-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #000;
+  padding: 3px;
+  margin: 3px;
 }
