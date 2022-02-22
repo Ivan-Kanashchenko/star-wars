@@ -1,7 +1,11 @@
+import * as React from 'react';
+import { FC } from "react";
 import { useFilmsData } from "../../../customHooks/customHooks";
 import FilmItem from "./FilmItem/FilmItem";
 
-const Films = () => {
+
+
+const Films:FC = () => {
   const { status, data, error } = useFilmsData();
 
   return (

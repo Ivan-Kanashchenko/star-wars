@@ -1,27 +1,29 @@
+import * as React from 'react';
 import { useContent } from "../ContentContext/ContentContext";
 
 const Navigation = () => {
-  const { contentHandler } = useContent();
+  const { contentHandler  } = useContent();
 
   const contentTypeHandler = (e) => {
     contentHandler(e.target.name);
   };
+  
   return (
     <ul className="app-navigation">
       <li>
-        <a href="#" name={"films"} onClick={contentTypeHandler}>
+        <button name={"films"} onClick={contentTypeHandler}>
           films
-        </a>
+        </button>
       </li>
       <li>
-        <a href="#" name={"people"} onClick={contentTypeHandler}>
+        <button name={"people"} onClick={contentTypeHandler}>
           people
-        </a>
+        </button>
       </li>
       <li>
-        <a href="#" name={"planets"} onClick={contentTypeHandler}>
+        <button name={"planets"} onClick={contentTypeHandler}>
           planets
-        </a>
+        </button>
       </li>
     </ul>
   );

@@ -1,7 +1,9 @@
+import * as React from 'react';
+import { FC } from "react";
 import { usePlanetData } from "../../../customHooks/customHooks";
 import PlanetItem from "./PlanetItem/PlanetItem";
 
-const Planets = () => {
+const Planets:FC = () => {
   const { status, data, error } = usePlanetData();
 
   return (

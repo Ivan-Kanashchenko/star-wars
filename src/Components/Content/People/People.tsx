@@ -1,7 +1,9 @@
+import * as React from 'react';
+import { FC } from 'react';
 import { usePeopleData } from "../../../customHooks/customHooks";
 import PeopleItem from "./PeopleItem/PeopleItem";
 
-const People = () => {
+const People:FC = () => {
   const { status, data, error } = usePeopleData();
 
   return (

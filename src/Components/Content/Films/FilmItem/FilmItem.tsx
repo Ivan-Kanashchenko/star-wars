@@ -1,8 +1,10 @@
+import * as React from 'react';
+import { FC } from "react";
 import { useState } from "react";
-
 import { useActorsData } from "../../../../customHooks/customHooks";
+import { ActorsTypes, FilmItemType } from './FilmItemTypes';
 
-const FilmItem = ({
+const FilmItem:FC<FilmItemType> = ({
   title,
   episode_id,
   opening_crawl,
@@ -10,9 +12,9 @@ const FilmItem = ({
   producer,
   release_date,
 }) => {
-  const [actors, setActors] = useState(false);
+  const [actors, setActors] = useState<boolean>(false);
 
-  const toggleActors = () => {
+  const toggleActors = (): void => {
     setActors((prevState) => {
       if (prevState === actors) {
         return !actors;
@@ -45,7 +47,7 @@ const FilmItem = ({
 
 export default FilmItem;
 
-const Actors = ({ episode_id }) => {
+const Actors :FC<ActorsTypes> = ({ episode_id }) => {
   const { status, data, error } = useActorsData(episode_id);
   return (
     <div>

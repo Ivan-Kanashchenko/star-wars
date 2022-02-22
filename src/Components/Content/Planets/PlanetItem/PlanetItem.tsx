@@ -1,8 +1,11 @@
+import * as React from 'react';
+import { FC } from "react";
 import { useState } from "react";
-
 import { usePlanetsData } from "../../../../customHooks/customHooks";
+import { PlanetItemTypes, PlanetsTypes } from './PlanetItemTypes';
 
-const PlanetItem = ({ climate, created, diameter, edited, name, url }) => {
+
+const PlanetItem:FC<PlanetItemTypes> = ({ climate, created, diameter, edited, name, url }) => {
   const [residents, setResidents] = useState(false);
 
   const toggleDetails = () => {
@@ -35,7 +38,7 @@ const PlanetItem = ({ climate, created, diameter, edited, name, url }) => {
 
 export default PlanetItem;
 
-const Planets = ({ url }) => {
+const Planets: FC<PlanetsTypes> = ({ url }) => {
   const { status, data, error } = usePlanetsData(url);
 
   return (

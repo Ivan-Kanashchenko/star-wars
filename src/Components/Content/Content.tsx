@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { useContent } from "../ContentContext/ContentContext";
 import Films from "./Films/Films";
 import People from "./People/People";

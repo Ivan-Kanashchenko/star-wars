@@ -1,4 +1,8 @@
-const PeopleItem = ({
+import * as React from 'react';
+import { FC } from 'react';
+import { PeopleItemTypes } from './PeopleItemTypes';
+
+const PeopleItem: FC<PeopleItemTypes> = ({
   name,
   mass,
   hair_color,
