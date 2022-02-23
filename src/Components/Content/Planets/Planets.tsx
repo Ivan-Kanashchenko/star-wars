@@ -1,18 +1,18 @@
-import * as React from 'react';
+import * as React from "react";
 import { FC } from "react";
 import { usePlanetData } from "../../../customHooks/customHooks";
-import PlanetItem from "./PlanetItem/PlanetItem";
+import { PlanetItem } from "./PlanetItem/PlanetItem";
 
-const Planets:FC = () => {
+export const Planets: FC = () => {
   const { status, data, error } = usePlanetData();
 
   return (
     <div className="content-cards">
-      {status === "loading" ? (
-        "Loading..."
-      ) : status === "error" ? (
-        <span>Error: {error.message}</span>
-      ) : (
+      {status === "loading" && "Loading..."}
+
+      {status === "error" && <span>Error: {error.message}</span>}
+
+      {status === "success" && (
         <>
           {data.results.map((item) => (
             <PlanetItem
@@ -30,5 +30,3 @@ const Planets:FC = () => {
     </div>
   );
 };
-
-export default Planets;

@@ -1,9 +1,9 @@
-import * as React from 'react';
+import * as React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
-import Content from "./Components/Content/Content";
-import ContentProvider from "./Components/ContentContext/ContentContext";
-import Navigation from "./Components/Navigation/Navigation";
+import { Content } from "../Content/Content";
+import ContentProvider from "../ContentContext/ContentContext";
+import { Navigation } from "../Navigation/Navigation";
 
 const queryClient = new QueryClient();
 

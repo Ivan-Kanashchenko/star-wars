@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 import { useContent } from "../ContentContext/ContentContext";
-import Films from "./Films/Films";
-import People from "./People/People";
-import Planets from "./Planets/Planets";
+import { Films } from "./Films";
+import { People } from "./People";
+import { Planets } from "./Planets";
 
-const Content = () => {
+export const Content = () => {
   const { content } = useContent();
 
   return (
@@ -18,5 +18,3 @@ const Content = () => {
     </div>
   );
 };
-
-export default Content;

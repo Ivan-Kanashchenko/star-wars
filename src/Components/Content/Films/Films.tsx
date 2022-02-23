@@ -1,20 +1,16 @@
-import * as React from 'react';
+import * as React from "react";
 import { FC } from "react";
 import { useFilmsData } from "../../../customHooks/customHooks";
-import FilmItem from "./FilmItem/FilmItem";
+import { FilmItem } from "./FilmItem/FilmItem";
 
-
-
-const Films:FC = () => {
+export const Films: FC = () => {
   const { status, data, error } = useFilmsData();
 
   return (
     <div className="content-cards">
-      {status === "loading" ? (
-        "Loading..."
-      ) : status === "error" ? (
-        <span>Error: {error.message}</span>
-      ) : (
+      {status === "loading" && "Loading..."}
+      {status === "error" && <span>Error: {error.message}</span>}
+      {status === "success" && (
         <>
           {data.results.map((item) => (
             <FilmItem
@@ -32,5 +28,3 @@ const Films:FC = () => {
     </div>
   );
 };
-
-export default Films;

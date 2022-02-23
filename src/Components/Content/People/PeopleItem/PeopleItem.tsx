@@ -1,8 +1,17 @@
-import * as React from 'react';
-import { FC } from 'react';
-import { PeopleItemTypes } from './PeopleItemTypes';
+import * as React from "react";
+import { FC } from "react";
 
-const PeopleItem: FC<PeopleItemTypes> = ({
+type PeopleItemTypes = {
+  name: string;
+  mass: string;
+  hair_color: string;
+  skin_color: string;
+  eye_color: string;
+  birth_year: string;
+  gender: string;
+};
+
+export const PeopleItem: FC<PeopleItemTypes> = ({
   name,
   mass,
   hair_color,
@@ -25,5 +34,3 @@ const PeopleItem: FC<PeopleItemTypes> = ({
     </div>
   );
 };
-
-export default PeopleItem;

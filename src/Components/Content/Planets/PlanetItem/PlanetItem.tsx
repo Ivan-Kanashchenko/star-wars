@@ -1,11 +1,25 @@
-import * as React from 'react';
+import * as React from "react";
 import { FC } from "react";
 import { useState } from "react";
 import { usePlanetsData } from "../../../../customHooks/customHooks";
-import { PlanetItemTypes, PlanetsTypes } from './PlanetItemTypes';
 
+type PlanetItemTypes = {
+  climate: string;
+  created: string;
+  diameter: string;
+  edited: string;
+  name: string;
+  url: string;
+};
 
-const PlanetItem:FC<PlanetItemTypes> = ({ climate, created, diameter, edited, name, url }) => {
+export const PlanetItem: FC<PlanetItemTypes> = ({
+  climate,
+  created,
+  diameter,
+  edited,
+  name,
+  url,
+}) => {
   const [residents, setResidents] = useState(false);
 
   const toggleDetails = () => {
@@ -36,7 +50,9 @@ const PlanetItem:FC<PlanetItemTypes> = ({ climate, created, diameter, edited, na
   );
 };
 
-export default PlanetItem;
+type PlanetsTypes = {
+  url: string;
+};
 
 const Planets: FC<PlanetsTypes> = ({ url }) => {
   const { status, data, error } = usePlanetsData(url);
@@ -44,11 +60,9 @@ const Planets: FC<PlanetsTypes> = ({ url }) => {
   return (
     <div>
       <div>
-        {status === "loading" ? (
-          "Loading..."
-        ) : status === "error" ? (
-          <span>Error: {error.message}</span>
-        ) : (
+        {status === "loading" && "Loading..."}
+        {status === "error" && <span>Error: {error.message}</span>}
+        {status === "success" && (
           <div className="person-card">
             {data.planetResidents.length
               ? data.planetResidents.map((el) => (

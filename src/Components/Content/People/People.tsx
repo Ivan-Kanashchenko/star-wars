@@ -1,18 +1,16 @@
-import * as React from 'react';
-import { FC } from 'react';
+import * as React from "react";
+import { FC } from "react";
 import { usePeopleData } from "../../../customHooks/customHooks";
-import PeopleItem from "./PeopleItem/PeopleItem";
+import { PeopleItem } from "./PeopleItem/PeopleItem";
 
-const People:FC = () => {
+export const People: FC = () => {
   const { status, data, error } = usePeopleData();
 
   return (
     <div className="content-cards">
-      {status === "loading" ? (
-        "Loading..."
-      ) : status === "error" ? (
-        <span>Error: {error.message}</span>
-      ) : (
+      {status === "loading" && "Loading..."}
+      {status === "error" && <span>Error: {error.message}</span>}
+      {status === "success" && (
         <>
           {data.results.map((item) => (
             <PeopleItem
@@ -31,5 +29,3 @@ const People:FC = () => {
     </div>
   );
 };
-
-export default People;

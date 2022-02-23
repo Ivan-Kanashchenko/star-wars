@@ -1,13 +1,13 @@
-import * as React from 'react';
+import * as React from "react";
 import { useContent } from "../ContentContext/ContentContext";
 
-const Navigation = () => {
-  const { contentHandler  } = useContent();
+export const Navigation = () => {
+  const { contentHandler } = useContent();
 
   const contentTypeHandler = (e) => {
     contentHandler(e.target.name);
   };
-  
+
   return (
     <ul className="app-navigation">
       <li>
@@ -28,5 +28,3 @@ const Navigation = () => {
     </ul>
   );
 };
-
-export default Navigation;
