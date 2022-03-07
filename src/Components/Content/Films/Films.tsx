@@ -1,14 +1,16 @@
 import * as React from "react";
 import { FC } from "react";
 import { useFilmsData } from "../../../customHooks/customHooks";
+import { Loading } from "../../Loading/Loading";
 import { FilmItem } from "./FilmItem/FilmItem";
+import Styled from "./styles";
 
 export const Films: FC = () => {
   const { status, data, error } = useFilmsData();
 
   return (
-    <div className="content-cards">
-      {status === "loading" && "Loading..."}
+    <Styled.FilmsContainer>
+      {status === "loading" && <Loading />}
       {status === "error" && <span>Error: {error.message}</span>}
       {status === "success" && (
         <>
@@ -25,6 +27,6 @@ export const Films: FC = () => {
           ))}
         </>
       )}
-    </div>
+    </Styled.FilmsContainer>
   );
 };

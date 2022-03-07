@@ -1,14 +1,16 @@
 import * as React from "react";
 import { FC } from "react";
 import { usePlanetData } from "../../../customHooks/customHooks";
+import { Loading } from "../../Loading/Loading";
 import { PlanetItem } from "./PlanetItem/PlanetItem";
+import Styled from "./styles";
 
 export const Planets: FC = () => {
   const { status, data, error } = usePlanetData();
 
   return (
-    <div className="content-cards">
-      {status === "loading" && "Loading..."}
+    <Styled.PlanetsContainer>
+      {status === "loading" && <Loading />}
 
       {status === "error" && <span>Error: {error.message}</span>}
 
@@ -27,6 +29,6 @@ export const Planets: FC = () => {
           ))}
         </>
       )}
-    </div>
+    </Styled.PlanetsContainer>
   );
 };

@@ -1,5 +1,8 @@
 import * as React from "react";
 import { FC } from "react";
+import { useContent } from "../../../ContentContext/ContentContext";
+import StyledCard from "../../../StyledComponents/Cards/MainCard";
+import StyledElement from "../../../StyledComponents/Elements/Elements";
 
 type PeopleItemTypes = {
   name: string;
@@ -20,17 +23,43 @@ export const PeopleItem: FC<PeopleItemTypes> = ({
   birth_year,
   gender,
 }) => {
+  const { content } = useContent();
+
   return (
-    <div className="content-cards-item">
-      <h2>{name}</h2>
-      <h3> Gender: {gender}</h3>
-      <ul>
-        <li>mass: {mass}</li>
-        <li>hair_color: {hair_color}</li>
-        <li>skin_color: {skin_color}</li>
-        <li>eye_color: {eye_color}</li>
-        <li>birth_year: {birth_year}</li>
-      </ul>
-    </div>
+    <StyledCard.Card flexRow>
+      <StyledCard.Info theme={content}>
+        <StyledElement.H2>{name}</StyledElement.H2>
+        <StyledElement.H3>Gender: {gender}</StyledElement.H3>
+        <StyledElement.Ul>
+          <StyledElement.Li>
+            mass:
+            <StyledElement.Span theme={content}>{mass}</StyledElement.Span>
+          </StyledElement.Li>
+          <StyledElement.Li>
+            hair color:
+            <StyledElement.Span theme={content}>
+              {hair_color}
+            </StyledElement.Span>
+          </StyledElement.Li>
+          <StyledElement.Li>
+            skin color:
+            <StyledElement.Span theme={content}>
+              {skin_color}
+            </StyledElement.Span>
+          </StyledElement.Li>
+          <StyledElement.Li>
+            eye color:
+            <StyledElement.Span theme={content}>{eye_color}</StyledElement.Span>
+          </StyledElement.Li>
+          <StyledElement.Li>
+            birth year:
+            <StyledElement.Span theme={content}>
+              {birth_year}
+            </StyledElement.Span>
+          </StyledElement.Li>
+        </StyledElement.Ul>
+      </StyledCard.Info>
+      <StyledCard.Image />
+    </StyledCard.Card>
   );
 };

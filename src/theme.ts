@@ -1,6 +1,10 @@
 export const theme = {
-  primary1: "#283637",
-  primary2: "#fefefe",
-  secondary: "#acacac",
-  accent: "#009687",
+  primary1: "#000",
+  primary2: "rgb(21, 21, 21)",
+  primary3: "gray",
+  secondary: "#282727",
+  accent1: "red",
+  accent2: "yellow",
+  accent3: "#009687",
+  accent4: "#cecece",
 };

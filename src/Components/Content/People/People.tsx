@@ -1,14 +1,16 @@
 import * as React from "react";
 import { FC } from "react";
 import { usePeopleData } from "../../../customHooks/customHooks";
+import { Loading } from "../../Loading/Loading";
 import { PeopleItem } from "./PeopleItem/PeopleItem";
+import Styled from "./styles";
 
 export const People: FC = () => {
   const { status, data, error } = usePeopleData();
 
   return (
-    <div className="content-cards">
-      {status === "loading" && "Loading..."}
+    <Styled.PeopleContainer>
+      {status === "loading" && <Loading />}
       {status === "error" && <span>Error: {error.message}</span>}
       {status === "success" && (
         <>
@@ -26,6 +28,6 @@ export const People: FC = () => {
           ))}
         </>
       )}
-    </div>
+    </Styled.PeopleContainer>
   );
 };

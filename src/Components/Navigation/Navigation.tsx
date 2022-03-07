@@ -1,30 +1,46 @@
 import * as React from "react";
 import { useContent } from "../ContentContext/ContentContext";
+import Styled from "./styles";
 
 export const Navigation = () => {
-  const { contentHandler } = useContent();
+  const { content, contentHandler } = useContent();
 
   const contentTypeHandler = (e) => {
     contentHandler(e.target.name);
   };
 
   return (
-    <ul className="app-navigation">
-      <li>
-        <button name={"films"} onClick={contentTypeHandler}>
+    <Styled.Navigation>
+      <Styled.Li>
+        <Styled.Button
+          name={"films"}
+          onClick={contentTypeHandler}
+          content={content}
+        >
           films
-        </button>
-      </li>
-      <li>
-        <button name={"people"} onClick={contentTypeHandler}>
+        </Styled.Button>
+        <Styled.LightSpan name={"films"} content={content} />
+      </Styled.Li>
+      <Styled.Li>
+        <Styled.Button
+          name={"people"}
+          onClick={contentTypeHandler}
+          content={content}
+        >
           people
-        </button>
-      </li>
-      <li>
-        <button name={"planets"} onClick={contentTypeHandler}>
+        </Styled.Button>
+        <Styled.LightSpan name={"people"} content={content} />
+      </Styled.Li>
+      <Styled.Li>
+        <Styled.Button
+          name={"planets"}
+          onClick={contentTypeHandler}
+          content={content}
+        >
           planets
-        </button>
-      </li>
-    </ul>
+        </Styled.Button>
+        <Styled.LightSpan name={"planets"} content={content} />
+      </Styled.Li>
+    </Styled.Navigation>
   );
 };
