@@ -7,6 +7,7 @@ import { Navigation } from "../Navigation/Navigation";
 import Styled from "./styles";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
+import { Chat } from "../Chat/Chat";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ function App() {
           <Header />
           <Navigation />
           <Content />
+          <Chat />
           <Footer />
         </Styled.App>
       </QueryClientProvider>

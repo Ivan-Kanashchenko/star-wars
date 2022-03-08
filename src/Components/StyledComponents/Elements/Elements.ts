@@ -10,6 +10,10 @@ const H3 = styled.h3`
   padding-left: 25px;
   color: var(--primary3);
 `;
+const H4 = styled.h4`
+  font-size: 20px;
+  color: var(--primary3);
+`;
 const Ul = styled.ul`
   padding-left: 30px;
 `;
@@ -68,6 +72,7 @@ const Button = styled.button`
 const StyledElement = {
   H2,
   H3,
+  H4,
   Ul,
   Li,
   Span,
