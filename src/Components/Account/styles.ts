@@ -1,24 +1,9 @@
 import styled from "styled-components";
-import logo from "../../assets/logo/logo.png";
-import headerBackground from "../../assets/backgrounds/headerBackground.jpeg";
 
-const Header = styled.header`
-  background-image: url(${headerBackground});
+const Button = styled.button`
   width: 100%;
-  height: 120px;
-  position: relative;
-`;
-const Logo = styled.a`
-  display: block;
-  top: 50%;
-  width: 100%;
-  max-width: 203px;
   height: 100%;
-  max-height: 88px;
-  margin: 20px auto;
-  box-sizing: border-box;
-  background-image: url(${logo});
-  background-size: contain;
+  text-align: left;
 `;
 
 interface LoginProps {
@@ -51,17 +36,9 @@ const Login = styled.button<LoginProps>`
   `}
 `;
 
-const Button = styled.button`
-  width: 100%;
-  height: 100%;
-  text-align: left;
-`;
-
 const Styled = {
-  Header,
-  Logo,
-  Login,
   Button,
+  Login,
 };
 
 export default Styled;

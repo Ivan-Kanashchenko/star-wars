@@ -14,11 +14,34 @@ const H4 = styled.h4`
   font-size: 20px;
   color: var(--primary3);
 `;
-const Ul = styled.ul`
-  padding-left: 30px;
-`;
-const Li = styled.li``;
 
+interface UlProps {
+  loginList?: boolean;
+}
+const Ul = styled.ul<UlProps>`
+  padding-left: 30px;
+  ${({ loginList }) =>
+    loginList &&
+    `padding-left: 0px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: left;
+    aligh-items: left;
+    text-align: left;`}
+`;
+
+interface LiProps {
+  loginList?: boolean;
+}
+const Li = styled.li<LiProps>`
+  ${({ loginList }) =>
+    loginList &&
+    `padding: 15px;
+    &:hover {
+      background-color: var(--accent4);
+    }
+`}
+`;
 const Span = styled.span`
   ${({ theme }) => theme === "people" && `color: var(--accent2);`}
   ${({ theme }) => theme === "films" && `color: var(--accent1);`}
@@ -32,17 +55,30 @@ interface ContainerProps {
   flexColumn?: boolean;
   flexWrap?: boolean;
   actorsCard?: boolean;
+  absolute?: boolean;
+  loginList?: boolean;
 }
 
 const Container = styled.div<ContainerProps>`
   display: flex;
   margin: 20px;
+
+  ${({ absolute }) => absolute && `position: absolute;`}
   ${({ itemscenter }) =>
     itemscenter && `text-align:center; justify-content:center;`};
   ${({ flexRow }) => flexRow && `flex-direction: row;`}
   ${({ flexColumn }) => flexColumn && `flex-direction: column;`}
   ${({ flexWrap }) => flexWrap && `flex-wrap: wrap;`}
   ${({ actorsCard }) => actorsCard && `border: 2px solid`}
+  ${({ loginList }) =>
+    loginList &&
+    `
+    background-color: var(--primary3);
+    margin: 0;
+    top: 45px;
+    right: 50px;
+    z-index: 10;
+    `}
 `;
 
 const Button = styled.button`

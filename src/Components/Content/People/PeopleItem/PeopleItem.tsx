@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FC } from "react";
-import { useContent } from "../../../ContentContext/ContentContext";
+import { useContent } from "../../../Context/ContentContext";
 import StyledCard from "../../../StyledComponents/Cards/MainCard";
 import StyledElement from "../../../StyledComponents/Elements/Elements";
 

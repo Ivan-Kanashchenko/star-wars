@@ -1,13 +1,12 @@
 import { useContext, useState } from "react";
-import * as React from 'react';
-
+import * as React from "react";
 
 const ContentContext = React.createContext(null);
 
 const ContentProvider = ({ children }) => {
   const [content, setContent] = useState<string>("description");
 
-  const contentHandler = (state:string) => {
+  const contentHandler = (state: string) => {
     setContent(state);
   };
 
@@ -19,9 +18,9 @@ const ContentProvider = ({ children }) => {
 };
 
 export type ContextType = {
-  content: string,
-  contentHandler: (arg0: string) => void,
-}
+  content: string;
+  contentHandler: (arg0: string) => void;
+};
 
 export const useContent = () => {
   const context = useContext<ContextType>(ContentContext);

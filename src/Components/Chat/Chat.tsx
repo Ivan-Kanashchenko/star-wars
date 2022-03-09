@@ -2,6 +2,7 @@ import * as React from "react";
 import StyledChat from "./styles";
 import { useState } from "react";
 import { ChatHeader } from "./ChatHeader/ChatHeader";
+import { useAuth } from "../../auth/AuthContext";
 
 {
   /* <StyledChat.Icon />
@@ -11,9 +12,15 @@ import { ChatHeader } from "./ChatHeader/ChatHeader";
 export const Chat = () => {
   const [openChat, setOpenChat] = useState(false);
 
+  const { isAuth } = useAuth();
+
   const chatToggle = () => {
     setOpenChat(!openChat);
   };
+
+  if (!isAuth) {
+    return null;
+  }
 
   return (
     <>

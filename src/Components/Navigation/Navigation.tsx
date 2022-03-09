@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useContent } from "../ContentContext/ContentContext";
+import { useContent } from "../Context/ContentContext";
 import Styled from "./styles";
 
 export const Navigation = () => {
