@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 const Register = () => {
-  return <Container>register</Container>;
+  return <Container></Container>;
 };
 
 export default Register;
