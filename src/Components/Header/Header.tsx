@@ -16,7 +16,7 @@ export const Header: FC = () => {
         <Account />
       ) : (
         <div>
-          <Styled.Login onClick={modalHandler}>Sing In</Styled.Login>
+          <Styled.Login onClick={modalHandler}>Sign In</Styled.Login>
         </div>
       )}
     </Styled.Header>

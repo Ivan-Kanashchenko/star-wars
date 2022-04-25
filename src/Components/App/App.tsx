@@ -11,6 +11,8 @@ import { Chat } from "../Chat/Chat";
 import AuthProvider from "../../auth/AuthContext";
 import Modal from "../Modal/Modal";
 import ModalProvider from "../Context/ModalContext";
+import { Route, Routes } from "react-router-dom";
+import Register from "../Register/Register";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +26,11 @@ function App() {
             <Styled.App>
               <Header />
               <Navigation />
-              <Content />
+              <Routes>
+                <Route path="/" element={<Content />} />
+                <Route path="/registration" element={<Register />} />
+              </Routes>
+
               <Chat />
               <Modal />
               <Footer />

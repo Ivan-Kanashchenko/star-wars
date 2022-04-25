@@ -22,6 +22,7 @@ const Container = styled.div`
   border-radius: 7px;
   background-color: white;
   z-index: 6;
+  padding: 5px 0px;
 `;
 
 const Title = styled.h3`
@@ -40,9 +41,15 @@ const Block = styled.div<{ flexRow?: boolean }>`
 `;
 
 const Button = styled.button`
-  padding: 10px 30px;
-  border: 1px solid black;
-  border-radius: 5px;
+  padding: 5px 35px;
+  border: 1px solid var(--primary1);
+  border-radius: 3px;
+  margin: 5px 0px;
+
+  &:hover {
+    background-color: var(--primary1);
+    color: var(--accent4);
+  }
 `;
 
 const SocialButton = styled.button<{ icon: string }>`
@@ -52,6 +59,36 @@ const SocialButton = styled.button<{ icon: string }>`
   ${({ icon }) => icon && `background: url(${icon}) 0 0/contain no-repeat;`}
 `;
 
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  border: 1px solid var(--accent4);
+  border-radius: 3px;
+  padding: 5px;
+  margin: 5px;
+  width: 64%;
+
+  &:focus,
+  :hover {
+    border: 1px solid var(--primary1);
+  }
+`;
+
+const Link = styled.a`
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--primary1);
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const Styled = {
   Background,
   Container,
@@ -59,6 +96,9 @@ const Styled = {
   Block,
   Button,
   SocialButton,
+  Form,
+  Input,
+  Link,
 };
 
 export default Styled;

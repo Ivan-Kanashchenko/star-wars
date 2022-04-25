@@ -1,12 +1,16 @@
 import * as React from "react";
+import { useAuth } from "../../auth/AuthContext";
 import { useContent } from "../Context/ContentContext";
+import { useModal } from "../Context/ModalContext";
 import Styled from "./styles";
 
 export const Navigation = () => {
+  const { isAuth } = useAuth();
   const { content, contentHandler } = useContent();
+  const { modalHandler } = useModal();
 
   const contentTypeHandler = (e) => {
-    contentHandler(e.target.name);
+    isAuth ? contentHandler(e.target.name) : modalHandler();
   };
 
   return (

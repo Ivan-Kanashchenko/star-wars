@@ -70,6 +70,7 @@ const App = styled.div(() => {
     align-items: center;
     margin: 0 auto;
     min-height: 100vh;
+    transition: 0.2s;
   `;
 });
 

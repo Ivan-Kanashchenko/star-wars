@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import * as React from "react";
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import {
   getAuth,
   signInWithPopup,

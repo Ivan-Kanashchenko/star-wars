@@ -24,8 +24,13 @@ export const Account: FC = () => {
       {menuOpen && (
         <StyledElement.Container absolute loginList>
           <StyledElement.Ul loginList>
-            <StyledElement.Li loginList>{userName}</StyledElement.Li>
-            <StyledElement.Li loginList>{userEmail}</StyledElement.Li>
+            {!!userName && (
+              <StyledElement.Li loginList>{userName}</StyledElement.Li>
+            )}
+
+            {!!userEmail && (
+              <StyledElement.Li loginList>{userEmail}</StyledElement.Li>
+            )}
             <StyledElement.Li>
               <Styled.Button onClick={Logout}>Exit</Styled.Button>
             </StyledElement.Li>

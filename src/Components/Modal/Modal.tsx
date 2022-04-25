@@ -27,14 +27,18 @@ const Modal = () => {
         <Styled.Block>
           <Styled.Title>Sign In</Styled.Title>
         </Styled.Block>
+        <Styled.Block>
+          <Styled.Form>
+            <Styled.Input type="email" placeholder="Email" />
+            <Styled.Input type="password" placeholder="Password" />
+            <Styled.Button type="submit">Login</Styled.Button>
+            <Styled.Link href="#">Register account...</Styled.Link>
+          </Styled.Form>
+        </Styled.Block>
         <Styled.Block flexRow>
           <Styled.SocialButton icon={gitIcon} onClick={gitHubAuth} />
           <Styled.SocialButton icon={facebookIcon} onClick={facebookAuth} />
           <Styled.SocialButton icon={googleIcon} onClick={googleAuth} />
-          <Styled.SocialButton icon={twitterIcon} />
-        </Styled.Block>
-        <Styled.Block>
-          <Styled.Button onClick={modalHandler}>close</Styled.Button>
         </Styled.Block>
       </Styled.Container>
       <Styled.Background onClick={modalHandler} />
