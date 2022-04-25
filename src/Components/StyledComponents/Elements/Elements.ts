@@ -15,10 +15,7 @@ const H4 = styled.h4`
   color: var(--primary3);
 `;
 
-interface UlProps {
-  loginList?: boolean;
-}
-const Ul = styled.ul<UlProps>`
+const Ul = styled.ul<{ loginList?: boolean }>`
   padding-left: 30px;
   ${({ loginList }) =>
     loginList &&
@@ -30,10 +27,7 @@ const Ul = styled.ul<UlProps>`
     text-align: left;`}
 `;
 
-interface LiProps {
-  loginList?: boolean;
-}
-const Li = styled.li<LiProps>`
+const Li = styled.li<{ loginList?: boolean; logoutButton?: boolean }>`
   ${({ loginList }) =>
     loginList &&
     `padding: 15px;

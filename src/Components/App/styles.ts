@@ -67,6 +67,7 @@ const App = styled.div(() => {
     text-align: center;
     width: 100%;
     justify-content: center;
+    align-items: center;
     margin: 0 auto;
     min-height: 100vh;
   `;

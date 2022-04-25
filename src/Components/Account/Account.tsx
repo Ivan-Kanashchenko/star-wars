@@ -26,7 +26,7 @@ export const Account: FC = () => {
           <StyledElement.Ul loginList>
             <StyledElement.Li loginList>{userName}</StyledElement.Li>
             <StyledElement.Li loginList>{userEmail}</StyledElement.Li>
-            <StyledElement.Li loginList>
+            <StyledElement.Li>
               <Styled.Button onClick={Logout}>Exit</Styled.Button>
             </StyledElement.Li>
           </StyledElement.Ul>

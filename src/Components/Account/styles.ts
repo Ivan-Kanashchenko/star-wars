@@ -4,14 +4,13 @@ const Button = styled.button`
   width: 100%;
   height: 100%;
   text-align: left;
+  padding: 15px;
+  &:hover {
+    background-color: var(--accent4);
+  }
 `;
 
-interface LoginProps {
-  isAuth?: boolean;
-  userPhoto?: string;
-}
-
-const Login = styled.button<LoginProps>`
+const Login = styled.button<{ isAuth?: boolean; userPhoto?: string }>`
   display: block;
   border: 1px solid var(--primary3);
   border-radius: 3px;

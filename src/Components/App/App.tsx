@@ -9,6 +9,8 @@ import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import { Chat } from "../Chat/Chat";
 import AuthProvider from "../../auth/AuthContext";
+import Modal from "../Modal/Modal";
+import ModalProvider from "../Context/ModalContext";
 
 const queryClient = new QueryClient();
 
@@ -16,16 +18,19 @@ function App() {
   return (
     <ContentProvider>
       <AuthProvider>
-        <QueryClientProvider client={queryClient}>
-          <Styled.GlobalStyles />
-          <Styled.App>
-            <Header />
-            <Navigation />
-            <Content />
-            <Chat />
-            <Footer />
-          </Styled.App>
-        </QueryClientProvider>
+        <ModalProvider>
+          <QueryClientProvider client={queryClient}>
+            <Styled.GlobalStyles />
+            <Styled.App>
+              <Header />
+              <Navigation />
+              <Content />
+              <Chat />
+              <Modal />
+              <Footer />
+            </Styled.App>
+          </QueryClientProvider>
+        </ModalProvider>
       </AuthProvider>
     </ContentProvider>
   );

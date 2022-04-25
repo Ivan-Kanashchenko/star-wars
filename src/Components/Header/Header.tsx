@@ -1,14 +1,13 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import * as React from "react";
 import { FC } from "react";
-import { useState } from "react";
 import { useAuth } from "../../auth/AuthContext";
 import { Account } from "../Account/Account";
-import StyledElement from "../StyledComponents/Elements/Elements";
+import { useModal } from "../Context/ModalContext";
 import Styled from "./styles";
 
 export const Header: FC = () => {
-  const { googleAuth, isAuth } = useAuth();
+  const { isAuth } = useAuth();
+  const { modalHandler } = useModal();
 
   return (
     <Styled.Header>
@@ -16,7 +15,9 @@ export const Header: FC = () => {
       {isAuth ? (
         <Account />
       ) : (
-        <Styled.Login onClick={googleAuth}>Sing in with google</Styled.Login>
+        <div>
+          <Styled.Login onClick={modalHandler}>Sing In</Styled.Login>
+        </div>
       )}
     </Styled.Header>
   );

@@ -8,8 +8,9 @@ import {
   GoogleAuthProvider,
   User,
   signOut,
+  FacebookAuthProvider,
+  GithubAuthProvider,
 } from "firebase/auth";
-import axios from "axios";
 
 // Initialize Firebase
 const app = initializeApp({
@@ -22,8 +23,6 @@ const app = initializeApp({
   measurementId: "G-VB6Y2FDM0J",
 });
 
-const analytics = getAnalytics(app);
-
 const AuthContext = React.createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -32,7 +31,9 @@ const AuthProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState<string>("");
   const [userPhoto, setUserPhoto] = useState<string>("");
 
-  const provider = new GoogleAuthProvider();
+  const googleProvider = new GoogleAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
+  const gitHubProvider = new GithubAuthProvider();
 
   const auth = getAuth();
 
@@ -44,8 +45,16 @@ const AuthProvider = ({ children }) => {
   };
 
   const googleAuth = async (): Promise<void> => {
-    const { user } = await signInWithPopup(auth, provider);
-    console.log(user);
+    const { user } = await signInWithPopup(auth, googleProvider);
+    Login(user);
+  };
+
+  const facebookAuth = async (): Promise<void> => {
+    const { user } = await signInWithPopup(auth, facebookProvider);
+    Login(user);
+  };
+  const gitHubAuth = async (): Promise<void> => {
+    const { user } = await signInWithPopup(auth, gitHubProvider);
     Login(user);
   };
 
@@ -59,7 +68,16 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ googleAuth, Logout, isAuth, userName, userEmail, userPhoto }}
+      value={{
+        facebookAuth,
+        googleAuth,
+        gitHubAuth,
+        Logout,
+        isAuth,
+        userName,
+        userEmail,
+        userPhoto,
+      }}
     >
       {children}
     </AuthContext.Provider>
@@ -67,7 +85,9 @@ const AuthProvider = ({ children }) => {
 };
 
 export type ContextType = {
+  facebookAuth: () => void;
   googleAuth: () => void;
+  gitHubAuth: () => void;
   Logout: () => void;
   isAuth: boolean;
   userName: string;
