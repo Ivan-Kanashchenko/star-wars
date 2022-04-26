@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Background = styled.div`
@@ -79,7 +80,7 @@ const Input = styled.input`
   }
 `;
 
-const Link = styled.a`
+const CustomLink = styled(Link)`
   font-size: 12px;
   text-decoration: none;
   color: var(--primary1);
@@ -98,7 +99,7 @@ const Styled = {
   SocialButton,
   Form,
   Input,
-  Link,
+  CustomLink,
 };
 
 export default Styled;

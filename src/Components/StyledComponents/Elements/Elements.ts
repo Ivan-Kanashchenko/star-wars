@@ -41,7 +41,11 @@ const Span = styled.span`
   ${({ theme }) => theme === "films" && `color: var(--accent1);`}
   ${({ theme }) => theme === "planets" && `color: var(--accent3);`}
 `;
-const Paragraph = styled.p``;
+const Paragraph = styled.p`
+  padding-bottom: 20px;
+  font-size: 24px;
+  line-height: 30px;
+`;
 
 interface ContainerProps {
   itemscenter?: boolean;

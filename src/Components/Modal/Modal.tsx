@@ -32,7 +32,9 @@ const Modal = () => {
             <Styled.Input type="email" placeholder="Email" />
             <Styled.Input type="password" placeholder="Password" />
             <Styled.Button type="submit">Login</Styled.Button>
-            <Styled.Link href="#">Register account...</Styled.Link>
+            <Styled.CustomLink to="/registration" onClick={modalHandler}>
+              Register account...
+            </Styled.CustomLink>
           </Styled.Form>
         </Styled.Block>
         <Styled.Block flexRow>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FC } from "react";
-import { usePlanetData } from "../../../customHooks/customHooks";
+import { usePlanetData } from "../../../customHooks/apiHooks";
 import { Loading } from "../../Loading/Loading";
 import { PlanetItem } from "./PlanetItem/PlanetItem";
 import Styled from "./styles";

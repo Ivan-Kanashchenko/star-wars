@@ -10,12 +10,15 @@ import {
 export function useFilmsData() {
   return useQuery<ResponseFilmsData, Error>("films", api.fetchFilmsData);
 }
+
 export function usePeopleData() {
   return useQuery<ResponsePeopleData, Error>("people", api.fetchPeopleData);
 }
+
 export function usePlanetData() {
   return useQuery<ResponsePlanetData, Error>("planet", api.fetchPlanetData);
 }
+
 export function useActorsData(id: number) {
   return useQuery<
     {
@@ -26,6 +29,7 @@ export function useActorsData(id: number) {
     return api.fetchActorsData(id);
   });
 }
+
 export function usePlanetsData(url: string) {
   return useQuery<
     {

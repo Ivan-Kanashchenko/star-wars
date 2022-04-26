@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FC } from "react";
 import { useState } from "react";
-import { usePlanetsData } from "../../../../customHooks/customHooks";
+import { usePlanetsData } from "../../../../customHooks/apiHooks";
 import { useContent } from "../../../Context/ContentContext";
 import { Loading } from "../../../Loading/Loading";
 import StyledActorsCard from "../../../StyledComponents/Cards/ActorsCard";

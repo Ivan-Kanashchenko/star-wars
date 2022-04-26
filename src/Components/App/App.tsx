@@ -30,7 +30,6 @@ function App() {
                 <Route path="/" element={<Content />} />
                 <Route path="/registration" element={<Register />} />
               </Routes>
-
               <Chat />
               <Modal />
               <Footer />
