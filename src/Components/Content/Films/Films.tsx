@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FC } from "react";
 import { useFilmsData } from "../../../customHooks/apiHooks";
-import { Loading } from "../../Loading/Loading";
+import { Loading } from "../../../ui/Loading/Loading";
 import { FilmItem } from "./FilmItem/FilmItem";
 import Styled from "./styles";
 

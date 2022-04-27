@@ -6,7 +6,7 @@ import { useContent } from "../../../Context/ContentContext";
 import StyledCard from "../../../StyledComponents/Cards/MainCard";
 import StyledActorsCard from "../../../StyledComponents/Cards/ActorsCard";
 import StyledElement from "../../../StyledComponents/Elements/Elements";
-import { Loading } from "../../../Loading/Loading";
+import { Loading } from "../../../../ui/Loading/Loading";
 
 type FilmItemType = {
   key: number;
