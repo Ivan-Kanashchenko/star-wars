@@ -5,6 +5,7 @@ import { isValidEmail, isValidPassword } from "../../../helpers/validators";
 import Styled from "./styles";
 
 interface FormValues {
+  displayName: string;
   email: string;
   password: string;
   passwordConfirm: string;
@@ -19,6 +20,17 @@ const InnerForm = (props: OtherProps & FormikProps<FormValues>) => {
   return (
     <Styled.FormContainer>
       <StyledElement.Span>{message}</StyledElement.Span>
+      <Styled.FormInput
+        type="text"
+        name="displayName"
+        placeholder="Name"
+        touched={!!touched.displayName}
+        errors={!!errors.displayName}
+      />
+      {touched.displayName && errors.displayName && (
+        <Styled.Error>{errors.displayName}</Styled.Error>
+      )}
+
       <Styled.FormInput
         type="email"
         name="email"
@@ -67,9 +79,10 @@ interface MyFormProps {
 // Wrap our form with the withFormik HoC
 const MyForm = withFormik<MyFormProps, FormValues>({
   // Transform outer props into form values
-  mapPropsToValues: (props) => {
+  mapPropsToValues: () => {
     return {
-      email: props.initialEmail || "",
+      displayName: "",
+      email: "",
       password: "",
       passwordConfirm: "",
     };
@@ -77,6 +90,9 @@ const MyForm = withFormik<MyFormProps, FormValues>({
 
   validate: (values: FormValues) => {
     let errors: FormikErrors<FormValues> = {};
+    if (!values.displayName) {
+      errors.displayName = "Name is required";
+    }
     if (!values.email) {
       errors.email = "Email is required";
     } else if (!isValidEmail(values.email)) {
