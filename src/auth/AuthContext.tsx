@@ -10,6 +10,7 @@ import {
   FacebookAuthProvider,
   GithubAuthProvider,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 
 // Initialize Firebase
@@ -58,7 +59,12 @@ const AuthProvider = ({ children }) => {
     Login(user);
   };
 
-  const emailAuth = async (
+  const emailAuth = async (email: string, password: string): Promise<void> => {
+    const { user } = await signInWithEmailAndPassword(auth, email, password);
+    Login(user);
+  };
+
+  const emailRegistration = async (
     email: string,
     password: string,
     displayName: string
