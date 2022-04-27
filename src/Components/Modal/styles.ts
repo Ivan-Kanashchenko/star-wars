@@ -60,26 +60,6 @@ const SocialButton = styled.button<{ icon: string }>`
   ${({ icon }) => icon && `background: url(${icon}) 0 0/contain no-repeat;`}
 `;
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Input = styled.input`
-  border: 1px solid var(--accent4);
-  border-radius: 3px;
-  padding: 5px;
-  margin: 5px;
-  width: 64%;
-
-  &:focus,
-  :hover {
-    border: 1px solid var(--primary1);
-  }
-`;
-
 const CustomLink = styled(Link)`
   font-size: 12px;
   text-decoration: none;
@@ -97,8 +77,6 @@ const Styled = {
   Block,
   Button,
   SocialButton,
-  Form,
-  Input,
   CustomLink,
 };
 

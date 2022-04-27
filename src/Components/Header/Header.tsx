@@ -11,7 +11,7 @@ export const Header: FC = () => {
 
   return (
     <Styled.Header>
-      <Styled.Logo href="#" />
+      <Styled.Logo to="/" />
       {isAuth ? (
         <Account />
       ) : (
