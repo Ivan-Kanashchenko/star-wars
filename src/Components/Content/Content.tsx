@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useContent } from "../Context/ContentContext";
+import { useContent } from "../../Context/ContentContext";
 import StyledElement from "../StyledComponents/Elements/Elements";
 import { Films } from "./Films";
 import { People } from "./People";

@@ -2,7 +2,7 @@ import * as React from "react";
 import { FC } from "react";
 import { useState } from "react";
 import { useActorsData } from "../../../../customHooks/apiHooks";
-import { useContent } from "../../../Context/ContentContext";
+import { useContent } from "../../../../Context/ContentContext";
 import StyledCard from "../../../StyledComponents/Cards/MainCard";
 import StyledActorsCard from "../../../StyledComponents/Cards/ActorsCard";
 import StyledElement from "../../../StyledComponents/Elements/Elements";

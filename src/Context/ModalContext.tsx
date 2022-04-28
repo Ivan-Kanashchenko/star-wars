@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import * as React from "react";
-import { useAuth } from "../../auth/AuthContext";
+import { useAuth } from "../auth/AuthContext";
 
 const ModalContext = React.createContext(null);
 

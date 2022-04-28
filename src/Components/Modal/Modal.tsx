@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import gitIcon from "../../assets/icons/github.png";
 import facebookIcon from "../../assets/icons/facebook.png";
 import googleIcon from "../../assets/icons/google.png";
-import { useModal } from "../Context/ModalContext";
+import { useModal } from "../../Context/ModalContext";
 import { useAuth } from "../../auth/AuthContext";
 import Styled from "./styles";
 import SignInForm from "../Forms/SignInForm/SignInForm";
