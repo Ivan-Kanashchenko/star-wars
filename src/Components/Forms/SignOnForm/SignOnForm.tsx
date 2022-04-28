@@ -1,4 +1,5 @@
 import * as React from "react";
+import { FC } from "react";
 import { Formik } from "formik";
 import {
   isValidEmail,
@@ -9,7 +10,11 @@ import {
 import Styled from "./styles";
 import StyledElement from "../../StyledComponents/Elements/Elements";
 
-const SignOnForm = ({ message }) => (
+interface SignOnFormProps {
+  message?: string;
+}
+
+const SignOnForm: FC<SignOnFormProps> = ({ message }) => (
   <>
     <Formik
       initialValues={{
