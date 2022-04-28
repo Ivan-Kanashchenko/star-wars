@@ -46,17 +46,36 @@ const AuthProvider = ({ children }) => {
   };
 
   const googleAuth = async (): Promise<void> => {
-    const { user } = await signInWithPopup(auth, googleProvider);
-    Login(user);
+    try {
+      const { user } = await signInWithPopup(auth, googleProvider);
+      Login(user);
+    } catch (error) {
+      throw new Error(
+        `Error in googleAuth. errorCode: ${error.code}, errorMessage: ${error.message}, errorEmail: ${error.email}`
+      );
+    }
   };
 
   const facebookAuth = async (): Promise<void> => {
-    const { user } = await signInWithPopup(auth, facebookProvider);
-    Login(user);
+    try {
+      const { user } = await signInWithPopup(auth, facebookProvider);
+      Login(user);
+    } catch (error) {
+      throw new Error(
+        `Error in facebookAuth. errorCode: ${error.code}, errorMessage: ${error.message}, errorEmail: ${error.email}`
+      );
+    }
   };
+
   const gitHubAuth = async (): Promise<void> => {
-    const { user } = await signInWithPopup(auth, gitHubProvider);
-    Login(user);
+    try {
+      const { user } = await signInWithPopup(auth, gitHubProvider);
+      Login(user);
+    } catch (error) {
+      throw new Error(
+        `Error in gitHubAuth. errorCode: ${error.code}, errorMessage: ${error.message}, errorEmail: ${error.email}`
+      );
+    }
   };
 
   const emailAuth = async (email: string, password: string): Promise<void> => {
