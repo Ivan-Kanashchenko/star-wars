@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Formik } from "formik";
-import StyledElement from "../../StyledComponents/Elements/Elements";
 import {
   isValidEmail,
   isValidPassword,
@@ -8,6 +7,7 @@ import {
   isValidUserName,
 } from "../../../helpers/validators";
 import Styled from "./styles";
+import StyledElement from "../../StyledComponents/Elements/Elements";
 
 const SignOnForm = ({ message }) => (
   <>
@@ -23,12 +23,13 @@ const SignOnForm = ({ message }) => (
         console.log(values);
       }}
     >
-      {({ errors, touched, isValidating }) => (
+      {({ errors, touched, isValidating, values }) => (
         <Styled.FormContainer>
           <StyledElement.Span>{message}</StyledElement.Span>
           <Styled.FormInput
             type="text"
             name="username"
+            placeholder="Name"
             errors={errors.username}
             touched={touched.username}
             validate={isValidUserName}
@@ -40,6 +41,7 @@ const SignOnForm = ({ message }) => (
           <Styled.FormInput
             type="email"
             name="email"
+            placeholder="Email"
             validate={isValidEmail}
             errors={errors.email}
             touched={touched.email}
@@ -51,6 +53,7 @@ const SignOnForm = ({ message }) => (
           <Styled.FormInput
             type="password"
             name="password"
+            placeholder="Password"
             errors={errors.password}
             touched={touched.password}
             validate={isValidPassword}
@@ -62,7 +65,10 @@ const SignOnForm = ({ message }) => (
           <Styled.FormInput
             type="password"
             name="passwordConfirm"
-            validate={isValidPasswordConfirm}
+            placeholder="Confirm your password"
+            validate={() =>
+              isValidPasswordConfirm(values.password, values.passwordConfirm)
+            }
             errors={errors.passwordConfirm}
             touched={touched.passwordConfirm}
           />

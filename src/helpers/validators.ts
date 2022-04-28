@@ -38,14 +38,13 @@ export const isValidPasswordConfirm = (
 ): string => {
   let error: string;
   const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
+
   if (!passwordConfirm) {
     error = "Password is required";
-  }
-  if (!re.test(passwordConfirm)) {
+  } else if (!re.test(passwordConfirm)) {
     error = `Invalid password. Password must be at least 5 characters long and max 15 characters long. 
     Password must contain at least one numeric digit, one uppercase and one lowercase letter`;
-  }
-  if (password !== passwordConfirm) {
+  } else if (password !== passwordConfirm) {
     error = "Passwords do not match";
   }
   return error;
