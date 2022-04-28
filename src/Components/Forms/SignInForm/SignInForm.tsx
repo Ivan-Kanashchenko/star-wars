@@ -22,8 +22,6 @@ const SignInForm = () => (
             name="email"
             placeholder="Email"
             validate={isValidEmail}
-            errors={errors.email}
-            touched={touched.email}
           />
           {errors.email && touched.email && (
             <Styled.Error>{errors.email}</Styled.Error>
@@ -33,8 +31,6 @@ const SignInForm = () => (
             type="password"
             name="password"
             placeholder="Password"
-            errors={errors.password}
-            touched={touched.password}
             validate={isValidPassword}
           />
           {errors.password && touched.password && (
