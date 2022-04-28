@@ -88,6 +88,8 @@ const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
+        emailRegistration,
+        emailAuth,
         facebookAuth,
         googleAuth,
         gitHubAuth,
@@ -104,6 +106,8 @@ const AuthProvider = ({ children }) => {
 };
 
 export type ContextType = {
+  emailRegistration: () => void;
+  emailAuth: () => void;
   facebookAuth: () => void;
   googleAuth: () => void;
   gitHubAuth: () => void;

@@ -1,10 +1,52 @@
-export const isValidEmail = (email: string): boolean => {
-  const re =
-    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-  return re.test(email.toLowerCase());
+export const isValidUserName = (userName: string): string => {
+  let error: string;
+  if (!userName) {
+    error = "userName is required";
+  }
+  return error;
 };
 
-export const isValidPassword = (password: string): boolean => {
+export const isValidEmail = (email: string): string => {
+  let error: string;
+  const re =
+    /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  if (!email) {
+    error = "Email is required";
+  }
+  if (!re.test(email.toLowerCase())) {
+    error = "Invalid email address";
+  }
+  return error;
+};
+
+export const isValidPassword = (password: string): string => {
+  let error: string;
   const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
-  return re.test(password);
+  if (!password) {
+    error = "Password is required";
+  }
+  if (!re.test(password)) {
+    error = `Invalid password. Password must be at least 5 characters long and max 15 characters long. 
+    Password must contain at least one numeric digit, one uppercase and one lowercase letter`;
+  }
+  return error;
+};
+
+export const isValidPasswordConfirm = (
+  password: string,
+  passwordConfirm: string
+): string => {
+  let error: string;
+  const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
+  if (!passwordConfirm) {
+    error = "Password is required";
+  }
+  if (!re.test(passwordConfirm)) {
+    error = `Invalid password. Password must be at least 5 characters long and max 15 characters long. 
+    Password must contain at least one numeric digit, one uppercase and one lowercase letter`;
+  }
+  if (password !== passwordConfirm) {
+    error = "Passwords do not match";
+  }
+  return error;
 };
