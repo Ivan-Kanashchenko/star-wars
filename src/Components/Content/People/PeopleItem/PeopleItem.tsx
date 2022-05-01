@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FC } from "react";
-import { useContent } from "../../../../Context/ContentContext";
+import { useLocation } from "react-router-dom";
 import StyledCard from "../../../StyledComponents/Cards/MainCard";
 import StyledElement from "../../../StyledComponents/Elements/Elements";
 
@@ -23,37 +23,39 @@ export const PeopleItem: FC<PeopleItemTypes> = ({
   birth_year,
   gender,
 }) => {
-  const { content } = useContent();
+  const { pathname } = useLocation();
 
   return (
     <StyledCard.Card flexRow>
-      <StyledCard.Info theme={content}>
+      <StyledCard.Info theme={pathname}>
         <StyledElement.H2>{name}</StyledElement.H2>
         <StyledElement.H3>Gender: {gender}</StyledElement.H3>
         <StyledElement.Ul>
           <StyledElement.Li>
             mass:
-            <StyledElement.Span theme={content}>{mass}</StyledElement.Span>
+            <StyledElement.Span theme={pathname}>{mass}</StyledElement.Span>
           </StyledElement.Li>
           <StyledElement.Li>
             hair color:
-            <StyledElement.Span theme={content}>
+            <StyledElement.Span theme={pathname}>
               {hair_color}
             </StyledElement.Span>
           </StyledElement.Li>
           <StyledElement.Li>
             skin color:
-            <StyledElement.Span theme={content}>
+            <StyledElement.Span theme={pathname}>
               {skin_color}
             </StyledElement.Span>
           </StyledElement.Li>
           <StyledElement.Li>
             eye color:
-            <StyledElement.Span theme={content}>{eye_color}</StyledElement.Span>
+            <StyledElement.Span theme={pathname}>
+              {eye_color}
+            </StyledElement.Span>
           </StyledElement.Li>
           <StyledElement.Li>
             birth year:
-            <StyledElement.Span theme={content}>
+            <StyledElement.Span theme={pathname}>
               {birth_year}
             </StyledElement.Span>
           </StyledElement.Li>

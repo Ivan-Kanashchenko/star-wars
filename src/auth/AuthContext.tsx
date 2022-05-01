@@ -39,9 +39,9 @@ const AuthProvider = ({ children }) => {
   const auth = getAuth();
 
   const Login = async (user: User) => {
-    setUserName(user.displayName);
+    setUserName(user.displayName || null);
     setUserEmail(user.email);
-    setUserPhoto(user.photoURL);
+    setUserPhoto(user.photoURL || null);
     setIsAuth(true);
   };
 
@@ -125,7 +125,11 @@ const AuthProvider = ({ children }) => {
 };
 
 export type ContextType = {
-  emailRegistration: () => void;
+  emailRegistration: (
+    email: string,
+    password: string,
+    displayName: string
+  ) => void;
   emailAuth: () => void;
   facebookAuth: () => void;
   googleAuth: () => void;

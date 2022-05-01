@@ -2,11 +2,11 @@ import * as React from "react";
 import { FC } from "react";
 import { useState } from "react";
 import { useActorsData } from "../../../../customHooks/apiHooks";
-import { useContent } from "../../../../Context/ContentContext";
 import StyledCard from "../../../StyledComponents/Cards/MainCard";
 import StyledActorsCard from "../../../StyledComponents/Cards/ActorsCard";
 import StyledElement from "../../../StyledComponents/Elements/Elements";
-import { Loading } from "../../../../ui/Loading/Loading";
+import { Loading } from "../../../StyledComponents/Loading/Loading";
+import { useLocation } from "react-router-dom";
 
 type FilmItemType = {
   key: number;
@@ -35,7 +35,7 @@ export const FilmItem: FC<FilmItemType> = ({
       }
     });
   };
-  const { content } = useContent();
+  const location = useLocation();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -45,11 +45,13 @@ export const FilmItem: FC<FilmItemType> = ({
 
   return (
     <StyledCard.Card flexColumn>
-      <StyledCard.Info theme={content}>
+      <StyledCard.Info theme={location.pathname}>
         <StyledElement.H2>{title}</StyledElement.H2>
         <StyledElement.H3>
           Episode:
-          <StyledElement.Span theme={content}>{episode_id}</StyledElement.Span>
+          <StyledElement.Span theme={location.pathname}>
+            {episode_id}
+          </StyledElement.Span>
         </StyledElement.H3>
         <StyledElement.Container>
           <StyledElement.Paragraph>{opening_crawl}</StyledElement.Paragraph>
@@ -57,15 +59,19 @@ export const FilmItem: FC<FilmItemType> = ({
         <StyledElement.Container>
           <StyledElement.Container>
             director:
-            <StyledElement.Span theme={content}>{director}</StyledElement.Span>
+            <StyledElement.Span theme={location.pathname}>
+              {director}
+            </StyledElement.Span>
           </StyledElement.Container>
           <StyledElement.Container>
             producer:
-            <StyledElement.Span theme={content}>{producer}</StyledElement.Span>
+            <StyledElement.Span theme={location.pathname}>
+              {producer}
+            </StyledElement.Span>
           </StyledElement.Container>
           <StyledElement.Container>
             release date:
-            <StyledElement.Span theme={content}>
+            <StyledElement.Span theme={location.pathname}>
               {release_date}
             </StyledElement.Span>
           </StyledElement.Container>
@@ -73,7 +79,7 @@ export const FilmItem: FC<FilmItemType> = ({
         <StyledElement.Container itemscenter>
           <StyledElement.Button
             onClick={toggleActors}
-            theme={content}
+            theme={location.pathname}
             disabled={isLoading}
           >
             {actors ? "hide actors" : "actors"}
@@ -94,7 +100,8 @@ type ActorsTypes = {
 
 const Actors: FC<ActorsTypes> = ({ episode_id, toggleLoading }) => {
   const { status, data, error } = useActorsData(episode_id);
-  const { content } = useContent();
+
+  const { pathname } = useLocation();
 
   if (status === "loading") {
     toggleLoading(true);
@@ -112,7 +119,7 @@ const Actors: FC<ActorsTypes> = ({ episode_id, toggleLoading }) => {
               <StyledElement.Container key={el.name} flexColumn actorsCard>
                 <StyledElement.Container>
                   Name:
-                  <StyledElement.Span theme={content}>
+                  <StyledElement.Span theme={pathname}>
                     {el.name}
                   </StyledElement.Span>
                 </StyledElement.Container>

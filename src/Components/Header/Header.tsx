@@ -4,6 +4,7 @@ import { useAuth } from "../../auth/AuthContext";
 import { Account } from "../Account/Account";
 import { useModal } from "../../Context/ModalContext";
 import Styled from "./styles";
+import { Link } from "react-router-dom";
 
 export const Header: FC = () => {
   const { isAuth } = useAuth();

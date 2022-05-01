@@ -1,9 +1,17 @@
 import * as React from "react";
+import { Navigate, useLocation } from "react-router-dom";
+import { useAuth } from "../../auth/AuthContext";
 import SignOnForm from "../Forms/SignOnForm/SignOnForm";
 import StyledElement from "../StyledComponents/Elements/Elements";
 import Styled from "./styles";
 
 const Register = () => {
+  const { isAuth } = useAuth();
+  const location = useLocation();
+
+  if (isAuth) {
+    return <Navigate to="/" state={{ from: location }} replace />;
+  }
   return (
     <Styled.Container>
       <Styled.TextBlock>

@@ -1,50 +1,37 @@
 import * as React from "react";
+import { useMemo } from "react";
 import { useAuth } from "../../auth/AuthContext";
-import { useContent } from "../../Context/ContentContext";
-import { useModal } from "../../Context/ModalContext";
+import CustomNavLink from "../StyledComponents/CustomNavLink/CustomNavLink";
 import Styled from "./styles";
 
 export const Navigation = () => {
   const { isAuth } = useAuth();
-  const { content, contentHandler } = useContent();
-  const { modalHandler } = useModal();
 
-  const contentTypeHandler = (e) => {
-    isAuth ? contentHandler(e.target.name) : modalHandler();
-  };
+  const links = [
+    {
+      name: "films",
+      link: "/films",
+      type: "public",
+    },
+    {
+      name: "people",
+      link: "/people",
+    },
+    {
+      name: "planets",
+      link: "/planets",
+    },
+  ];
 
   return (
     <Styled.Navigation>
-      <Styled.Li>
-        <Styled.Button
-          name={"films"}
-          onClick={contentTypeHandler}
-          content={content}
-        >
-          films
-        </Styled.Button>
-        <Styled.LightSpan name={"films"} content={content} />
-      </Styled.Li>
-      <Styled.Li>
-        <Styled.Button
-          name={"people"}
-          onClick={contentTypeHandler}
-          content={content}
-        >
-          people
-        </Styled.Button>
-        <Styled.LightSpan name={"people"} content={content} />
-      </Styled.Li>
-      <Styled.Li>
-        <Styled.Button
-          name={"planets"}
-          onClick={contentTypeHandler}
-          content={content}
-        >
-          planets
-        </Styled.Button>
-        <Styled.LightSpan name={"planets"} content={content} />
-      </Styled.Li>
+      {links.map((link) => (
+        <Styled.Li>
+          <CustomNavLink content={link.link} to={link.link}>
+            {link.name}
+          </CustomNavLink>
+        </Styled.Li>
+      ))}
     </Styled.Navigation>
   );
 };

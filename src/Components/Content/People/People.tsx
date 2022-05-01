@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FC } from "react";
 import { usePeopleData } from "../../../customHooks/apiHooks";
-import { Loading } from "../../../ui/Loading/Loading";
+import { Loading } from "../../StyledComponents/Loading/Loading";
 import { PeopleItem } from "./PeopleItem/PeopleItem";
 import Styled from "./styles";
 

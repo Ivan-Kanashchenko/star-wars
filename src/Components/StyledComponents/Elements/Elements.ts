@@ -37,9 +37,9 @@ const Li = styled.li<{ loginList?: boolean; logoutButton?: boolean }>`
 `}
 `;
 const Span = styled.span`
-  ${({ theme }) => theme === "people" && `color: var(--accent2);`}
-  ${({ theme }) => theme === "films" && `color: var(--accent1);`}
-  ${({ theme }) => theme === "planets" && `color: var(--accent3);`}
+  ${({ theme }) => theme === "/people" && `color: var(--accent2);`}
+  ${({ theme }) => theme === "/films" && `color: var(--accent1);`}
+  ${({ theme }) => theme === "/planets" && `color: var(--accent3);`}
 `;
 const Paragraph = styled.p`
   padding-bottom: 20px;
@@ -88,11 +88,11 @@ const Button = styled.button`
   transition: 0.3s;
   &:hover {
     ${({ theme }) => {
-      if (theme === "people") {
+      if (theme === "/people") {
         return "border-color: var(--accent2); color: var(--accent2);";
-      } else if (theme === "films") {
+      } else if (theme === "/films") {
         return "border-color: var(--accent1); color: var(--accent1);";
-      } else if (theme === "planets") {
+      } else if (theme === "/planets") {
         return "border-color: var(--accent3); color: var(--accent3);";
       }
     }}
