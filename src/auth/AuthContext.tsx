@@ -130,7 +130,7 @@ export type ContextType = {
     password: string,
     displayName: string
   ) => void;
-  emailAuth: () => void;
+  emailAuth: (email: string, password: string) => void;
   facebookAuth: () => void;
   googleAuth: () => void;
   gitHubAuth: () => void;

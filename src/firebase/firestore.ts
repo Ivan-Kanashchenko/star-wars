@@ -26,7 +26,7 @@ export const sendMessage = async ({
   }
 };
 
-export const getMessages = async () => {
+export const getMessages = () => {
   const unsub = onSnapshot(doc(db, "messages", "SF"), (doc) => {
     console.log("Current data: ", doc.data());
   });
