@@ -9,21 +9,20 @@ import bgImage from "../../assets/backgrounds/rey.png";
 import { useAuth } from "../../auth/AuthContext";
 import Styled from "./styles";
 
+interface LocationState {
+  from?: {
+    pathname?: string;
+  };
+}
+
 export const Login = () => {
   const { googleAuth, facebookAuth, gitHubAuth, isAuth } = useAuth();
-
-  type SomeType = {
-    state: {
-      from: {
-        pathname: string;
-      };
-    };
-  };
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from: string = location?.state?.from?.pathname || "/";
+  //react-router-dom don`t have this interface
+  const from = (location.state as LocationState).from?.pathname || "/";
 
   useEffect(() => {
     isAuth && navigate(from, { replace: true });
