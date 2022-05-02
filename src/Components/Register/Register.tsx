@@ -5,7 +5,7 @@ import { SignOnForm } from "../Forms/SignOnForm/SignOnForm";
 import StyledElement from "../StyledComponents/Elements/Elements";
 import Styled from "./styles";
 
-const Register = () => {
+export const Register = () => {
   const { isAuth } = useAuth();
   const location = useLocation();
 
@@ -27,5 +27,3 @@ const Register = () => {
     </Styled.Container>
   );
 };
-
-export default Register;

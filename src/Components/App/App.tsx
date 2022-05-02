@@ -1,12 +1,11 @@
 import * as React from "react";
 import { Content } from "../Content/Content";
 import { Navigation } from "../Navigation/Navigation";
-import Styled from "./styles";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import { Chat } from "../Chat/Chat";
 import { Route, Routes } from "react-router-dom";
-import Register from "../Register/Register";
+import { Register } from "../Register/Register";
 import { Films } from "../Content/Films";
 import { People } from "../Content/People";
 import { Planets } from "../Content/Planets";
@@ -14,6 +13,7 @@ import { Home } from "../Content/Home";
 import { Login } from "../Login/Login";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
 import { Providers } from "../../providers/Providers";
+import Styled from "./styles";
 
 function App() {
   return (
