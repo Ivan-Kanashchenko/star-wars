@@ -22,7 +22,7 @@ export const Login = () => {
   const location = useLocation();
 
   //react-router-dom don`t have this interface
-  const from = (location.state as LocationState).from?.pathname || "/";
+  const from = (location.state as LocationState)?.from?.pathname || "/";
 
   useEffect(() => {
     isAuth && navigate(from, { replace: true });
