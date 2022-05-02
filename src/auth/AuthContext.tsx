@@ -14,7 +14,7 @@ import {
 } from "firebase/auth";
 
 // Initialize Firebase
-const app = initializeApp({
+export const app = initializeApp({
   apiKey: "AIzaSyA_m0pYQi0wC2RjjypxZ6JjMs2hBHjjT4Y",
   authDomain: "react-chat-15b5a.firebaseapp.com",
   projectId: "react-chat-15b5a",
