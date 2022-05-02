@@ -3,12 +3,6 @@ import StyledChat from "./styles";
 import { useState } from "react";
 import { ChatHeader } from "./ChatHeader/ChatHeader";
 import { useAuth } from "../../auth/AuthContext";
-
-{
-  /* <StyledChat.Icon />
-      <StyledChat.Window /> */
-}
-
 export const Chat = () => {
   const [openChat, setOpenChat] = useState(false);
 

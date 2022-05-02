@@ -6,7 +6,11 @@ type OtherProps = {
   content?: string;
 };
 
-const CustomNavLink = ({ children, to, content }: LinkProps & OtherProps) => {
+export const CustomNavLink = ({
+  children,
+  to,
+  content,
+}: LinkProps & OtherProps) => {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
 
@@ -19,5 +23,3 @@ const CustomNavLink = ({ children, to, content }: LinkProps & OtherProps) => {
     </div>
   );
 };
-
-export default CustomNavLink;

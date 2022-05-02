@@ -11,9 +11,9 @@ import { Films } from "../Content/Films";
 import { People } from "../Content/People";
 import { Planets } from "../Content/Planets";
 import { Home } from "../Content/Home";
-import Login from "../Login/Login";
-import RequireAuth from "../RequireAuth/RequireAuth";
-import Providers from "../../providers/Providers";
+import { Login } from "../Login/Login";
+import { RequireAuth } from "../RequireAuth/RequireAuth";
+import { Providers } from "../../providers/Providers";
 
 function App() {
   return (
@@ -47,7 +47,6 @@ function App() {
           </Routes>
         </Content>
         <Chat />
-        {/* <Modal /> */}
         <Footer />
       </Styled.App>
     </Providers>

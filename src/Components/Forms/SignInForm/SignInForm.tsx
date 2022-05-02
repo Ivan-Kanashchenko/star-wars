@@ -4,7 +4,7 @@ import { Formik } from "formik";
 import { isValidEmail, isValidPassword } from "../../../helpers/validators";
 import Styled from "./styles";
 
-const SignInForm: FC = () => (
+export const SignInForm: FC = () => (
   <>
     <Formik
       initialValues={{
@@ -44,5 +44,3 @@ const SignInForm: FC = () => (
     </Formik>
   </>
 );
-
-export default SignInForm;

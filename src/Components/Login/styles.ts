@@ -1,33 +1,46 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Background = styled.div`
+const Background = styled.div<{ bg: string }>`
+  background: ${({ bg }) =>
+    bg ? `url(${bg}) 0 0/100% auto no-repeat;` : "transparent"};
+  overflow: hidden;
+  width: 37%;
   height: 100%;
-  width: 100%;
-  background-color: white;
-  opacity: 0.5;
   position: absolute;
+  right: 18%;
+  bottom: 0%;
+  z-index: 11;
+`;
+
+const Wrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 5;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 100%;
+  z-index: 6;
+  overflow: hidden;
 `;
 
 const Container = styled.div`
   width: 100%;
-  max-width: 500px;
-  position: absolute;
+  height: 500px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 7px;
   background-color: white;
-  z-index: 6;
   padding: 5px 0px;
+  z-index: 7;
+  position: absolute;
+  left: 20%;
+  top: 20%;
 `;
 
 const Title = styled.h3`
-  font-size: 34px;
+  font-size: 48px;
 `;
 
 const Block = styled.div<{ flexRow?: boolean }>`
@@ -39,18 +52,6 @@ const Block = styled.div<{ flexRow?: boolean }>`
   `}
   padding: 15px;
   width: 100%;
-`;
-
-const Button = styled.button`
-  padding: 5px 35px;
-  border: 1px solid var(--primary1);
-  border-radius: 3px;
-  margin: 5px 0px;
-
-  &:hover {
-    background-color: var(--primary1);
-    color: var(--accent4);
-  }
 `;
 
 const SocialButton = styled.button<{ icon: string }>`
@@ -71,13 +72,13 @@ const CustomLink = styled(Link)`
 `;
 
 const Styled = {
-  Background,
+  Wrapper,
+  Block,
   Container,
   Title,
-  Block,
-  Button,
-  SocialButton,
   CustomLink,
+  SocialButton,
+  Background,
 };
 
 export default Styled;

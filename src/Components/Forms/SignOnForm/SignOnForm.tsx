@@ -11,11 +11,7 @@ import Styled from "./styles";
 import StyledElement from "../../StyledComponents/Elements/Elements";
 import { useAuth } from "../../../auth/AuthContext";
 
-interface SignOnFormProps {
-  message?: string;
-}
-
-const SignOnForm: FC<SignOnFormProps> = ({ message }) => {
+export const SignOnForm: FC<{ message?: string }> = ({ message }) => {
   const { emailRegistration } = useAuth();
 
   return (
@@ -91,5 +87,3 @@ const SignOnForm: FC<SignOnFormProps> = ({ message }) => {
     </>
   );
 };
-
-export default SignOnForm;

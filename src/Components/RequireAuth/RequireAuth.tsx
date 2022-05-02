@@ -2,7 +2,7 @@ import * as React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../../auth/AuthContext";
 
-const RequireAuth = ({ children }: { children: JSX.Element }) => {
+export const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const { isAuth } = useAuth();
   let location = useLocation();
 
@@ -16,5 +16,3 @@ const RequireAuth = ({ children }: { children: JSX.Element }) => {
 
   return children;
 };
-
-export default RequireAuth;

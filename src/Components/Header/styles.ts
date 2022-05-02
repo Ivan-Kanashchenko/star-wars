@@ -22,12 +22,7 @@ const Logo = styled(Link)`
   background-size: contain;
 `;
 
-interface LoginProps {
-  isAuth?: boolean;
-  userPhoto?: string;
-}
-
-const Login = styled.button<LoginProps>`
+const Login = styled(Link)<{ isAuth?: boolean; userPhoto?: string }>`
   display: block;
   border: 1px solid var(--primary3);
   border-radius: 3px;

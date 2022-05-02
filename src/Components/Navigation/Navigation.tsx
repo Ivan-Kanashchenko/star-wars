@@ -1,27 +1,32 @@
 import * as React from "react";
 import { useMemo } from "react";
-import { useAuth } from "../../auth/AuthContext";
-import CustomNavLink from "../StyledComponents/CustomNavLink/CustomNavLink";
+import { CustomNavLink } from "../StyledComponents/CustomNavLink/CustomNavLink";
 import Styled from "./styles";
 
-export const Navigation = () => {
-  const { isAuth } = useAuth();
+type LinksTypes = {
+  name: string;
+  link: string;
+  type?: string;
+}[];
 
-  const links = [
-    {
-      name: "films",
-      link: "/films",
-      type: "public",
-    },
-    {
-      name: "people",
-      link: "/people",
-    },
-    {
-      name: "planets",
-      link: "/planets",
-    },
-  ];
+export const Navigation = () => {
+  const links = useMemo((): LinksTypes => {
+    return [
+      {
+        name: "films",
+        link: "/films",
+        type: "public",
+      },
+      {
+        name: "people",
+        link: "/people",
+      },
+      {
+        name: "planets",
+        link: "/planets",
+      },
+    ];
+  }, []);
 
   return (
     <Styled.Navigation>
