@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import * as React from "react";
 import { initializeApp } from "firebase/app";
+import { config } from "../config/config";
 import {
   getAuth,
   signInWithPopup,
@@ -14,15 +15,7 @@ import {
 } from "firebase/auth";
 
 // Initialize Firebase
-export const app = initializeApp({
-  apiKey: "AIzaSyA_m0pYQi0wC2RjjypxZ6JjMs2hBHjjT4Y",
-  authDomain: "react-chat-15b5a.firebaseapp.com",
-  projectId: "react-chat-15b5a",
-  storageBucket: "react-chat-15b5a.appspot.com",
-  messagingSenderId: "405726454771",
-  appId: "1:405726454771:web:cf11ac8487d238100f6886",
-  measurementId: "G-VB6Y2FDM0J",
-});
+export const app = initializeApp(config);
 
 const AuthContext = React.createContext(null);
 
@@ -124,7 +117,7 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-export type ContextType = {
+export interface ContextType {
   emailRegistration: (
     email: string,
     password: string,
@@ -139,13 +132,17 @@ export type ContextType = {
   userName: string;
   userEmail: string;
   userPhoto: string;
-};
+}
 
 export const useAuth = () => {
   const context = useContext<ContextType>(AuthContext);
 
   if (context === undefined) {
-    throw new ReferenceError("useAuth inside its provider.");
+    try {
+      throw new ReferenceError("useAuth in AuthContext have Error:");
+    } catch (e) {
+      console.log(e.message);
+    }
   }
   return context;
 };

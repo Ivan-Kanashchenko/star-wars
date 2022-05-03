@@ -3,7 +3,7 @@ import { FC } from "react";
 import { usePlanetData } from "../../../customHooks/apiHooks";
 import { Loading } from "../../StyledComponents/Loading/Loading";
 import { PlanetItem } from "./PlanetItem/PlanetItem";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
 export const Planets: FC = () => {
   const { status, data, error } = usePlanetData();

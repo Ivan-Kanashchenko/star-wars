@@ -2,7 +2,7 @@ import * as React from "react";
 import { FC } from "react";
 import { useState } from "react";
 import { useAuth } from "../../auth/AuthContext";
-import StyledElement from "../StyledComponents/Elements/Elements";
+import { StyledElement } from "../StyledComponents/Elements/Elements";
 import Styled from "./styles";
 
 export const Account: FC = () => {

@@ -17,9 +17,7 @@ const Li = styled.li`
   }
 `;
 
-const Styled = {
+export const Styled = {
   Navigation,
   Li,
 };
-
-export default Styled;

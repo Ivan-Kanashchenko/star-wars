@@ -2,7 +2,7 @@ import * as React from "react";
 import { FC } from "react";
 import { useAuth } from "../../auth/AuthContext";
 import { Account } from "../Account/Account";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
 export const Header: FC = () => {
   const { isAuth } = useAuth();

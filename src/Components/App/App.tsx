@@ -3,19 +3,19 @@ import { Content } from "../Content/Content";
 import { Navigation } from "../Navigation/Navigation";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
-import { Chat } from "../Chat/Chat";
+// import { Chat } from "../Chat/Chat";
 import { Route, Routes } from "react-router-dom";
 import { Register } from "../Register/Register";
 import { Films } from "../Content/Films";
 import { People } from "../Content/People";
 import { Planets } from "../Content/Planets";
-import { Home } from "../Content/Home";
+import { Home } from "../Home/Home";
 import { Login } from "../Login/Login";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
 import { Providers } from "../../providers/Providers";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
-function App() {
+export const App = () => {
   return (
     <Providers>
       <Styled.GlobalStyles />
@@ -46,11 +46,9 @@ function App() {
             />
           </Routes>
         </Content>
-        <Chat />
+        {/* <Chat /> */}
         <Footer />
       </Styled.App>
     </Providers>
   );
-}
-
-export default App;
+};

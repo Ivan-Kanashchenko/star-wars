@@ -6,8 +6,6 @@ const FilmsContainer = styled.div`
   background-color: var(--primary2);
 `;
 
-const Styled = {
+export const Styled = {
   FilmsContainer,
 };
-
-export default Styled;

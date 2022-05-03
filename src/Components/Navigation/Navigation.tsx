@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useMemo } from "react";
 import { CustomNavLink } from "../StyledComponents/CustomNavLink/CustomNavLink";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
 type LinksTypes = {
   id: number;

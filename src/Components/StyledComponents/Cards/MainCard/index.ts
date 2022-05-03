@@ -21,10 +21,8 @@ const Card = styled.div<Props>`
   background: var(--secondary);
 `;
 
-const StyledCard = {
+export const StyledCard = {
   Card,
   Info,
   Image,
 };
-
-export default StyledCard;

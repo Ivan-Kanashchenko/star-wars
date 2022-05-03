@@ -42,11 +42,9 @@ const Error = styled.span`
   width: 64%;
 `;
 
-const Styled = {
+export const Styled = {
   Error,
   Button,
   FormInput,
   FormContainer,
 };
-
-export default Styled;

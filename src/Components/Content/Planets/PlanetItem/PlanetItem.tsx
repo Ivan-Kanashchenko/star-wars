@@ -3,9 +3,9 @@ import { FC } from "react";
 import { useState } from "react";
 import { usePlanetsData } from "../../../../customHooks/apiHooks";
 import { Loading } from "../../../StyledComponents/Loading/Loading";
-import StyledActorsCard from "../../../StyledComponents/Cards/ActorsCard";
-import StyledCard from "../../../StyledComponents/Cards/MainCard";
-import StyledElement from "../../../StyledComponents/Elements/Elements";
+import { StyledActorsCard } from "../../../StyledComponents/Cards/ActorsCard";
+import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
+import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { useLocation } from "react-router-dom";
 
 type PlanetItemTypes = {

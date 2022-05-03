@@ -1,5 +1,5 @@
 import * as React from "react";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
 export const Content = ({ children }) => {
   return (

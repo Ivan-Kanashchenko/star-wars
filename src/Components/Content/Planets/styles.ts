@@ -6,8 +6,6 @@ const PlanetsContainer = styled.div`
   background-color: var(--primary2);
 `;
 
-const Styled = {
+export const Styled = {
   PlanetsContainer,
 };
-
-export default Styled;

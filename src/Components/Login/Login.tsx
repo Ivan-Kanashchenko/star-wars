@@ -7,7 +7,7 @@ import facebookIcon from "../../assets/icons/facebook.png";
 import googleIcon from "../../assets/icons/google.png";
 import bgImage from "../../assets/backgrounds/rey.png";
 import { useAuth } from "../../auth/AuthContext";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
 interface LocationState {
   from?: {

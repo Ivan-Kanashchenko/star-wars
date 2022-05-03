@@ -12,8 +12,6 @@ const ActorsCard = styled.div<Props>`
   grid-auto-flow: row;
 `;
 
-const StyledActorsCard = {
+export const StyledActorsCard = {
   ActorsCard,
 };
-
-export default StyledActorsCard;

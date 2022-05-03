@@ -71,7 +71,7 @@ const CustomLink = styled(Link)`
   }
 `;
 
-const Styled = {
+export const Styled = {
   Wrapper,
   Block,
   Container,
@@ -80,5 +80,3 @@ const Styled = {
   SocialButton,
   Background,
 };
-
-export default Styled;

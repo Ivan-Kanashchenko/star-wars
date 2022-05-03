@@ -74,8 +74,7 @@ const App = styled.div(() => {
   `;
 });
 
-const Styled = {
+export const Styled = {
   GlobalStyles,
   App,
 };
-export default Styled;

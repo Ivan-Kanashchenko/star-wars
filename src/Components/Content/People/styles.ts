@@ -6,8 +6,6 @@ const PeopleContainer = styled.div`
   background-color: var(--primary2);
 `;
 
-const Styled = {
+export const Styled = {
   PeopleContainer,
 };
-
-export default Styled;

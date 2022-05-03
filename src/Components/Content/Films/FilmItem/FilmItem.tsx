@@ -2,9 +2,9 @@ import * as React from "react";
 import { FC } from "react";
 import { useState } from "react";
 import { useActorsData } from "../../../../customHooks/apiHooks";
-import StyledCard from "../../../StyledComponents/Cards/MainCard";
-import StyledActorsCard from "../../../StyledComponents/Cards/ActorsCard";
-import StyledElement from "../../../StyledComponents/Elements/Elements";
+import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
+import { StyledActorsCard } from "../../../StyledComponents/Cards/ActorsCard";
+import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { Loading } from "../../../StyledComponents/Loading/Loading";
 import { useLocation } from "react-router-dom";
 

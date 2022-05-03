@@ -11,8 +11,6 @@ const Footer = styled.footer`
   font-size: 20px;
 `;
 
-const Styled = {
+export const Styled = {
   Footer,
 };
-
-export default Styled;

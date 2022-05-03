@@ -26,10 +26,8 @@ const FormBlock = styled.div`
   justify-content: center;
 `;
 
-const Styled = {
+export const Styled = {
   Container,
   TextBlock,
   FormBlock,
 };
-
-export default Styled;

@@ -103,7 +103,7 @@ const Button = styled.button`
   }
 `;
 
-const StyledElement = {
+export const StyledElement = {
   H2,
   H3,
   H4,
@@ -114,5 +114,3 @@ const StyledElement = {
   Container,
   Button,
 };
-
-export default StyledElement;

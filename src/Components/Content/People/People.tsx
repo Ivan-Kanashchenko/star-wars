@@ -3,7 +3,7 @@ import { FC } from "react";
 import { usePeopleData } from "../../../customHooks/apiHooks";
 import { Loading } from "../../StyledComponents/Loading/Loading";
 import { PeopleItem } from "./PeopleItem/PeopleItem";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
 export const People: FC = () => {
   const { status, data, error } = usePeopleData();

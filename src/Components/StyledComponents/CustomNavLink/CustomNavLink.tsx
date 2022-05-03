@@ -1,6 +1,6 @@
 import * as React from "react";
 import { LinkProps, useMatch, useResolvedPath } from "react-router-dom";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
 type OtherProps = {
   content?: string;

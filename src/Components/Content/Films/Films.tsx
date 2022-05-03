@@ -3,7 +3,7 @@ import { FC } from "react";
 import { useFilmsData } from "../../../customHooks/apiHooks";
 import { Loading } from "../../StyledComponents/Loading/Loading";
 import { FilmItem } from "./FilmItem/FilmItem";
-import Styled from "./styles";
+import { Styled } from "./styles";
 
 export const Films: FC = () => {
   const { status, data, error } = useFilmsData();

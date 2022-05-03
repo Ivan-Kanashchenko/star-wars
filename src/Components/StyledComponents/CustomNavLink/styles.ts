@@ -51,9 +51,7 @@ const LightSpan = styled.span<{
   }};
 `;
 
-const Styled = {
+export const Styled = {
   CustomLink,
   LightSpan,
 };
-
-export default Styled;

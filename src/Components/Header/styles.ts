@@ -53,11 +53,9 @@ const Button = styled.button`
   text-align: left;
 `;
 
-const Styled = {
+export const Styled = {
   Header,
   Logo,
   Login,
   Button,
 };
-
-export default Styled;

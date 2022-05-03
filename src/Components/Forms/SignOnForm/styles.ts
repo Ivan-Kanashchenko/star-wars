@@ -63,11 +63,9 @@ const Error = styled.span`
   text-align: left;
 `;
 
-const Styled = {
+export const Styled = {
   Error,
   Button,
   FormInput,
   FormContainer,
 };
-
-export default Styled;

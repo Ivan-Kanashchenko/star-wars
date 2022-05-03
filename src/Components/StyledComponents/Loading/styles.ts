@@ -66,9 +66,7 @@ const LoadingContainer = styled.div`
   align-items: center;
 `;
 
-const Styled = {
+export const Styled = {
   Loading,
   LoadingContainer,
 };
-
-export default Styled;
