@@ -6,4 +6,7 @@ export const config = {
   messagingSenderId: process.env.MESSAGING_SENDER_ID || "405726454771",
   appId: process.env.APP_ID || "1:405726454771:web:cf11ac8487d238100f6886",
   measurementId: process.env.MEASUREMENT_ID || "G-VB6Y2FDM0J",
+  databaseURL:
+    process.env.DATABASE_URL ||
+    "https://react-chat-15b5a-default-rtdb.firebaseio.com/",
 };

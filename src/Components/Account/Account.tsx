@@ -17,7 +17,7 @@ export const Account: FC = () => {
   return (
     <>
       <Styled.Login
-        isAuth
+        userId
         userPhoto={userPhoto}
         onClick={toggleMenu}
       ></Styled.Login>

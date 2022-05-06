@@ -1,7 +1,5 @@
 import { useContext, useState } from "react";
 import * as React from "react";
-import { initializeApp } from "firebase/app";
-import { config } from "../config/config";
 import {
   getAuth,
   signInWithPopup,
@@ -14,14 +12,12 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-// Initialize Firebase
-export const app = initializeApp(config);
-
 const AuthContext = React.createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState<boolean>(false);
   const [userName, setUserName] = useState<string>("");
+  const [userId, setUserId] = useState<string>("");
   const [userEmail, setUserEmail] = useState<string>("");
   const [userPhoto, setUserPhoto] = useState<string>("");
 
@@ -33,6 +29,7 @@ const AuthProvider = ({ children }) => {
 
   const Login = async (user: User) => {
     setUserName(user.displayName || null);
+    setUserId(user.uid);
     setUserEmail(user.email);
     setUserPhoto(user.photoURL || null);
     setIsAuth(true);
@@ -92,6 +89,7 @@ const AuthProvider = ({ children }) => {
   const Logout = () => {
     signOut(auth);
     setUserName("");
+    setUserId("");
     setUserEmail("");
     setUserPhoto("");
     setIsAuth(false);
@@ -106,7 +104,7 @@ const AuthProvider = ({ children }) => {
         googleAuth,
         gitHubAuth,
         Logout,
-        isAuth,
+        userId,
         userName,
         userEmail,
         userPhoto,
@@ -128,7 +126,7 @@ export interface ContextType {
   googleAuth: () => void;
   gitHubAuth: () => void;
   Logout: () => void;
-  isAuth: boolean;
+  userId: string;
   userName: string;
   userEmail: string;
   userPhoto: string;

@@ -22,7 +22,7 @@ const Logo = styled(Link)`
   background-size: contain;
 `;
 
-const Login = styled(Link)<{ isAuth?: boolean; userPhoto?: string }>`
+const Login = styled(Link)<{ userId?: boolean; userPhoto?: string }>`
   display: block;
   border: 1px solid var(--primary3);
   border-radius: 3px;
@@ -36,8 +36,8 @@ const Login = styled(Link)<{ isAuth?: boolean; userPhoto?: string }>`
     color: var(--accent4);
     border: 1px solid var(--accent4);
   }
-  ${({ isAuth, userPhoto }) =>
-    isAuth &&
+  ${({ userId, userPhoto }) =>
+    userId &&
     `
   background-repeat: no-repeat;
   background-image:url(${userPhoto});

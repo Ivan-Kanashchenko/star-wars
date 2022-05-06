@@ -7,4 +7,5 @@ export const theme = {
   accent2: "yellow",
   accent3: "#009687",
   accent4: "#cecece",
+  accent5: "lightblue",
 };

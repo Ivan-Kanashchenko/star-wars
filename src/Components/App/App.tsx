@@ -3,7 +3,7 @@ import { Content } from "../Content/Content";
 import { Navigation } from "../Navigation/Navigation";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
-// import { Chat } from "../Chat/Chat";
+import { Chat } from "../Chat/Chat";
 import { Route, Routes } from "react-router-dom";
 import { Register } from "../Register/Register";
 import { Films } from "../Content/Films";
@@ -46,7 +46,7 @@ export const App = () => {
             />
           </Routes>
         </Content>
-        {/* <Chat /> */}
+        <Chat />
         <Footer />
       </Styled.App>
     </Providers>
