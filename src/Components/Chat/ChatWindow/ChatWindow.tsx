@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FC, useEffect, useRef } from "react";
 import { DocumentData } from "firebase/firestore";
-import { dateCreator } from "../../../helpers/dateCreator";
+import { dateCreator } from "../../../helpers/dateCreator/dateCreator";
 import { useAuth } from "../../../auth/AuthContext";
 import { Styled } from "./styles";
 

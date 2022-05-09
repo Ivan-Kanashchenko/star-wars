@@ -6,7 +6,7 @@ import {
   isValidPassword,
   isValidPasswordConfirm,
   isValidUserName,
-} from "../../../helpers/validators";
+} from "../../../helpers/validators/validators";
 import { Styled } from "./styles";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
 import { useAuth } from "../../../auth/AuthContext";

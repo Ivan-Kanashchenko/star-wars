@@ -1,7 +1,10 @@
 import * as React from "react";
 import { FC } from "react";
 import { Formik } from "formik";
-import { isValidEmail, isValidPassword } from "../../../helpers/validators";
+import {
+  isValidEmail,
+  isValidPassword,
+} from "../../../helpers/validators/validators";
 import { Styled } from "./styles";
 import { useAuth } from "../../../auth/AuthContext";
 

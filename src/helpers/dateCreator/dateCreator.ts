@@ -1,6 +1,6 @@
-import { getMonthName } from "./getMonthName";
+import { getMonthName } from "../getMonthName/getMonthName";
 import { Timestamp } from "firebase/firestore";
-import { getFormatedTime } from "./getFormatedTime";
+import { getFormatedTime } from "../getFormatedTime/getFormatedTime";
 
 export const dateCreator = (timeStamp: Timestamp): string => {
   const time = timeStamp?.toDate();
