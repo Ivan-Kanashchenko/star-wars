@@ -11,6 +11,7 @@ describe("UserNameValidation", () => {
     test("ValidUserName", () =>
       expect(isValidUserName("John")).toBeUndefined());
   });
+
   describe("invalid name", () => {
     test("notValidUserName", () => {
       // @ts-ignore
@@ -31,6 +32,7 @@ describe("UserEmailValidation", () => {
     expect(isValidEmail("exapmle@mailcom")).toBe(formError.invalidEmail);
     expect(isValidEmail("exapmlemail.com")).toBe(formError.invalidEmail);
   });
+
   test("ValidUserEmail", () =>
     expect(isValidEmail("exapmle@mail.com")).toBeUndefined());
 });
@@ -50,6 +52,7 @@ describe("UserPasswordValidation", () => {
       formError.invalidPassword
     );
   });
+
   test("ValidUserPassword", () => {
     expect(isValidPassword("SomePassword12")).toBeUndefined();
     expect(isValidPassword("SomeP2")).toBeUndefined();
@@ -88,6 +91,7 @@ describe("UserPasswordConfirmValidation", () => {
     ).toBe(formError.invalidPassword);
     expect(isValidPasswordConfirm("SomeP2", "SomeP3")).toBe(formError.notMatch);
   });
+
   test("ValidUserPassword", () => {
     expect(
       isValidPasswordConfirm("SomePassword12", "SomePassword12")
