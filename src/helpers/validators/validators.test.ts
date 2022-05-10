@@ -1,16 +1,10 @@
+import { formError } from "./../../consts/forms.errors";
 import {
   isValidUserName,
   isValidEmail,
   isValidPassword,
   isValidPasswordConfirm,
 } from "./validators";
-
-const error = {
-  requiredField: "This field is required",
-  invalidEmail: "Invalid email address",
-  invalidPassword: `Invalid password. Password must be at least 5 characters long and max 15 characters long. Password must contain at least one numeric digit, one uppercase and one lowercase letter`,
-  notMatch: "Passwords do not match",
-};
 
 describe("UserNameValidation", () => {
   describe("valid name", () => {
@@ -20,8 +14,8 @@ describe("UserNameValidation", () => {
   describe("invalid name", () => {
     test("notValidUserName", () => {
       // @ts-ignore
-      expect(isValidUserName()).toBe(error.requiredField);
-      expect(isValidUserName("")).toBe(error.requiredField);
+      expect(isValidUserName()).toBe(formError.requiredField);
+      expect(isValidUserName("")).toBe(formError.requiredField);
     });
   });
 });
@@ -29,13 +23,13 @@ describe("UserNameValidation", () => {
 describe("UserEmailValidation", () => {
   test("notValidUserEmail", () => {
     // @ts-ignore
-    expect(isValidEmail()).toBe(error.requiredField);
-    expect(isValidEmail("")).toBe(error.requiredField);
-    expect(isValidEmail("exapmle")).toBe(error.invalidEmail);
-    expect(isValidEmail("exapmle@")).toBe(error.invalidEmail);
-    expect(isValidEmail("exapmle@mail")).toBe(error.invalidEmail);
-    expect(isValidEmail("exapmle@mailcom")).toBe(error.invalidEmail);
-    expect(isValidEmail("exapmlemail.com")).toBe(error.invalidEmail);
+    expect(isValidEmail()).toBe(formError.requiredField);
+    expect(isValidEmail("")).toBe(formError.requiredField);
+    expect(isValidEmail("exapmle")).toBe(formError.invalidEmail);
+    expect(isValidEmail("exapmle@")).toBe(formError.invalidEmail);
+    expect(isValidEmail("exapmle@mail")).toBe(formError.invalidEmail);
+    expect(isValidEmail("exapmle@mailcom")).toBe(formError.invalidEmail);
+    expect(isValidEmail("exapmlemail.com")).toBe(formError.invalidEmail);
   });
   test("ValidUserEmail", () =>
     expect(isValidEmail("exapmle@mail.com")).toBeUndefined());
@@ -44,16 +38,16 @@ describe("UserEmailValidation", () => {
 describe("UserPasswordValidation", () => {
   test("notValidUserPassword", () => {
     // @ts-ignore
-    expect(isValidPassword()).toBe(error.requiredField);
-    expect(isValidPassword("")).toBe(error.requiredField);
-    expect(isValidPassword("Some")).toBe(error.invalidPassword);
-    expect(isValidPassword("SOMEPASSWORD")).toBe(error.invalidPassword);
-    expect(isValidPassword("somepassword")).toBe(error.invalidPassword);
-    expect(isValidPassword("123456")).toBe(error.invalidPassword);
-    expect(isValidPassword("somepassword1213")).toBe(error.invalidPassword);
-    expect(isValidPassword("SOMEPASSWORD1234")).toBe(error.invalidPassword);
+    expect(isValidPassword()).toBe(formError.requiredField);
+    expect(isValidPassword("")).toBe(formError.requiredField);
+    expect(isValidPassword("Some")).toBe(formError.invalidPassword);
+    expect(isValidPassword("SOMEPASSWORD")).toBe(formError.invalidPassword);
+    expect(isValidPassword("somepassword")).toBe(formError.invalidPassword);
+    expect(isValidPassword("123456")).toBe(formError.invalidPassword);
+    expect(isValidPassword("somepassword1213")).toBe(formError.invalidPassword);
+    expect(isValidPassword("SOMEPASSWORD1234")).toBe(formError.invalidPassword);
     expect(isValidPassword("SomeVeryLongPassword1234567890")).toBe(
-      error.invalidPassword
+      formError.invalidPassword
     );
   });
   test("ValidUserPassword", () => {
@@ -66,31 +60,33 @@ describe("UserPasswordValidation", () => {
 describe("UserPasswordConfirmValidation", () => {
   test("notValidUserPassword", () => {
     // @ts-ignore
-    expect(isValidPasswordConfirm()).toBe(error.requiredField);
-    expect(isValidPasswordConfirm("", "")).toBe(error.requiredField);
-    expect(isValidPasswordConfirm("Some", "Some")).toBe(error.invalidPassword);
+    expect(isValidPasswordConfirm()).toBe(formError.requiredField);
+    expect(isValidPasswordConfirm("", "")).toBe(formError.requiredField);
+    expect(isValidPasswordConfirm("Some", "Some")).toBe(
+      formError.invalidPassword
+    );
     expect(isValidPasswordConfirm("SOMEPASSWORD", "SOMEPASSWORD")).toBe(
-      error.invalidPassword
+      formError.invalidPassword
     );
     expect(isValidPasswordConfirm("somepassword", "somepassword")).toBe(
-      error.invalidPassword
+      formError.invalidPassword
     );
     expect(isValidPasswordConfirm("123456", "123456")).toBe(
-      error.invalidPassword
+      formError.invalidPassword
     );
     expect(isValidPasswordConfirm("somepassword1213", "somepassword1213")).toBe(
-      error.invalidPassword
+      formError.invalidPassword
     );
     expect(isValidPasswordConfirm("SOMEPASSWORD1234", "SOMEPASSWORD1234")).toBe(
-      error.invalidPassword
+      formError.invalidPassword
     );
     expect(
       isValidPasswordConfirm(
         "SomeVeryLongPassword1234567890",
         "SomeVeryLongPassword1234567890"
       )
-    ).toBe(error.invalidPassword);
-    expect(isValidPasswordConfirm("SomeP2", "SomeP3")).toBe(error.notMatch);
+    ).toBe(formError.invalidPassword);
+    expect(isValidPasswordConfirm("SomeP2", "SomeP3")).toBe(formError.notMatch);
   });
   test("ValidUserPassword", () => {
     expect(
