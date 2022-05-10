@@ -5,7 +5,7 @@ import { getFormatedTime } from "../getFormatedTime/getFormatedTime";
 export const dateCreator = (timeStamp: Timestamp): string => {
   const time = timeStamp?.toDate();
 
-  return `${getMonthName(time.getMonth())} ${time.getDay()}, ${getFormatedTime(
+  return `${getMonthName(time.getMonth())} ${time.getDate()}, ${getFormatedTime(
     time.getHours()
   )}:${getFormatedTime(time.getMinutes())}`;
 };

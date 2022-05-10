@@ -13,13 +13,23 @@ const error = {
 };
 
 describe("UserNameValidation", () => {
-  test("ValidUserName", () => expect(isValidUserName("John")).toBeUndefined());
-  test("notValidUserName", () =>
-    expect(isValidUserName("")).toBe(error.requiredField));
+  describe("valid name", () => {
+    test("ValidUserName", () =>
+      expect(isValidUserName("John")).toBeUndefined());
+  });
+  describe("invalid name", () => {
+    test("notValidUserName", () => {
+      // @ts-ignore
+      expect(isValidUserName()).toBe(error.requiredField);
+      expect(isValidUserName("")).toBe(error.requiredField);
+    });
+  });
 });
 
 describe("UserEmailValidation", () => {
   test("notValidUserEmail", () => {
+    // @ts-ignore
+    expect(isValidEmail()).toBe(error.requiredField);
     expect(isValidEmail("")).toBe(error.requiredField);
     expect(isValidEmail("exapmle")).toBe(error.invalidEmail);
     expect(isValidEmail("exapmle@")).toBe(error.invalidEmail);
@@ -33,6 +43,8 @@ describe("UserEmailValidation", () => {
 
 describe("UserPasswordValidation", () => {
   test("notValidUserPassword", () => {
+    // @ts-ignore
+    expect(isValidPassword()).toBe(error.requiredField);
     expect(isValidPassword("")).toBe(error.requiredField);
     expect(isValidPassword("Some")).toBe(error.invalidPassword);
     expect(isValidPassword("SOMEPASSWORD")).toBe(error.invalidPassword);
@@ -53,6 +65,8 @@ describe("UserPasswordValidation", () => {
 
 describe("UserPasswordConfirmValidation", () => {
   test("notValidUserPassword", () => {
+    // @ts-ignore
+    expect(isValidPasswordConfirm()).toBe(error.requiredField);
     expect(isValidPasswordConfirm("", "")).toBe(error.requiredField);
     expect(isValidPasswordConfirm("Some", "Some")).toBe(error.invalidPassword);
     expect(isValidPasswordConfirm("SOMEPASSWORD", "SOMEPASSWORD")).toBe(
