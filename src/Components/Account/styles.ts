@@ -10,7 +10,7 @@ const Button = styled.button`
   }
 `;
 
-const Login = styled.button<{ userId?: boolean; userPhoto?: string }>`
+const Login = styled.button<{ userId?: string; userPhoto?: string }>`
   display: block;
   border: 1px solid var(--primary3);
   border-radius: 3px;

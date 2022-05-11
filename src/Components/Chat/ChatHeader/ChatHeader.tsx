@@ -3,17 +3,15 @@ import { Styled } from "./styles";
 import { FC } from "react";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
 
-type ChatProps = {
+interface ChatProps {
   chatToggle: () => void;
-};
+}
 
 export const ChatHeader: FC<ChatProps> = ({ chatToggle }) => {
   return (
-    <>
-      <Styled.Header>
-        <StyledElement.H4>Chat</StyledElement.H4>
-        <Styled.CloseButton onClick={chatToggle} />
-      </Styled.Header>
-    </>
+    <Styled.Header>
+      <StyledElement.H4>Chat</StyledElement.H4>
+      <Styled.CloseButton onClick={chatToggle} />
+    </Styled.Header>
   );
 };
