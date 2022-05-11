@@ -1,7 +1,7 @@
 import { formError } from "./../../consts/forms.errors";
 
-export const isValidUserName = (userName: string): string => {
-  let error: string;
+export const isValidUserName = (userName: string): string | undefined => {
+  let error: string | undefined;
 
   if (!userName) {
     return (error = formError.requiredField);
@@ -9,8 +9,8 @@ export const isValidUserName = (userName: string): string => {
   return error;
 };
 
-export const isValidEmail = (email: string): string => {
-  let error: string;
+export const isValidEmail = (email: string): string | undefined => {
+  let error: string | undefined;
 
   const re =
     /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
@@ -25,7 +25,7 @@ export const isValidEmail = (email: string): string => {
 };
 
 export const isValidPassword = (password: string): string => {
-  let error: string;
+  let error: string | undefined;
 
   const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
 
@@ -42,7 +42,7 @@ export const isValidPasswordConfirm = (
   password: string,
   passwordConfirm: string
 ): string => {
-  let error: string;
+  let error: string | undefined;
 
   const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
 

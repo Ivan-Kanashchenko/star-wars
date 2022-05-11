@@ -2,14 +2,24 @@ import { getMonthName } from "./getMonthName";
 
 describe("getMonthValidation", () => {
   describe("valid values", () => {
-    test("must recieve January", () => {
-      expect(getMonthName(0)).toBe("January");
-    });
-    test("must recieve June", () => {
-      expect(getMonthName(5)).toBe("June");
-    });
-    test("must recieve December", () => {
-      expect(getMonthName(11)).toBe("December");
+    const monthes = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    test("must recieve name of month", () => {
+      monthes.forEach((value, idx) => {
+        expect(getMonthName(idx)).toBe(value);
+      });
     });
   });
 

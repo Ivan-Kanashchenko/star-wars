@@ -14,8 +14,6 @@ describe("UserNameValidation", () => {
 
   describe("invalid name", () => {
     test("notValidUserName", () => {
-      // @ts-ignore
-      expect(isValidUserName()).toBe(formError.requiredField);
       expect(isValidUserName("")).toBe(formError.requiredField);
     });
   });
@@ -23,8 +21,6 @@ describe("UserNameValidation", () => {
 
 describe("UserEmailValidation", () => {
   test("notValidUserEmail", () => {
-    // @ts-ignore
-    expect(isValidEmail()).toBe(formError.requiredField);
     expect(isValidEmail("")).toBe(formError.requiredField);
     expect(isValidEmail("exapmle")).toBe(formError.invalidEmail);
     expect(isValidEmail("exapmle@")).toBe(formError.invalidEmail);
@@ -39,8 +35,6 @@ describe("UserEmailValidation", () => {
 
 describe("UserPasswordValidation", () => {
   test("notValidUserPassword", () => {
-    // @ts-ignore
-    expect(isValidPassword()).toBe(formError.requiredField);
     expect(isValidPassword("")).toBe(formError.requiredField);
     expect(isValidPassword("Some")).toBe(formError.invalidPassword);
     expect(isValidPassword("SOMEPASSWORD")).toBe(formError.invalidPassword);
@@ -62,8 +56,6 @@ describe("UserPasswordValidation", () => {
 
 describe("UserPasswordConfirmValidation", () => {
   test("notValidUserPassword", () => {
-    // @ts-ignore
-    expect(isValidPasswordConfirm()).toBe(formError.requiredField);
     expect(isValidPasswordConfirm("", "")).toBe(formError.requiredField);
     expect(isValidPasswordConfirm("Some", "Some")).toBe(
       formError.invalidPassword
