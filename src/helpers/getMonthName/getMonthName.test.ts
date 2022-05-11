@@ -2,7 +2,7 @@ import { getMonthName } from "./getMonthName";
 
 describe("getMonthValidation", () => {
   describe("valid values", () => {
-    const monthes = [
+    const months = [
       "January",
       "February",
       "March",
@@ -16,8 +16,8 @@ describe("getMonthValidation", () => {
       "November",
       "December",
     ];
-    test("must recieve name of month", () => {
-      monthes.forEach((value, idx) => {
+    test("getting month`s name", () => {
+      months.forEach((value, idx) => {
         expect(getMonthName(idx)).toBe(value);
       });
     });
