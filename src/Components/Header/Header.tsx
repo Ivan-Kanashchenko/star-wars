@@ -5,12 +5,12 @@ import { Account } from "../Account/Account";
 import { Styled } from "./styles";
 
 export const Header: FC = () => {
-  const { isAuth } = useAuth();
+  const { userId } = useAuth();
 
   return (
     <Styled.Header>
       <Styled.Logo to="/" />
-      {isAuth ? (
+      {userId ? (
         <Account />
       ) : (
         <div>

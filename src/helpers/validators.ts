@@ -49,11 +49,3 @@ export const isValidPasswordConfirm = (
   }
   return error;
 };
-
-export const isValidMessage = (message: string): string => {
-  let error: string;
-  if (!message) {
-    error = "Email is empty";
-  }
-  return error;
-};

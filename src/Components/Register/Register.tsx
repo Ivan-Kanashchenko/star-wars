@@ -6,10 +6,10 @@ import { StyledElement } from "../StyledComponents/Elements/Elements";
 import { Styled } from "./styles";
 
 export const Register = () => {
-  const { isAuth } = useAuth();
+  const { userId } = useAuth();
   const location = useLocation();
 
-  if (isAuth) {
+  if (userId) {
     return <Navigate to="/" state={{ from: location }} replace />;
   }
   return (

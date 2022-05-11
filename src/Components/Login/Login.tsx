@@ -16,7 +16,7 @@ interface LocationState {
 }
 
 export const Login = () => {
-  const { googleAuth, facebookAuth, gitHubAuth, isAuth } = useAuth();
+  const { googleAuth, facebookAuth, gitHubAuth, userId } = useAuth();
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,8 +25,8 @@ export const Login = () => {
   const from = (location.state as LocationState)?.from?.pathname || "/";
 
   useEffect(() => {
-    isAuth && navigate(from, { replace: true });
-  }, [isAuth, from, navigate]);
+    userId && navigate(from, { replace: true });
+  }, [userId, from, navigate]);
 
   return (
     <Styled.Wrapper>
