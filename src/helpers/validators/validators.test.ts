@@ -6,25 +6,16 @@ import {
   isValidPasswordConfirm,
 } from "./validators";
 
-describe("UserNameValidation", () => {
-  describe("valid name", () => {
-    test("ValidUserName", () =>
-      expect(isValidUserName("John")).toBeUndefined());
-  });
+describe("username validation", () => {
+  test("valid username", () => expect(isValidUserName("John")).toBeUndefined());
 
-  describe("invalid name", () => {
-    test("notValidUserName", () => {
-      // @ts-ignore
-      expect(isValidUserName()).toBe(formError.requiredField);
-      expect(isValidUserName("")).toBe(formError.requiredField);
-    });
+  test("invalid username", () => {
+    expect(isValidUserName("")).toBe(formError.requiredField);
   });
 });
 
-describe("UserEmailValidation", () => {
-  test("notValidUserEmail", () => {
-    // @ts-ignore
-    expect(isValidEmail()).toBe(formError.requiredField);
+describe("email validation", () => {
+  test("invalid email", () => {
     expect(isValidEmail("")).toBe(formError.requiredField);
     expect(isValidEmail("exapmle")).toBe(formError.invalidEmail);
     expect(isValidEmail("exapmle@")).toBe(formError.invalidEmail);
@@ -33,14 +24,12 @@ describe("UserEmailValidation", () => {
     expect(isValidEmail("exapmlemail.com")).toBe(formError.invalidEmail);
   });
 
-  test("ValidUserEmail", () =>
+  test("valid email", () =>
     expect(isValidEmail("exapmle@mail.com")).toBeUndefined());
 });
 
-describe("UserPasswordValidation", () => {
-  test("notValidUserPassword", () => {
-    // @ts-ignore
-    expect(isValidPassword()).toBe(formError.requiredField);
+describe("password validation", () => {
+  test("invalid password", () => {
     expect(isValidPassword("")).toBe(formError.requiredField);
     expect(isValidPassword("Some")).toBe(formError.invalidPassword);
     expect(isValidPassword("SOMEPASSWORD")).toBe(formError.invalidPassword);
@@ -53,17 +42,15 @@ describe("UserPasswordValidation", () => {
     );
   });
 
-  test("ValidUserPassword", () => {
+  test("valid password", () => {
     expect(isValidPassword("SomePassword12")).toBeUndefined();
     expect(isValidPassword("SomeP2")).toBeUndefined();
     expect(isValidPassword("Sm1236")).toBeUndefined();
   });
 });
 
-describe("UserPasswordConfirmValidation", () => {
-  test("notValidUserPassword", () => {
-    // @ts-ignore
-    expect(isValidPasswordConfirm()).toBe(formError.requiredField);
+describe("confirm password validation", () => {
+  test("invalid password", () => {
     expect(isValidPasswordConfirm("", "")).toBe(formError.requiredField);
     expect(isValidPasswordConfirm("Some", "Some")).toBe(
       formError.invalidPassword
@@ -92,7 +79,7 @@ describe("UserPasswordConfirmValidation", () => {
     expect(isValidPasswordConfirm("SomeP2", "SomeP3")).toBe(formError.notMatch);
   });
 
-  test("ValidUserPassword", () => {
+  test("valid password", () => {
     expect(
       isValidPasswordConfirm("SomePassword12", "SomePassword12")
     ).toBeUndefined();
