@@ -21,19 +21,17 @@ export const Chat = () => {
     return null;
   }
 
+  if (!openChat) {
+    return <Styled.Icon onClick={chatToggle} />;
+  }
+
   return (
-    <>
-      {openChat ? (
-        <Styled.Window openChat={openChat}>
-          <ChatHeader chatToggle={chatToggle} />
-          <Styled.Screen>
-            <ChatWindow messagesList={messagesList} />
-            <ChatForm />
-          </Styled.Screen>
-        </Styled.Window>
-      ) : (
-        <Styled.Icon onClick={chatToggle} />
-      )}
-    </>
+    <Styled.Window openChat={openChat}>
+      <ChatHeader chatToggle={chatToggle} />
+      <Styled.Screen>
+        <ChatWindow messagesList={messagesList} />
+        <ChatForm />
+      </Styled.Screen>
+    </Styled.Window>
   );
 };
