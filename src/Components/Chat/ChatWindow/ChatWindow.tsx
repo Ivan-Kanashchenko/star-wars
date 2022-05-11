@@ -23,7 +23,7 @@ export const ChatWindow: FC<{ messagesList: DocumentData[] }> = ({
   return (
     <Styled.Container>
       {messagesList.map((message) => (
-        <Styled.Message owner={message.userId === userId}>
+        <Styled.Message key={message.userId} owner={message.userId === userId}>
           {message?.username && (
             <Styled.MessageAuthor owner={message.userId === userId}>
               {message?.username}
