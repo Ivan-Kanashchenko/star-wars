@@ -1,0 +1,8 @@
+{
+    "prettier.requirePragma": false,
+    "prettier.resolveGlobalModules": false,
+    "prettier.insertPragma": false,
+    "prettier.endOfLine": "lf",
+    "files.insertFinalNewline": false,
+    "prettier.enable": true,
+}
