@@ -6,7 +6,7 @@ import { StyledElement } from "../StyledComponents/Elements/Elements";
 import Styled from "./styles";
 
 export const Account: FC = () => {
-  const { Logout, userName, userEmail, userPhoto } = useAuth();
+  const { Logout, userId, userName, userEmail, userPhoto } = useAuth();
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,7 +17,7 @@ export const Account: FC = () => {
   return (
     <>
       <Styled.Login
-        userId
+        userId={userId}
         userPhoto={userPhoto}
         onClick={toggleMenu}
       ></Styled.Login>
