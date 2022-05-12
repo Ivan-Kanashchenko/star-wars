@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.15.0",
     "ts-jest": "^28.0.2"
   }
 }
