@@ -5,4 +5,5 @@
     "prettier.endOfLine": "lf",
     "files.insertFinalNewline": false,
     "prettier.enable": true,
+    "prettier.configPath": "",
 }
