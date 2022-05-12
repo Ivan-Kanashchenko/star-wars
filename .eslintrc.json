@@ -21,5 +21,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "no-console":"warn",
+        "no-var":"warn"
     }
 }
