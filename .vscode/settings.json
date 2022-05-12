@@ -6,4 +6,8 @@
     "files.insertFinalNewline": false,
     "prettier.enable": true,
     "prettier.configPath": "",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    }
 }
