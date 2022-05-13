@@ -4,7 +4,7 @@ import AuthProvider from "../auth/AuthContext";
 
 const queryClient = new QueryClient();
 
-export const Providers = ({ children }) => {
+export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <AuthProvider>

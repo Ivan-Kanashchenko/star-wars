@@ -11,10 +11,11 @@ import {
   orderBy,
   DocumentData,
   onSnapshot,
+  Timestamp,
 } from "firebase/firestore";
 
 export type MessageListType = {
-  createdAt: any;
+  createdAt: Timestamp;
   text: string;
   type: string;
   username: string;

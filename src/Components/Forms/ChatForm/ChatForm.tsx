@@ -42,6 +42,7 @@ const ChatForm: FC = () => {
   );
 };
 
+// eslint-disable-next-line react/prop-types
 const CustomInputComponent = ({ field, ...props }) => (
   <Styled.FormInput type="text" {...field} {...props} />
 );
