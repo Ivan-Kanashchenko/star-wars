@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Styled } from "./styles";
 
-export const Content = ({ children }: { children: JSX.Element }) => {
+export const Content: React.FC = ({ children }) => {
   return (
     <Styled.ContentContainer>
       <Styled.Content>{children}</Styled.Content>

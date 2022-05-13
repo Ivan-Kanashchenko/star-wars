@@ -1,11 +1,10 @@
 import * as React from "react";
-import { FC } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import AuthProvider from "../auth/AuthContext";
 
 const queryClient = new QueryClient();
 
-export const Providers: FC = ({ children }) => {
+export const Providers: React.FC = ({ children }) => {
   return (
     <>
       <AuthProvider>

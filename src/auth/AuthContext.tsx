@@ -14,7 +14,7 @@ import {
 
 const AuthContext = React.createContext(null);
 
-const AuthProvider = ({ children }: { children: JSX.Element }) => {
+const AuthProvider: React.FC = ({ children }) => {
   const [userName, setUserName] = useState<string>("");
   const [userId, setUserId] = useState<string>("");
   const [userEmail, setUserEmail] = useState<string>("");
@@ -132,11 +132,7 @@ export const useAuth = () => {
   const context = useContext<ContextType>(AuthContext);
 
   if (context === undefined) {
-    try {
-      throw new ReferenceError("useAuth in AuthContext have Error:");
-    } catch (e) {
-      console.error(new Error(e.message));
-    }
+    throw new Error("useAuth: context undefined");
   }
   return context;
 };
