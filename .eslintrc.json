@@ -9,9 +9,10 @@
         "plugin:@typescript-eslint/recommended",
         "prettier",
         "prettier/prettier",
-        "prettier/react",
-        "prettier/@typescript-eslint",
-        "plugin:prettier/recommended",
+        "plugin:react/jsx-runtime",
+        // "prettier/react",
+        // "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -25,8 +26,18 @@
         "react",
         "@typescript-eslint"
     ],
+    "settings": {
+        "react": {
+          "version": "detect",
+          "pragma": "React"  // Pragma to use, default to "React"
+        }
+    },
     "rules": {
         "no-console":"warn",
-        "no-var":"warn"
+        "no-var":"warn",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/member-ordering": "warn",
+        "react/jsx-uses-vars": "error",
+        "react/jsx-uses-react": "error"
     }
 }
