@@ -16,7 +16,6 @@ import { Providers } from "../../providers/Providers";
 import { Styled } from "./styles";
 
 export const App = () => {
-  console.log("hey hey hey");
   return (
     <Providers>
       <Styled.GlobalStyles />
