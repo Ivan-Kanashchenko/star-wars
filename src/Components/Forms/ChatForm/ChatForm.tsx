@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FC } from "react";
-import { Formik } from "formik";
+import { Formik, FormikValues } from "formik";
 import { Field } from "formik";
 import { useChat } from "../../../chat/useChat";
 import { Styled } from "./styles";
@@ -42,8 +42,7 @@ const ChatForm: FC = () => {
   );
 };
 
-// eslint-disable-next-line react/prop-types
-const CustomInputComponent = ({ field, ...props }) => (
+const CustomInputComponent: FC<FormikValues> = ({ field, ...props }) => (
   <Styled.FormInput type="text" {...field} {...props} />
 );
 

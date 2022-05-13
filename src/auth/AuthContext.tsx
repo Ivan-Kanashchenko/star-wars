@@ -135,8 +135,7 @@ export const useAuth = () => {
     try {
       throw new ReferenceError("useAuth in AuthContext have Error:");
     } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log(e.message);
+      console.error(new Error(e.message));
     }
   }
   return context;
