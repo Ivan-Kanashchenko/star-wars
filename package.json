@@ -67,7 +67,7 @@
     "ts-jest": "^28.0.2"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx,json,css}": [
+    "src/**/*.{ts,tsx,json}": [
       "eslint src/",
       "prettier --write",
       "git add"
