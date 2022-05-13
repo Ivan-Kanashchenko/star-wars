@@ -16,36 +16,38 @@ import { Providers } from "../../providers/Providers";
 import { Styled } from "./styles";
 
 export const App = () => {
-  return (
-    <Providers>
+
+
+  return ( 
+  <Providers>
       <Styled.GlobalStyles />
-      <Styled.App>
+<Styled.App>
         <Header />
-        <Navigation />
+   <Navigation />
         <Content>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registration" element={<Register />} />
-            <Route path="/films" element={<Films />} />
-            <Route
-              path="/people"
-              element={
-                <RequireAuth>
-                  <People />
-                </RequireAuth>
-              }
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/registration" element={<Register />} />
+      <Route path="/films" element={<Films />} />
+      <Route
+        path="/people"
+        element={
+          <RequireAuth>
+            <People />
+          </RequireAuth>
+        }
             />
             <Route
-              path="/planets"
-              element={
-                <RequireAuth>
-                  <Planets />
-                </RequireAuth>
-              }
-            />
-          </Routes>
-        </Content>
+                    path="/planets"
+                    element={
+                      <RequireAuth>
+                        <Planets />
+                      </RequireAuth>
+                    }
+                  />
+                </Routes>
+              </Content>
         <Chat />
         <Footer />
       </Styled.App>

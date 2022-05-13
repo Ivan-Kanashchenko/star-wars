@@ -10,8 +10,6 @@ import {
 
 const swapi = "https://swapi.dev/api";
 
-export const husky = "husky test";
-
 export const api = {
   async fetchFilmsData(): Promise<ResponseFilmsData> {
     const { data } = await axios.get<ResponseFilmsData>(`${swapi}/films/`);
