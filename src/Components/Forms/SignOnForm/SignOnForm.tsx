@@ -26,7 +26,7 @@ export const SignOnForm: FC<{ message?: string }> = ({ message }) => {
         emailRegistration(values.email, values.password, values.username);
       }}
     >
-      {({ errors, touched, isValidating, values }) => (
+      {({ errors, touched, values }) => (
         <Styled.FormContainer>
           <StyledElement.Span>{message}</StyledElement.Span>
           <Styled.FormInput

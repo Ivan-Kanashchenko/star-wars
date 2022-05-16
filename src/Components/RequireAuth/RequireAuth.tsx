@@ -4,7 +4,7 @@ import { useAuth } from "../../auth/AuthContext";
 
 export const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const { userId } = useAuth();
-  let location = useLocation();
+  const location = useLocation();
 
   if (!userId) {
     // Redirect them to the /login page, but save the current location they were

@@ -21,7 +21,7 @@ export const SignInForm: FC = () => {
         emailAuth(values.email, values.password);
       }}
     >
-      {({ errors, touched, isValidating }) => (
+      {({ errors, touched }) => (
         <Styled.FormContainer>
           <Styled.FormInput
             type="email"

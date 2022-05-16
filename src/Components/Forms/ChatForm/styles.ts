@@ -13,8 +13,8 @@ const FormContainer = styled(Form)`
 `;
 
 const FormInput = styled.textarea<{
-  touched?: boolean;
-  errors?: boolean;
+  touched?: string;
+  errors?: string;
 }>`
   background: transparent;
   border-radius: 0px 0px 0px 15px;

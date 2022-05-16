@@ -14,8 +14,7 @@ import {
 
 const AuthContext = React.createContext(null);
 
-const AuthProvider = ({ children }) => {
-  const [isAuth, setIsAuth] = useState<boolean>(false);
+const AuthProvider: React.FC = ({ children }) => {
   const [userName, setUserName] = useState<string>("");
   const [userId, setUserId] = useState<string>("");
   const [userEmail, setUserEmail] = useState<string>("");
@@ -32,7 +31,6 @@ const AuthProvider = ({ children }) => {
     setUserId(user.uid);
     setUserEmail(user.email);
     setUserPhoto(user.photoURL || null);
-    setIsAuth(true);
   };
 
   const googleAuth = async (): Promise<void> => {
@@ -75,8 +73,7 @@ const AuthProvider = ({ children }) => {
 
   const emailRegistration = async (
     email: string,
-    password: string,
-    displayName: string
+    password: string
   ): Promise<void> => {
     const { user } = await createUserWithEmailAndPassword(
       auth,
@@ -92,7 +89,6 @@ const AuthProvider = ({ children }) => {
     setUserId("");
     setUserEmail("");
     setUserPhoto("");
-    setIsAuth(false);
   };
 
   return (
@@ -136,11 +132,7 @@ export const useAuth = () => {
   const context = useContext<ContextType>(AuthContext);
 
   if (context === undefined) {
-    try {
-      throw new ReferenceError("useAuth in AuthContext have Error:");
-    } catch (e) {
-      console.log(e.message);
-    }
+    throw new Error("useAuth: context undefined");
   }
   return context;
 };
