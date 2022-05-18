@@ -8,4 +8,6 @@ export const theme = {
   accent3: "#009687",
   accent4: "#cecece",
   accent5: "lightblue",
+  accent6: "orange",
+  accent7: "white",
 };

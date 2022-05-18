@@ -14,6 +14,7 @@ import { Login } from "../Login/Login";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
 import { Providers } from "../../providers/Providers";
 import { Styled } from "./styles";
+import { Market } from "../Market/Market";
 
 export const App = () => {
   return (
@@ -44,6 +45,7 @@ export const App = () => {
                 </RequireAuth>
               }
             />
+            <Route path="/market" element={<Market />} />
           </Routes>
         </Content>
         <Chat />

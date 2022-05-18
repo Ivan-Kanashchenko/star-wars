@@ -1,9 +1,7 @@
-import { Link, PathMatch, To } from "react-router-dom";
+import { Link, PathMatch } from "react-router-dom";
 import styled from "styled-components";
 
 const CustomLink = styled(Link)<{
-  content: string;
-  to: To;
   match: PathMatch<string>;
 }>`
   text-transform: uppercase;
@@ -16,7 +14,6 @@ const CustomLink = styled(Link)<{
 
 const LightSpan = styled.span<{
   match: PathMatch<string>;
-  to: To;
   content: string;
 }>`
   display: block;
@@ -35,20 +32,28 @@ const LightSpan = styled.span<{
     if (content === "/planets") {
       return `var(--accent3);`;
     }
-  }};
-  box-shadow: ${({ match, content }) => {
-    if (match) {
-      if (content === "/films") {
-        return `0 0 6px 2px var(--accent1);`;
-      }
-      if (content === "/people") {
-        return `0 0 6px 2px var(--accent2);`;
-      }
-      if (content === "/planets") {
-        return `0 0 6px 2px var(--accent3);`;
-      }
+    if (content === "/market") {
+      return `var(--accent6);`;
     }
   }};
+
+  box-shadow: 0 0 6px 2px
+    ${({ match, content }) => {
+      if (match) {
+        if (content === "/films") {
+          return `var(--accent1);`;
+        }
+        if (content === "/people") {
+          return `var(--accent2);`;
+        }
+        if (content === "/planets") {
+          return `var(--accent3);`;
+        }
+        if (content === "/market") {
+          return `var(--accent6);`;
+        }
+      }
+    }};
 `;
 
 export const Styled = {

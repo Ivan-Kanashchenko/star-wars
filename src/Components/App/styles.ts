@@ -61,6 +61,8 @@ const App = styled.div(() => {
     --accent3: ${theme.accent3};
     --accent4: ${theme.accent4};
     --accent5: ${theme.accent5};
+    --accent6: ${theme.accent6};
+    --accent7: ${theme.accent7};
     background-color: var(--primary2);
     transition: 0.2s;
     display: flex;
