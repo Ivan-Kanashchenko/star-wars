@@ -16,7 +16,6 @@ export const Modal: React.FC<ModalProps> = ({ children, title }) => {
     <Styled.Layout onClick={() => setIsOpenFeedback(false)}>
       <Styled.ModalWindow onClick={(e) => e.stopPropagation()}>
         <StyledElement.H4>{title}</StyledElement.H4>
-
         <div>{children}</div>
       </Styled.ModalWindow>
     </Styled.Layout>
