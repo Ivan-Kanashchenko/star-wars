@@ -14,6 +14,7 @@ import { Login } from "../Login/Login";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
 import { Providers } from "../../providers/Providers";
 import { Styled } from "./styles";
+import { Modal } from "../Modal/Modal";
 
 export const App = () => {
   return (
@@ -47,6 +48,7 @@ export const App = () => {
           </Routes>
         </Content>
         <Chat />
+        <Modal title={"this is my modal"} />
         <Footer />
       </Styled.App>
     </Providers>
