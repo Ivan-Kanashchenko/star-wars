@@ -5,7 +5,7 @@ interface PortalProps {
   el?: string;
 }
 
-const Portal: React.FC<PortalProps> = ({ children, el = "div" }) => {
+export const Portal: React.FC<PortalProps> = ({ children, el = "div" }) => {
   const [element] = React.useState(() => document.createElement(el));
   React.useEffect(() => {
     document.getElementById("root").firstChild.appendChild(element);
@@ -15,5 +15,3 @@ const Portal: React.FC<PortalProps> = ({ children, el = "div" }) => {
   }, []);
   return ReactDOM.createPortal(children, element);
 };
-
-export default Portal;

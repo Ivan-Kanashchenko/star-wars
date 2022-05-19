@@ -18,7 +18,6 @@ const BackgroundLeft = styled.div`
   height: 100%;
   width: 200px;
   background-repeat: repeat-y;
-  z-index: 2;
 `;
 const BackgroundRight = styled.div`
   background-image: url(${backgroundRigth});
@@ -27,7 +26,6 @@ const BackgroundRight = styled.div`
   height: 100%;
   width: 200px;
   background-repeat: repeat-y;
-  z-index: 2;
 `;
 
 const Content = styled.div`

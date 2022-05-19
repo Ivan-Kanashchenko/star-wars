@@ -10,14 +10,12 @@ const Layout = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
 `;
 
 const ModalWindow = styled.div`
   border-radius: 10px;
   background-color: white;
   padding: 20px;
-  z-index: 100;
 `;
 
 export const Styled = {
