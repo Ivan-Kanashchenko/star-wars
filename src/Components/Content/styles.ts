@@ -7,23 +7,17 @@ const ContentContainer = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  flex-direction: column;
+  flex-direction: row;
   flex-grow: 1;
 `;
 
 const BackgroundLeft = styled.div`
   background-image: url(${backgroundLeft});
-  position: absolute;
-  left: 0;
-  height: 100%;
   width: 200px;
   background-repeat: repeat-y;
 `;
 const BackgroundRight = styled.div`
   background-image: url(${backgroundRigth});
-  position: absolute;
-  right: 0;
-  height: 100%;
   width: 200px;
   background-repeat: repeat-y;
 `;
@@ -31,8 +25,7 @@ const BackgroundRight = styled.div`
 const Content = styled.div`
   padding: 10px 0;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
 `;
 
 export const Styled = {

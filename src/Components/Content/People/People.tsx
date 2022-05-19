@@ -1,15 +1,14 @@
 import * as React from "react";
-import { FC } from "react";
 import { usePeopleData } from "../../../customHooks/apiHooks";
+import { StyledCard } from "../../StyledComponents/Cards/MainCard";
 import { Loading } from "../../StyledComponents/Loading/Loading";
 import { PeopleItem } from "./PeopleItem/PeopleItem";
-import { Styled } from "./styles";
 
-export const People: FC = () => {
+export const People: React.FC = () => {
   const { status, data, error } = usePeopleData();
 
   return (
-    <Styled.PeopleContainer>
+    <StyledCard.Container>
       {status === "loading" && <Loading />}
       {status === "error" && <span>Error: {error.message}</span>}
       {status === "success" && (
@@ -28,6 +27,6 @@ export const People: FC = () => {
           ))}
         </>
       )}
-    </Styled.PeopleContainer>
+    </StyledCard.Container>
   );
 };
