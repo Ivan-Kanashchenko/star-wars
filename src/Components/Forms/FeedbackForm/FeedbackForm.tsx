@@ -21,8 +21,8 @@ export const FeedbackForm: React.FC = () => {
             name="name"
             placeholder="name"
             validate={isValidUserName}
-            error={errors.name}
-            touched={touched.name}
+            error={!!errors.name}
+            touched={!!touched.name}
           />
           <Field
             name="text"

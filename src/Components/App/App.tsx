@@ -16,6 +16,7 @@ import { Providers } from "../../providers/Providers";
 import { Styled } from "./styles";
 import { Modal } from "../Modal/Modal";
 import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
+import Portal from "../Portal/Portal";
 
 export const App = () => {
   return (
@@ -49,9 +50,11 @@ export const App = () => {
           </Routes>
         </Content>
         <Chat />
-        <Modal title={"left feedback..."}>
-          <FeedbackForm />
-        </Modal>
+        <Portal>
+          <Modal title={"left feedback..."}>
+            <FeedbackForm />
+          </Modal>
+        </Portal>
         <Footer />
       </Styled.App>
     </Providers>

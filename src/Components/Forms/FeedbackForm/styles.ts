@@ -10,7 +10,7 @@ const FormContainer = styled(Form)`
   height: 300px;
 `;
 
-const Input = styled(Field)<{ error: string; touched: string }>`
+const Input = styled(Field)<{ error: boolean; touched: boolean }>`
   width: 100%;
   border: 1px solid
     ${({ error, touched }) =>
