@@ -1,15 +1,14 @@
 import * as React from "react";
-import { FC } from "react";
 import { useFilmsData } from "../../../customHooks/apiHooks";
+import { StyledCard } from "../../StyledComponents/Cards/MainCard";
 import { Loading } from "../../StyledComponents/Loading/Loading";
 import { FilmItem } from "./FilmItem/FilmItem";
-import { Styled } from "./styles";
 
-export const Films: FC = () => {
+export const Films: React.FC = () => {
   const { status, data, error } = useFilmsData();
 
   return (
-    <Styled.FilmsContainer>
+    <StyledCard.Container>
       {status === "loading" && <Loading />}
       {status === "error" && <span>Error: {error.message}</span>}
       {status === "success" && (
@@ -27,6 +26,6 @@ export const Films: FC = () => {
           ))}
         </>
       )}
-    </Styled.FilmsContainer>
+    </StyledCard.Container>
   );
 };

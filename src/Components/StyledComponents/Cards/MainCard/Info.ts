@@ -11,7 +11,7 @@ export const Info = styled.div<Props>`
 
   ${({ theme }) => {
     if (theme === "/people") {
-      return `padding: 20px 0px 5px 20px; border-right: 5px solid var(--accent2);`;
+      return `padding: 20px 0px 20px 20px; border-right: 5px solid var(--accent2);`;
     } else if (theme === "/films") {
       return `padding: 20px 20px 5px 20px; border-left: 5px solid var(--accent1);`;
     } else if (theme === "/planets") {
