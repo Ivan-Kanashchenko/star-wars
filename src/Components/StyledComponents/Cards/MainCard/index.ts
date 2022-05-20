@@ -7,8 +7,18 @@ interface Props {
   flexColumn?: boolean;
 }
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary2);
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Card = styled.div<Props>`
   display: flex;
+  width: 100%;
   ${({ flexRow }) => flexRow && `flex-direction: row;`}
   ${({ flexColumn }) => flexColumn && `flex-direction: column;`}
 
@@ -17,11 +27,11 @@ const Card = styled.div<Props>`
   margin: 5px 30px;
   padding: 5px;
   height: auto;
-  z-index: 5;
   background: var(--secondary);
 `;
 
 export const StyledCard = {
+  Container,
   Card,
   Info,
   Image,
