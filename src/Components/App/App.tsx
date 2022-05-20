@@ -17,6 +17,8 @@ import { Styled } from "./styles";
 import { Modal } from "../Modal/Modal";
 import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
 import { Portal } from "../Portal/Portal";
+import { Market } from "../Market/Market";
+
 
 export const App = () => {
   return (
@@ -47,6 +49,7 @@ export const App = () => {
                 </RequireAuth>
               }
             />
+            <Route path="/market" element={<Market />} />
           </Routes>
         </Content>
         <Chat />

@@ -29,6 +29,11 @@ export const Navigation = () => {
         name: "planets",
         link: "/planets",
       },
+      {
+        id: 3,
+        name: "market",
+        link: "/market",
+      },
     ];
   }, []);
 

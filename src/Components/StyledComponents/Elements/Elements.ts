@@ -15,6 +15,12 @@ const H4 = styled.h4`
   color: var(--primary3);
 `;
 
+const H5 = styled.h5`
+  font-size: 18px;
+  color: var(--primary1);
+  margin: 10px 0;
+`;
+
 const Ul = styled.ul<{ loginList?: boolean }>`
   padding-left: 30px;
   ${({ loginList }) =>
@@ -107,6 +113,7 @@ export const StyledElement = {
   H2,
   H3,
   H4,
+  H5,
   Ul,
   Li,
   Span,
