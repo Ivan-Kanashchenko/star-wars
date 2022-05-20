@@ -10,7 +10,6 @@ const Background = styled.div<{ bg: string }>`
   position: absolute;
   right: 18%;
   bottom: 0%;
-  z-index: 11;
 `;
 
 const Wrapper = styled.div`
@@ -18,7 +17,6 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   height: 100%;
-  z-index: 6;
   overflow: hidden;
 `;
 
@@ -33,7 +31,6 @@ const Container = styled.div`
   border-radius: 7px;
   background-color: white;
   padding: 5px 0px;
-  z-index: 7;
   position: absolute;
   left: 20%;
   top: 20%;

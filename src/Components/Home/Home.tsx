@@ -10,8 +10,6 @@ export const Home = () => {
           Hi! This is the database of StarWars
         </StyledElement.H3>
       </Styled.Content>
-      <Styled.BackgroundLeft />
-      <Styled.BackgroundRight />
     </Styled.ContentContainer>
   );
 };

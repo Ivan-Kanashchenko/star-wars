@@ -56,6 +56,7 @@ const App = styled.div(() => {
     --primary2: ${theme.primary2};
     --primary3: ${theme.primary3};
     --secondary: ${theme.secondary};
+    --secondary2: ${theme.secondary2};
     --accent1: ${theme.accent1};
     --accent2: ${theme.accent2};
     --accent3: ${theme.accent3};
@@ -73,7 +74,6 @@ const App = styled.div(() => {
     align-items: center;
     margin: 0 auto;
     min-height: 100vh;
-    transition: 0.2s;
   `;
 });
 

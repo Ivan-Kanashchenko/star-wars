@@ -14,7 +14,11 @@ import { Login } from "../Login/Login";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
 import { Providers } from "../../providers/Providers";
 import { Styled } from "./styles";
+import { Modal } from "../Modal/Modal";
+import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
+import { Portal } from "../Portal/Portal";
 import { Market } from "../Market/Market";
+
 
 export const App = () => {
   return (
@@ -49,6 +53,11 @@ export const App = () => {
           </Routes>
         </Content>
         <Chat />
+        <Portal>
+          <Modal title={"left feedback..."}>
+            <FeedbackForm />
+          </Modal>
+        </Portal>
         <Footer />
       </Styled.App>
     </Providers>
