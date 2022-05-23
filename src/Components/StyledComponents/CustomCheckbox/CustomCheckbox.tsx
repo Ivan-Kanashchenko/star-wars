@@ -19,8 +19,10 @@ export const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
 };
 
 const Container = styled.div`
+  display: flex;
+  justify-content: left;
+  align-items: center;
   margin: 5px 0;
-  justify-content: center;
 `;
 
 const Input = styled.input`

@@ -17,10 +17,11 @@ export const Market: React.FC = () => {
         </Styled.Section>
         <div>Choose Price</div>
         <Styled.InputContainer>
-          <input type="number" />
-          <input type="number" />
+          <Styled.Input type="number" />
+          <Styled.Input type="number" />
+          <Styled.SquareButton>OK</Styled.SquareButton>
         </Styled.InputContainer>
-        <div>slider</div>
+        <input type="range" id="points" name="points" min="0" max="10" />
 
         <Styled.Section>
           <StyledElement.H5>Made in</StyledElement.H5>
@@ -53,9 +54,41 @@ const Container = styled.div`
   justify-items: flex-start;
 `;
 
+const SquareButton = styled.button`
+  border: 1px solid var(--primary3);
+  border-radius: 3px;
+  color: var(--primary3);
+  text-transform: uppercase;
+  padding: 5px 10px;
+
+  &:hover {
+    color: var(--primary1);
+    border: 1px solid var(--primary1);
+  }
+  &:active {
+    background: var(--primary1);
+    color: var(--accent7);
+  }
+`;
+
 const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
+  margin: 5px 0;
+`;
+
+const Input = styled.input`
+  border: 1px solid var(--primary3);
+  border-radius: 3px;
+  padding: 10px;
+  width: 80px;
+  margin-right: 10px;
+
+  &:hover,
+  :focus {
+    color: var(--primary1);
+    border: 1px solid var(--primary1);
+  }
 `;
 
 const Section = styled.div`
@@ -74,7 +107,6 @@ const FiltersBar = styled.div`
   max-width: 300px;
   background: var(--accent7);
   border-radius: 10px;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -90,7 +122,9 @@ const Goods = styled.div`
 const Styled = {
   Container,
   Section,
+  SquareButton,
   InputContainer,
   FiltersBar,
   Goods,
+  Input,
 };

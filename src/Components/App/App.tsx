@@ -19,7 +19,6 @@ import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
 import { Portal } from "../Portal/Portal";
 import { Market } from "../Market/Market";
 
-
 export const App = () => {
   return (
     <Providers>

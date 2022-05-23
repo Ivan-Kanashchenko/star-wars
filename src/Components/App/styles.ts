@@ -27,6 +27,14 @@ html, body {
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 input,button,textarea {font-family: inherit;}
 input::-ms-clear{display: none;}
 button{cursor: pointer;}
