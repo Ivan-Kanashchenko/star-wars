@@ -21,7 +21,7 @@ export const Market: React.FC = () => {
           <Styled.Input type="number" />
           <Styled.SquareButton>OK</Styled.SquareButton>
         </Styled.InputContainer>
-        <input type="range" id="points" name="points" min="0" max="10" />
+        <div>slider</div>
 
         <Styled.Section>
           <StyledElement.H5>Made in</StyledElement.H5>
