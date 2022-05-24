@@ -5,12 +5,18 @@ const Container = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-items: flex-start;
+  width: 100%;
 `;
 
 const Goods = styled.div`
   width: 100%;
-  background: var(--accent4);
   margin: 0 0 0 10px;
+  display: grid;
+  grid-template: 1fr / repeat(4, 1fr);
+  grid-auto-flow: row;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
 `;
 
 export const Styled = {

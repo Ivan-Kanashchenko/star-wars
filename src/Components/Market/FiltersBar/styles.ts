@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 100%;
-  max-width: 300px;
-  background: var(--accent7);
+  background: var(--primary4);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   text-align: left;
   padding: 20px;
+  margin-top: 7px;
 `;
 
 const SquareButton = styled.button`
