@@ -1,102 +1,53 @@
 import * as React from "react";
-import {
-  ChangeEvent,
-  FC,
-  useCallback,
-  useEffect,
-  useState,
-  useRef,
-} from "react";
-import { Styled } from "./styles";
+import { Slider, withStyles } from "@material-ui/core/";
+import { theme } from "../../../theme";
 
-interface MultiRangeSliderProps {
-  min: number;
-  max: number;
-  onChange: ({ min, max }: { min: number; max: number }) => void;
-}
+const CustomSlider = withStyles({
+  root: {
+    color: "gray",
+    height: 3,
+    padding: "10px 0 5px 0",
+  },
+  thumb: {
+    height: 10,
+    width: 10,
+    backgroundColor: theme.primary4,
+    border: `1px solid ${theme.primary3} `,
+    marginTop: -3.5,
+    marginLeft: -3.5,
+    boxShadow: "#ebebeb 0 2px 2px",
+    "&:focus, &:hover, &$active": {
+      boxShadow: "#ccc 0 2px 3px 1px",
+    },
+    "&:hover": {
+      border: `1px solid ${theme.primary1}`,
+    },
+    "& .bar": {
+      height: 9,
+      width: 1,
+      backgroundColor: "currentColor",
+      marginLeft: 1,
+      marginRight: 1,
+    },
+  },
+  active: {},
+  track: {
+    height: 3,
+  },
+  rail: {
+    color: "#d8d8d8",
+    opacity: 1,
+    height: 3,
+  },
+})(Slider);
 
-const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
-  min,
-  max,
-  onChange,
-}) => {
-  const [minVal, setMinVal] = useState(min);
-  const [maxVal, setMaxVal] = useState(max);
-  const minValRef = useRef<HTMLInputElement>(null);
-  const maxValRef = useRef<HTMLInputElement>(null);
-  const range = useRef<HTMLDivElement>(null);
-
-  // Convert to percentage
-  const getPercent = useCallback(
-    (value: number) => Math.round(((value - min) / (max - min)) * 100),
-    [min, max]
-  );
-
-  // Set width of the range to decrease from the left side
-  useEffect(() => {
-    if (maxValRef.current) {
-      const minPercent = getPercent(minVal);
-      const maxPercent = getPercent(+maxValRef.current.value); // Precede with '+' to convert the value from type string to type number
-
-      if (range.current) {
-        range.current.style.left = `${minPercent}%`;
-        range.current.style.width = `${maxPercent - minPercent}%`;
-      }
-    }
-  }, [minVal, getPercent]);
-
-  // Set width of the range to decrease from the right side
-  useEffect(() => {
-    if (minValRef.current) {
-      const minPercent = getPercent(+minValRef.current.value);
-      const maxPercent = getPercent(maxVal);
-
-      if (range.current) {
-        range.current.style.width = `${maxPercent - minPercent}%`;
-      }
-    }
-  }, [maxVal, getPercent]);
-
-  // Get min and max values when their state changes
-  useEffect(() => {
-    onChange({ min: minVal, max: maxVal });
-  }, [minVal, maxVal, onChange]);
-
+export function MultiRangeSlider() {
   return (
-    <Styled.Container>
-      <Styled.Slider>
-        <Styled.SliderTrack />
-        <Styled.SliderRange ref={range} />
-        <Styled.SliderLeftValue>{minVal}</Styled.SliderLeftValue>
-        <Styled.SliderRightValue>{maxVal}</Styled.SliderRightValue>
-      </Styled.Slider>
-
-      <Styled.Input
-        type="range"
-        min={min}
-        max={max}
-        value={minVal}
-        ref={minValRef}
-        onChange={(event: ChangeEvent<HTMLInputElement>) => {
-          const value = Math.min(+event.target.value, maxVal - 1);
-          setMinVal(value);
-          event.target.value = value.toString();
-        }}
-      />
-      <Styled.Input
-        type="range"
-        min={min}
-        max={max}
-        value={maxVal}
-        ref={maxValRef}
-        onChange={(event: ChangeEvent<HTMLInputElement>) => {
-          const value = Math.max(+event.target.value, minVal + 1);
-          setMaxVal(value);
-          event.target.value = value.toString();
-        }}
-      />
-    </Styled.Container>
+    <CustomSlider
+      getAriaLabel={(index) =>
+        index === 0 ? "Minimum price" : "Maximum price"
+      }
+      defaultValue={[20, 40]}
+    />
   );
-};
-
-export default MultiRangeSlider;
+}

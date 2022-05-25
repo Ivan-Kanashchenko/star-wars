@@ -109,6 +109,18 @@ const Button = styled.button`
   }
 `;
 
+const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--accent4);
+  margin-top: 10px;
+  padding-bottom: 10px;
+
+  &:last-child {
+    border-bottom: 1px solid var(--accent4);
+  }
+`;
+
 export const StyledElement = {
   H2,
   H3,
@@ -120,4 +132,5 @@ export const StyledElement = {
   Paragraph,
   Container,
   Button,
+  Section,
 };
