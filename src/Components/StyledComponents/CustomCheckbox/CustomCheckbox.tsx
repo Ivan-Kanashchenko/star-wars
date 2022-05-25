@@ -1,42 +1,39 @@
 import * as React from "react";
-import styled from "styled-components";
+import {
+  Checkbox,
+  CheckboxProps,
+  FormControlLabel,
+  withStyles,
+} from "@material-ui/core";
+import { theme } from "../../../theme";
 
-interface CustomCheckboxProps {
-  label: string;
-  name: string;
-}
+const GreenCheckbox = withStyles({
+  root: {
+    color: theme.primary3,
+    "&$checked": {
+      color: theme.primary3,
+    },
+  },
+  checked: {},
+})((props: CheckboxProps) => <Checkbox color="default" {...props} />);
 
-export const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
+export const CustomCheckbox: React.FC<{ label: string; name: string }> = ({
   label,
   name,
 }) => {
+  const [checked, setChecked] = React.useState<boolean>(false);
+
   return (
-    <Styled.Container>
-      <Styled.Input type="checkbox" name={name} />
-      <Styled.Label>{label}</Styled.Label>
-    </Styled.Container>
+    <FormControlLabel
+      control={
+        <GreenCheckbox
+          size="medium"
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+          name={name}
+        />
+      }
+      label={label}
+    />
   );
-};
-
-const Container = styled.div`
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin: 5px 0;
-`;
-
-const Input = styled.input`
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-`;
-
-const Label = styled.label`
-  margin-left: 5px;
-`;
-
-const Styled = {
-  Container,
-  Input,
-  Label,
 };
