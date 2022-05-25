@@ -41,13 +41,27 @@ const CustomSlider = withStyles({
   },
 })(Slider);
 
-export function MultiRangeSlider() {
+export const MultiRangeSlider: React.FC<{
+  maxValue: number | null;
+  minValue: number | null;
+  setMinValue: (arg: number) => void;
+  setMaxValue: (arg: number) => void;
+}> = ({ minValue, maxValue, setMinValue, setMaxValue }) => {
+  const setValues = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.target.ariaLabel === "Maximum price" &&
+      setMaxValue(Number(e.target.ariaValueNow));
+    e.target.ariaLabel === "Minimum price" &&
+      setMinValue(Number(e.target.ariaValueNow));
+  };
   return (
     <CustomSlider
       getAriaLabel={(index) =>
         index === 0 ? "Minimum price" : "Maximum price"
       }
-      defaultValue={[20, 40]}
+      min={0}
+      max={5000}
+      defaultValue={[minValue, maxValue]}
+      onChange={setValues}
     />
   );
-}
+};
