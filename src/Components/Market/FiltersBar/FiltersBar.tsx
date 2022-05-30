@@ -7,14 +7,35 @@ import { ProductTypeForm } from "../../Forms/Market/ProductTypeForm/ProductTypeF
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
 import { Styled } from "./styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { useQueryStringParams } from "../../../customHooks/useQueryStringParams";
 
 export const FiltersBar: React.FC = () => {
+  const { searchParams } = useQueryStringParams();
+
+  const initialState = {
+    price: !!searchParams.has("price") || false,
+    country: !!searchParams.has("country") || false,
+    company: !!searchParams.has("company") || false,
+    type: !!searchParams.has("type") || false,
+    stock: !!searchParams.has("stock") || false,
+  };
+
+  const [expanded, setExpanded] = React.useState(initialState);
+
+  const handleChange = (property: string) => {
+    setExpanded(
+      Object.assign({}, expanded, { [property]: !expanded[property] })
+    );
+  };
   return (
     <Styled.Container>
       <StyledElement.H4>Filters</StyledElement.H4>
 
       <StyledElement.Section borderTop>
-        <Styled.Accordion>
+        <Styled.Accordion
+          expanded={expanded.company}
+          onChange={() => handleChange("company")}
+        >
           <Styled.AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -29,7 +50,10 @@ export const FiltersBar: React.FC = () => {
       </StyledElement.Section>
 
       <StyledElement.Section borderTop>
-        <Styled.Accordion>
+        <Styled.Accordion
+          expanded={expanded.price}
+          onChange={() => handleChange("price")}
+        >
           <Styled.AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -44,7 +68,10 @@ export const FiltersBar: React.FC = () => {
       </StyledElement.Section>
 
       <StyledElement.Section borderTop>
-        <Styled.Accordion>
+        <Styled.Accordion
+          expanded={expanded.country}
+          onChange={() => handleChange("country")}
+        >
           <Styled.AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -59,7 +86,10 @@ export const FiltersBar: React.FC = () => {
       </StyledElement.Section>
 
       <StyledElement.Section borderTop>
-        <Styled.Accordion>
+        <Styled.Accordion
+          expanded={expanded.type}
+          onChange={() => handleChange("type")}
+        >
           <Styled.AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
@@ -74,7 +104,10 @@ export const FiltersBar: React.FC = () => {
       </StyledElement.Section>
 
       <StyledElement.Section borderTop borderBottom>
-        <Styled.Accordion>
+        <Styled.Accordion
+          expanded={expanded.stock}
+          onChange={() => handleChange("stock")}
+        >
           <Styled.AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"

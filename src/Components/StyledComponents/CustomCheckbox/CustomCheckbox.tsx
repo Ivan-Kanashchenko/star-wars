@@ -21,18 +21,21 @@ const StyledMaterialCheckbox = withStyles({
 interface CustomProps {
   label: string;
   name: string;
+  active: boolean;
 }
 
 export const CustomCheckbox: React.FC<CustomProps & FormikValues> = ({
   label,
   name,
   field,
+  active,
   ...props
 }) => {
   return (
     <FormControlLabel
       control={
         <StyledMaterialCheckbox
+          // checked={active}
           size="medium"
           name={name}
           {...field}

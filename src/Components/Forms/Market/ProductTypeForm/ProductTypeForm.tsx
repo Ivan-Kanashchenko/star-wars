@@ -2,16 +2,22 @@ import * as React from "react";
 import { Field, Form, Formik } from "formik";
 import { CustomCheckbox } from "../../../StyledComponents/CustomCheckbox/CustomCheckbox";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
+import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
 
 export const ProductTypeForm: React.FC = () => {
+  const { searchParams, setParams } = useQueryStringParams();
+
+  const isType = searchParams.has("type");
+
   return (
     <Formik
       initialValues={{
-        type: [],
+        type: searchParams.get("type") || [],
       }}
       onSubmit={(values) => {
         // eslint-disable-next-line no-alert
-        alert(JSON.stringify(values, null, 2));
+        // alert(JSON.stringify(values, null, 2));
+        setParams("type", values.type.toString());
       }}
     >
       {({ handleSubmit }) => (
@@ -23,13 +29,13 @@ export const ProductTypeForm: React.FC = () => {
           }}
         >
           <StyledElement.Section borderTop>
-            <StyledElement.H5>Type</StyledElement.H5>
             <Field
               name="type"
               value="single"
               type="checkbox"
               label={"one toy"}
               component={CustomCheckbox}
+              checked={isType && searchParams.get("type").includes("single")}
             />
             <Field
               name="type"
@@ -37,6 +43,7 @@ export const ProductTypeForm: React.FC = () => {
               type="checkbox"
               label={"toy set"}
               component={CustomCheckbox}
+              checked={isType && searchParams.get("type").includes("set")}
             />
           </StyledElement.Section>
         </Form>

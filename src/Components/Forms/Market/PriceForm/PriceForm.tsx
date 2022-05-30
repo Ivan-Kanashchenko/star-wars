@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useQueryStringFilters } from "../../../../customHooks/useQueryStringFilters";
+import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { MultiRangeSlider } from "../../../StyledComponents/MultiRangeSlider/MultiRangeSlider";
 import { Styled } from "./styles";
@@ -16,7 +16,6 @@ export const PriceForm: React.FC = () => {
 
   return (
     <StyledElement.Section>
-      <StyledElement.H5>Choose Price</StyledElement.H5>
       <Styled.InputContainer>
         <Styled.Input
           type="number"

@@ -1,17 +1,22 @@
 import { Field, Form, Formik } from "formik";
 import * as React from "react";
+import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
 import { CustomCheckbox } from "../../../StyledComponents/CustomCheckbox/CustomCheckbox";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 
 export const ProductStatusForm: React.FC = () => {
+  const { searchParams, setParams } = useQueryStringParams();
+
+  const isStock = searchParams.has("stock");
+
   return (
     <Formik
       initialValues={{
-        stock: [],
+        stock: searchParams.get("stock") || [],
       }}
       onSubmit={(values) => {
         // eslint-disable-next-line no-alert
-        alert(JSON.stringify(values, null, 2));
+        setParams("stock", values.stock.toString());
       }}
     >
       {({ handleSubmit }) => (
@@ -23,13 +28,13 @@ export const ProductStatusForm: React.FC = () => {
           }}
         >
           <StyledElement.Section borderTop borderBottom>
-            <StyledElement.H5>Product status</StyledElement.H5>
             <Field
               name="stock"
               value="inStock"
               type="checkbox"
               label={"In stock"}
               component={CustomCheckbox}
+              checked={isStock && searchParams.get("stock").includes("inStock")}
             />
             <Field
               name="stock"
@@ -37,6 +42,9 @@ export const ProductStatusForm: React.FC = () => {
               type="checkbox"
               label={"Out of stock"}
               component={CustomCheckbox}
+              checked={
+                isStock && searchParams.get("stock").includes("notInStock")
+              }
             />
           </StyledElement.Section>
         </Form>
