@@ -4,14 +4,23 @@ export const useQueryStringParams = () => {
   const [searchParams, setSearchParams] = useSearchParams({});
 
   const setParams = (name: string, params: string) => {
-    const Obj = Object.fromEntries(searchParams.entries());
+    const objectFromQueryString = Object.fromEntries(searchParams.entries());
 
-    // if (!!name && !params) {
-    // }
-
-    setSearchParams(Object.assign({}, Obj, { [name]: params }));
-
-    // const Obj = Object.fromEntries(searchParams.entries());
+    //removing filter from queryString
+    if (!params) {
+      const thisIsObject = Object.keys(objectFromQueryString)
+        .filter((key) => key !== name)
+        .reduce((obj, key) => {
+          obj[key] = objectFromQueryString[key];
+          return obj;
+        }, {});
+      setSearchParams(thisIsObject);
+    } else {
+      //adding or modification queryString
+      setSearchParams(
+        Object.assign({}, objectFromQueryString, { [name]: params })
+      );
+    }
   };
 
   return { searchParams, setParams };
