@@ -1,11 +1,18 @@
 import * as React from "react";
+import { useQueryStringFilters } from "../../../../customHooks/useQueryStringFilters";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { MultiRangeSlider } from "../../../StyledComponents/MultiRangeSlider/MultiRangeSlider";
 import { Styled } from "./styles";
 
 export const PriceForm: React.FC = () => {
+  // const { searchParams, setSearchParams } = useQueryStringFilters();
+
   const [minValue, setMinValue] = React.useState<number | null>(100);
   const [maxValue, setMaxValue] = React.useState<number | null>(500);
+
+  const handleSubmit = () => {
+    // setSearchParams({ price: `${minValue.toString()}-${maxValue.toString()}` });
+  };
 
   return (
     <StyledElement.Section>
@@ -25,7 +32,7 @@ export const PriceForm: React.FC = () => {
             setMaxValue(+e.target.value)
           }
         />
-        <Styled.SquareButton>OK</Styled.SquareButton>
+        <Styled.SquareButton onClick={handleSubmit}>OK</Styled.SquareButton>
       </Styled.InputContainer>
       <MultiRangeSlider
         minValue={minValue}

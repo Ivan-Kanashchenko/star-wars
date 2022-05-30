@@ -12,6 +12,7 @@ const H3 = styled.h3`
 `;
 const H4 = styled.h4`
   font-size: 20px;
+  padding-bottom: 10px;
   color: var(--primary3);
 `;
 
@@ -109,16 +110,15 @@ const Button = styled.button`
   }
 `;
 
-const Section = styled.div`
+const Section = styled.div<{ borderTop?: boolean; borderBottom?: boolean }>`
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--accent4);
-  margin-top: 10px;
-  padding-bottom: 10px;
+  /* margin-top: 10px;
+  padding-bottom: 10px; */
 
-  &:last-child {
-    border-bottom: 1px solid var(--accent4);
-  }
+  ${({ borderTop }) => borderTop && `border-top: 1px solid var(--accent4);`}
+  ${({ borderBottom }) =>
+    borderBottom && `border-bottom: 1px solid var(--accent4);`}
 `;
 
 export const StyledElement = {
