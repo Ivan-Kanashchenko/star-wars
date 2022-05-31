@@ -1,22 +1,7 @@
 import * as React from "react";
-import {
-  Checkbox,
-  CheckboxProps,
-  FormControlLabel,
-  withStyles,
-} from "@material-ui/core";
-import { theme } from "../../../theme";
+import { FormControlLabel } from "@material-ui/core";
 import { FormikValues } from "formik";
-
-const StyledCheckbox = withStyles({
-  root: {
-    color: theme.primary3,
-    "&$checked": {
-      color: theme.primary3,
-    },
-  },
-  checked: {},
-})((props: CheckboxProps) => <Checkbox color="default" {...props} />);
+import { StyledCheckbox } from "./styles";
 
 interface CustomProps {
   label: string;
@@ -33,13 +18,7 @@ export const CustomCheckbox: React.FC<CustomProps & FormikValues> = ({
   return (
     <FormControlLabel
       control={
-        <StyledCheckbox
-          size="medium"
-          name={name}
-          {...field}
-          {...props}
-          onChange={(ha) => ha}
-        />
+        <StyledCheckbox size="medium" name={name} {...field} {...props} />
       }
       label={label}
     />

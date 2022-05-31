@@ -8,13 +8,13 @@ export const useQueryStringParams = () => {
 
     //removing filter from queryString
     if (!params) {
-      const thisIsObject = Object.keys(objectFromQueryString)
+      const paramsObj = Object.keys(objectFromQueryString)
         .filter((key) => key !== name)
         .reduce((obj, key) => {
           obj[key] = objectFromQueryString[key];
           return obj;
         }, {});
-      setSearchParams(thisIsObject);
+      setSearchParams(paramsObj);
     } else {
       //adding or modification queryString
       setSearchParams(

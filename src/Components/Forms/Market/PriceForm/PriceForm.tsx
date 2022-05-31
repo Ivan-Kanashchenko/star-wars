@@ -1,26 +1,27 @@
 import * as React from "react";
 import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
+import { PriceBlockProps } from "../../../Market/FiltersBar/FiltersBlock/FiltersBlockTypes";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { MultiRangeSlider } from "../../../StyledComponents/MultiRangeSlider/MultiRangeSlider";
 import { Styled } from "./styles";
 
-export const PriceForm: React.FC = () => {
+export const PriceForm: React.FC<PriceBlockProps> = ({ data }) => {
   const { searchParams, setParams } = useQueryStringParams();
 
   const [minValue, setMinValue] = React.useState<number | null>(100);
   const [maxValue, setMaxValue] = React.useState<number | null>(500);
 
   React.useEffect(() => {
-    const isValue = searchParams.has("price");
+    const isValue = searchParams.has(data.type);
     if (isValue) {
-      const values: string[] = searchParams.get("price").split("-");
+      const values: string[] = searchParams.get(data.type).split("-");
       setMinValue(Number(values[0]));
       setMaxValue(Number(values[1]));
     }
   }, []);
 
   const handleSubmit = () => {
-    setParams("price", `${minValue.toString()}-${maxValue.toString()}`);
+    setParams(data.type, `${minValue.toString()}-${maxValue.toString()}`);
   };
 
   return (
