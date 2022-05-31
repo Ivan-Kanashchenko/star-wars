@@ -5,13 +5,22 @@ import { MultiRangeSlider } from "../../../StyledComponents/MultiRangeSlider/Mul
 import { Styled } from "./styles";
 
 export const PriceForm: React.FC = () => {
-  // const { searchParams, setSearchParams } = useQueryStringFilters();
+  const { searchParams, setParams } = useQueryStringParams();
 
   const [minValue, setMinValue] = React.useState<number | null>(100);
   const [maxValue, setMaxValue] = React.useState<number | null>(500);
 
+  React.useEffect(() => {
+    const isValue = searchParams.has("price");
+    if (isValue) {
+      const values: string[] = searchParams.get("price").split("-");
+      setMinValue(Number(values[0]));
+      setMaxValue(Number(values[1]));
+    }
+  }, []);
+
   const handleSubmit = () => {
-    // setSearchParams({ price: `${minValue.toString()}-${maxValue.toString()}` });
+    setParams("price", `${minValue.toString()}-${maxValue.toString()}`);
   };
 
   return (
@@ -20,16 +29,18 @@ export const PriceForm: React.FC = () => {
         <Styled.Input
           type="number"
           value={minValue}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setMinValue(+e.target.value)
-          }
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            const value = Number(e.target.value);
+            value === 0 ? setMinValue(null) : setMinValue(+e.target.value);
+          }}
         />
         <Styled.Input
           type="number"
           value={maxValue}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setMaxValue(+e.target.value)
-          }
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+            const value = Number(e.target.value);
+            value === 0 ? setMaxValue(null) : setMaxValue(+e.target.value);
+          }}
         />
         <Styled.SquareButton onClick={handleSubmit}>OK</Styled.SquareButton>
       </Styled.InputContainer>

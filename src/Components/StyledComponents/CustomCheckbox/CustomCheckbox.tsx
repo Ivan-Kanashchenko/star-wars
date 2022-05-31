@@ -8,7 +8,7 @@ import {
 import { theme } from "../../../theme";
 import { FormikValues } from "formik";
 
-const StyledMaterialCheckbox = withStyles({
+const StyledCheckbox = withStyles({
   root: {
     color: theme.primary3,
     "&$checked": {
@@ -28,18 +28,17 @@ export const CustomCheckbox: React.FC<CustomProps & FormikValues> = ({
   label,
   name,
   field,
-  active,
   ...props
 }) => {
   return (
     <FormControlLabel
       control={
-        <StyledMaterialCheckbox
-          // checked={active}
+        <StyledCheckbox
           size="medium"
           name={name}
           {...field}
           {...props}
+          onChange={(ha) => ha}
         />
       }
       label={label}

@@ -18,7 +18,6 @@ const Container = styled.div`
 const Accordion = withStyles({
   root: {
     backgroundColor: "transparent",
-    // border: "1px solid rgba(0, 0, 0, .125)",
     margin: 0,
     padding: 0,
     boxShadow: "none",
@@ -29,7 +28,6 @@ const Accordion = withStyles({
       display: "none",
     },
     "&$expanded": {
-      // margin: "auto",
       margin: 0,
       padding: 0,
     },
@@ -40,7 +38,6 @@ const Accordion = withStyles({
 const AccordionSummary = withStyles({
   root: {
     backgroundColor: "transparent",
-    // borderBottom: "1px solid rgba(0, 0, 0, .125)",
     marginBottom: -1,
     minHeight: 25,
     padding: 0,
@@ -62,7 +59,6 @@ const AccordionSummary = withStyles({
 const AccordionDetails = withStyles({
   root: {
     backgroundColor: "transparent",
-    // border: "1px solid rgba(0, 0, 0, .125)",
     margin: 0,
     padding: 0,
     boxShadow: "none",
@@ -73,7 +69,6 @@ const AccordionDetails = withStyles({
       display: "none",
     },
     "&$expanded": {
-      // margin: "auto",
       margin: 0,
       padding: 0,
     },

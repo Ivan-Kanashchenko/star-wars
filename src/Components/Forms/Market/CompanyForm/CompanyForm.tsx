@@ -15,8 +15,6 @@ export const CompanyForm: React.FC = () => {
         company: searchParams.get("company") || [],
       }}
       onSubmit={(values) => {
-        // eslint-disable-next-line no-alert
-        // alert(JSON.stringify(values, null, 2));
         setParams("company", values.company.toString());
       }}
     >

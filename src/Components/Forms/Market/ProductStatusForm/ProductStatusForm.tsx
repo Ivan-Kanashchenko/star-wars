@@ -15,7 +15,6 @@ export const ProductStatusForm: React.FC = () => {
         stock: searchParams.get("stock") || [],
       }}
       onSubmit={(values) => {
-        // eslint-disable-next-line no-alert
         setParams("stock", values.stock.toString());
       }}
     >

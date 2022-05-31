@@ -47,21 +47,27 @@ export const MultiRangeSlider: React.FC<{
   setMinValue: (arg: number) => void;
   setMaxValue: (arg: number) => void;
 }> = ({ minValue, maxValue, setMinValue, setMaxValue }) => {
-  const setValues = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.target.ariaLabel === "Maximum price" &&
-      setMaxValue(Number(e.target.ariaValueNow));
-    e.target.ariaLabel === "Minimum price" &&
-      setMinValue(Number(e.target.ariaValueNow));
+  const min = 0;
+  const max = 5000;
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    newValue: number | number[]
+  ) => {
+    setMaxValue(newValue[1]);
+    setMinValue(newValue[0]);
   };
+
   return (
     <CustomSlider
       getAriaLabel={(index) =>
         index === 0 ? "Minimum price" : "Maximum price"
       }
-      min={0}
-      max={5000}
-      defaultValue={[minValue, maxValue]}
-      onChange={setValues}
+      min={min}
+      max={max}
+      value={[minValue, maxValue]}
+      defaultValue={[min, max]}
+      onChange={handleChange}
     />
   );
 };

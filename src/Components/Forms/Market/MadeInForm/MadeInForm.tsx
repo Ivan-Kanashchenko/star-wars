@@ -15,8 +15,6 @@ export const MadeInForm: React.FC = () => {
           country: searchParams.get("country") || [],
         }}
         onSubmit={(values) => {
-          // eslint-disable-next-line no-alert
-          // alert(JSON.stringify(values, null, 2));
           setParams("country", values.country.toString());
         }}
       >
@@ -25,10 +23,21 @@ export const MadeInForm: React.FC = () => {
             onSubmit={handleSubmit}
             onChange={(e) => {
               e.preventDefault();
+              // e.stopPropagation();
               handleSubmit();
             }}
           >
             <StyledElement.Section borderTop>
+              <Field
+                name="country"
+                value="Vacanda"
+                type="checkbox"
+                label={"Vacanda"}
+                component={CustomCheckbox}
+                checked={
+                  isCountry && searchParams.get("country").includes("Vacanda")
+                }
+              />
               <Field
                 name="country"
                 value="Ukraine"
