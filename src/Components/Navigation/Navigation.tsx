@@ -30,7 +30,7 @@ export const Navigation = () => {
         link: "/planets",
       },
       {
-        id: 3,
+        id: 4,
         name: "market",
         link: "/market",
       },

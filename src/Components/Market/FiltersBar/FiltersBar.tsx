@@ -36,13 +36,13 @@ export const FiltersBar: React.FC = () => {
       </StyledElement.Section>
 
       <StyledElement.Section borderTop>
-        <FiltersBlock data={types} title={countries.title}>
+        <FiltersBlock data={types} title={types.title}>
           <CheckboxFiltersForm data={types} />
         </FiltersBlock>
       </StyledElement.Section>
 
       <StyledElement.Section borderTop borderBottom>
-        <FiltersBlock data={statuses} title={countries.title}>
+        <FiltersBlock data={statuses} title={statuses.title}>
           <CheckboxFiltersForm data={statuses} />
         </FiltersBlock>
       </StyledElement.Section>
