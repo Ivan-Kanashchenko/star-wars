@@ -9,14 +9,14 @@ export const Market: React.FC = () => {
     <Styled.Container>
       <FiltersBar />
       <Styled.Goods>
-        {data.map((item) => (
+        {data.map((card) => (
           <MarketCard
-            key={item.id}
-            title={item.title}
-            image={item.image}
-            price={item.price}
-            salePrice={item.salePrice}
-            inStock={item.inStock}
+            key={card.id}
+            title={card.title}
+            image={card.image}
+            price={card.price}
+            salePrice={card.salePrice}
+            inStock={card.inStock}
           />
         ))}
       </Styled.Goods>

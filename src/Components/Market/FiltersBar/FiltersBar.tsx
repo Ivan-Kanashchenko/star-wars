@@ -8,7 +8,7 @@ import {
   prices,
   statuses,
   types,
-} from "../../../config/marketFiltersConfig";
+} from "../../../market/config/filtersConfig";
 import { FiltersBlock } from "./FiltersBlock/FiltersBlock";
 import { CheckboxFiltersForm } from "../../Forms/Market/CheckboxFiltersForm/CheckboxFiltersForm";
 
