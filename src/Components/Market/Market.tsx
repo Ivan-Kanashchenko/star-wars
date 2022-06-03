@@ -1,15 +1,23 @@
 import * as React from "react";
-import { data } from "../../market/data/data";
+import { useMarketData } from "../../customHooks/useMarketData";
 import { MarketCard } from "../StyledComponents/Cards/MarketCard/MarketCard";
 import { FiltersBar } from "./FiltersBar/FiltersBar";
 import { Styled } from "./styles";
 
 export const Market: React.FC = () => {
+  const { state } = useMarketData();
+
+  const [marketData, setMarketData] = React.useState(state);
+
+  React.useEffect(() => {
+    setMarketData(state);
+  }, [state]);
+
   return (
     <Styled.Container>
       <FiltersBar />
       <Styled.Goods>
-        {data.map((card) => (
+        {marketData.map((card) => (
           <MarketCard
             key={card.id}
             title={card.title}

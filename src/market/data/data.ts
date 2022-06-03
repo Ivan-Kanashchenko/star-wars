@@ -5,13 +5,16 @@ import set5in1 from "../img/256305483-removebg-preview.png";
 import set6in1 from "../img/256305498-removebg-preview.png";
 import interactive from "../img/248052998-removebg-preview.png";
 
-interface serverdata {
+export interface serverdata {
   id: number;
   title: string;
   image: string;
   price: number;
   salePrice: number;
+  country: string;
+  company: string;
   inStock: boolean;
+  type: string;
 }
 
 export const data: serverdata[] = [
@@ -22,7 +25,10 @@ export const data: serverdata[] = [
     image: yoda,
     price: 1678,
     salePrice: 1449,
+    country: "Ukraine",
+    company: "rozetka",
     inStock: true,
+    type: "single",
   },
   {
     id: 2,
@@ -31,7 +37,10 @@ export const data: serverdata[] = [
     image: yoda,
     price: 1599,
     salePrice: 1149,
+    country: "Ukraine",
+    company: "rozetka",
     inStock: true,
+    type: "single",
   },
   {
     id: 3,
@@ -39,7 +48,10 @@ export const data: serverdata[] = [
     image: veider,
     price: 399,
     salePrice: 319,
+    country: "Ukraine",
+    company: "funnyBunny",
     inStock: true,
+    type: "single",
   },
   {
     id: 4,
@@ -48,7 +60,10 @@ export const data: serverdata[] = [
     image: soldier,
     price: 399,
     salePrice: 319,
+    country: "China",
+    company: "funnyBunny",
     inStock: true,
+    type: "single",
   },
   {
     id: 5,
@@ -57,7 +72,10 @@ export const data: serverdata[] = [
     image: set5in1,
     price: 549,
     salePrice: 429,
+    country: "China",
+    company: "Lucas Art",
     inStock: true,
+    type: "set",
   },
   {
     id: 6,
@@ -66,7 +84,10 @@ export const data: serverdata[] = [
     image: set6in1,
     price: 549,
     salePrice: 479,
+    country: "China",
+    company: "Lucas Art",
     inStock: true,
+    type: "set",
   },
   {
     id: 9,
@@ -75,7 +96,10 @@ export const data: serverdata[] = [
     image: interactive,
     price: 4499,
     salePrice: 2999,
+    country: "Germany",
+    company: "Lucas Art",
     inStock: false,
+    type: "single",
   },
   {
     id: 8,
@@ -83,7 +107,10 @@ export const data: serverdata[] = [
     image: yoda,
     price: 1599,
     salePrice: 1599,
+    country: "Germany",
+    company: "Lucas Art",
     inStock: true,
+    type: "single",
   },
   {
     id: 7,
@@ -91,6 +118,9 @@ export const data: serverdata[] = [
     image: yoda,
     price: 1759,
     salePrice: 1671,
+    country: "Vietnam",
+    company: "Lucas Art",
     inStock: true,
+    type: "single",
   },
 ];
