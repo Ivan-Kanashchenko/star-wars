@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import logo from "../../assets/logo/logo.png";
-import headerBackground from "../../assets/backgrounds/headerBackground.jpeg";
 import { Link } from "react-router-dom";
+import headerBackground from "../../assets/backgrounds/headerBackground.jpeg";
+import logo from "../../assets/logo/logo.png";
+import styled from "styled-components";
 
 const Header = styled.header`
   background-image: url(${headerBackground});

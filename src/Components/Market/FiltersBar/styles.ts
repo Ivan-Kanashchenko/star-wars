@@ -1,8 +1,8 @@
-import { withStyles } from "@material-ui/core";
 import MuiAccordion from "@material-ui/core/Accordion";
-import MuiAccordionSummary from "@material-ui/core/AccordionSummary";
 import MuiAccordionDetails from "@material-ui/core/AccordionDetails";
+import MuiAccordionSummary from "@material-ui/core/AccordionSummary";
 import styled from "styled-components";
+import { withStyles } from "@material-ui/core";
 
 const Container = styled.div`
   background: var(--primary4);

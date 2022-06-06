@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Checkbox, CheckboxProps, withStyles } from "@material-ui/core";
 import { theme } from "../../../theme";
+import { Checkbox, CheckboxProps, withStyles } from "@material-ui/core";
 
 export const StyledCheckbox = withStyles({
   root: {

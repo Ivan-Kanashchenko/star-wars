@@ -31,11 +31,17 @@
         }
     },
     "rules": {
+        "sort-imports": ["error", {
+            "ignoreCase": false,
+            "ignoreDeclarationSort": false,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["all", "single", "multiple", "none"],
+            "allowSeparatedGroups": false
+        }],
         "no-console": ["error", { "allow": ["warn", "error"] }],
         "no-alert":"error",
         "no-debugger":"error",
         "no-var":"error",
-        "sort-imports": ["error", { "memberSyntaxSortOrder": ["all", "single", "multiple", "none"] }],
         "@typescript-eslint/no-unused-vars": "warn",
         "@typescript-eslint/member-ordering": "warn",
         "react/jsx-uses-vars": "error",

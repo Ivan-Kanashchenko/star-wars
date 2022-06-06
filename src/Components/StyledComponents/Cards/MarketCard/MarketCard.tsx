@@ -1,7 +1,6 @@
 import * as React from "react";
-import { FC } from "react";
-import { getDiscountValue } from "../../../../helpers/getDiscountValue/getDiscountValue";
 import { Styled } from "./styles";
+import { getDiscountValue } from "../../../../helpers/getDiscountValue/getDiscountValue";
 
 interface MarketCardProps {
   title: string;
@@ -11,7 +10,7 @@ interface MarketCardProps {
   inStock: boolean;
 }
 
-export const MarketCard: FC<MarketCardProps> = ({
+export const MarketCard: React.FC<MarketCardProps> = ({
   title,
   image,
   price,

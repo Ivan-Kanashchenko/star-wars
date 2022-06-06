@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Field, Form, Formik } from "formik";
 import { CustomCheckbox } from "../../../StyledComponents/CustomCheckbox/CustomCheckbox";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
+import { Field, Form, Formik } from "formik";
 
 interface FormProps {
   data: {

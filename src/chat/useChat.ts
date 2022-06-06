@@ -1,17 +1,17 @@
-import { useAuth } from "./../auth/AuthContext";
+import * as React from "react";
 import { db } from "../firebase/firebaseConfig";
-import { useState, useEffect } from "react";
+import { useAuth } from "./../auth/AuthContext";
 import {
-  collection,
-  addDoc,
-  serverTimestamp,
-  query,
-  collectionGroup,
-  where,
-  orderBy,
   DocumentData,
-  onSnapshot,
   Timestamp,
+  addDoc,
+  collection,
+  collectionGroup,
+  onSnapshot,
+  orderBy,
+  query,
+  serverTimestamp,
+  where,
 } from "firebase/firestore";
 
 export type MessageListType = {
@@ -25,9 +25,9 @@ export type MessageListType = {
 export const useChat = () => {
   const { userId, userName } = useAuth();
 
-  const [messagesList, setMessagesList] = useState<DocumentData[]>([]);
+  const [messagesList, setMessagesList] = React.useState<DocumentData[]>([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const q = query(
       collectionGroup(db, "message"),
       where("type", "==", "chat_message"),

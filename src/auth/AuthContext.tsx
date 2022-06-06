@@ -1,16 +1,16 @@
-import { useContext, useState } from "react";
 import * as React from "react";
 import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  User,
-  signOut,
   FacebookAuthProvider,
   GithubAuthProvider,
+  GoogleAuthProvider,
+  User,
   createUserWithEmailAndPassword,
+  getAuth,
   signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
 } from "firebase/auth";
+import { useContext, useState } from "react";
 
 const AuthContext = React.createContext(null);
 

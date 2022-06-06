@@ -1,12 +1,10 @@
 import * as React from "react";
-import { FC } from "react";
-import { useState } from "react";
-import { usePlanetsData } from "../../../../customHooks/apiHooks";
 import { Loading } from "../../../StyledComponents/Loading/Loading";
 import { StyledActorsCard } from "../../../StyledComponents/Cards/ActorsCard";
 import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { useLocation } from "react-router-dom";
+import { usePlanetsData } from "../../../../customHooks/apiHooks";
 
 type PlanetItemTypes = {
   climate: string;
@@ -17,7 +15,7 @@ type PlanetItemTypes = {
   url: string;
 };
 
-export const PlanetItem: FC<PlanetItemTypes> = ({
+export const PlanetItem: React.FC<PlanetItemTypes> = ({
   climate,
   created,
   diameter,
@@ -25,7 +23,7 @@ export const PlanetItem: FC<PlanetItemTypes> = ({
   name,
   url,
 }) => {
-  const [residents, setResidents] = useState(false);
+  const [residents, setResidents] = React.useState(false);
 
   const toggleDetails = () => {
     setResidents((prevState) => {
@@ -37,7 +35,7 @@ export const PlanetItem: FC<PlanetItemTypes> = ({
 
   const { pathname } = useLocation();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const toggleLoading = (loading: boolean) => {
     setIsLoading(loading);
@@ -85,7 +83,7 @@ type PlanetsTypes = {
   toggleLoading: (arg0: boolean) => void;
 };
 
-const Planets: FC<PlanetsTypes> = ({ url, toggleLoading }) => {
+const Planets: React.FC<PlanetsTypes> = ({ url, toggleLoading }) => {
   const { status, data, error } = usePlanetsData(url);
 
   const { pathname } = useLocation();

@@ -1,18 +1,17 @@
 import * as React from "react";
-import { FC, useEffect, useRef } from "react";
 import { DocumentData } from "firebase/firestore";
+import { Styled } from "./styles";
 import { dateCreator } from "../../../helpers/dateCreator/dateCreator";
 import { useAuth } from "../../../auth/AuthContext";
-import { Styled } from "./styles";
 
-export const ChatWindow: FC<{ messagesList: DocumentData[] }> = ({
+export const ChatWindow: React.FC<{ messagesList: DocumentData[] }> = ({
   messagesList,
 }) => {
   const { userId } = useAuth();
 
-  const messagesEndRef = useRef(null);
+  const messagesEndRef = React.useRef(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     scrollToBottom();
   }, [messagesList]);
 

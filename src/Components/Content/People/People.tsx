@@ -1,8 +1,8 @@
 import * as React from "react";
-import { usePeopleData } from "../../../customHooks/apiHooks";
-import { StyledCard } from "../../StyledComponents/Cards/MainCard";
 import { Loading } from "../../StyledComponents/Loading/Loading";
 import { PeopleItem } from "./PeopleItem/PeopleItem";
+import { StyledCard } from "../../StyledComponents/Cards/MainCard";
+import { usePeopleData } from "../../../customHooks/apiHooks";
 
 export const People: React.FC = () => {
   const { status, data, error } = usePeopleData();
