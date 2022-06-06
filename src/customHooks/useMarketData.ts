@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { data, serverdata } from "../market/data/data";
+import { data, IServerdata } from "../market/data/data";
 import { getFilteredData } from "../market/utils/getFilteredData";
 import { useQueryStringParams } from "./useQueryStringParams";
 
@@ -24,7 +24,7 @@ export const useMarketData = () => {
     }
   }, [searchParams]);
 
-  const filter = (searchParams: URLSearchParams, data: serverdata[]) => {
+  const filter = (searchParams: URLSearchParams, data: IServerdata[]) => {
     const filters: IDatafilters = Object.fromEntries(searchParams.entries());
     return data.filter((element) => getFilteredData(element, filters));
   };

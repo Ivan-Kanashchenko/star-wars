@@ -1,7 +1,10 @@
 import { IDatafilters } from "../../customHooks/useMarketData";
-import { serverdata } from "../data/data";
+import { IServerdata } from "../data/data";
 
-export const getFilteredData = (element: serverdata, filters: IDatafilters) => {
+export const getFilteredData = (
+  element: IServerdata,
+  filters: IDatafilters
+) => {
   if (filters.company) {
     if (!filters.company.includes(element.company)) return false;
   }

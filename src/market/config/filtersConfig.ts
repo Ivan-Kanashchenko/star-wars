@@ -20,8 +20,8 @@ export const companies = {
       id: 5256,
       name: "company",
       type: "checkbox",
-      label: "lucasArt",
-      value: "Lucas Art",
+      label: "Lucas Art",
+      value: "lucasArt",
     },
   ],
 };

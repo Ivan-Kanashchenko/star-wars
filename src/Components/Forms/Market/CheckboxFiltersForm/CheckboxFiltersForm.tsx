@@ -25,7 +25,7 @@ export const CheckboxFiltersForm: React.FC<FormProps> = ({ data }) => {
   return (
     <Formik
       initialValues={{
-        [data.type]: searchParams.get(data.type) || [],
+        [data.type]: [searchParams.get(data.type)] || [],
       }}
       onSubmit={(values: { [x: string]: { toString: () => string } }) =>
         setParams(data.type, values[data.type].toString())

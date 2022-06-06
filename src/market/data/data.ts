@@ -5,7 +5,7 @@ import set5in1 from "../img/256305483-removebg-preview.png";
 import set6in1 from "../img/256305498-removebg-preview.png";
 import interactive from "../img/248052998-removebg-preview.png";
 
-export interface serverdata {
+export interface IServerdata {
   id: number;
   title: string;
   image: string;
@@ -17,7 +17,7 @@ export interface serverdata {
   type: string;
 }
 
-export const data: serverdata[] = [
+export const data: IServerdata[] = [
   {
     id: 1,
     title:
@@ -73,7 +73,7 @@ export const data: serverdata[] = [
     price: 549,
     salePrice: 429,
     country: "China",
-    company: "Lucas Art",
+    company: "lucasArt",
     inStock: true,
     type: "set",
   },
@@ -85,7 +85,7 @@ export const data: serverdata[] = [
     price: 549,
     salePrice: 479,
     country: "China",
-    company: "Lucas Art",
+    company: "lucasArt",
     inStock: true,
     type: "set",
   },
@@ -97,7 +97,7 @@ export const data: serverdata[] = [
     price: 4499,
     salePrice: 2999,
     country: "Germany",
-    company: "Lucas Art",
+    company: "lucasArt",
     inStock: false,
     type: "single",
   },
@@ -108,7 +108,7 @@ export const data: serverdata[] = [
     price: 1599,
     salePrice: 1599,
     country: "Germany",
-    company: "Lucas Art",
+    company: "lucasArt",
     inStock: true,
     type: "single",
   },
@@ -119,7 +119,7 @@ export const data: serverdata[] = [
     price: 1759,
     salePrice: 1671,
     country: "Vietnam",
-    company: "Lucas Art",
+    company: "lucasArt",
     inStock: true,
     type: "single",
   },
