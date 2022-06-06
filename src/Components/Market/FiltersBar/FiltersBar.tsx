@@ -2,7 +2,7 @@ import * as React from "react";
 import { CheckboxFiltersForm } from "../../Forms/Market/CheckboxFiltersForm/CheckboxFiltersForm";
 import { FiltersBlock } from "./FiltersBlock/FiltersBlock";
 import { PriceForm } from "../../Forms/Market/PriceForm/PriceForm";
-import { Styled } from "../styles";
+import { Styled } from "./styles";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
 import {
   companies,
