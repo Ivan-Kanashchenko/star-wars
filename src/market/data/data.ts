@@ -1,9 +1,9 @@
-import soldier from "../img/256305519.jpeg";
-import yoda from "../img/141304833-removebg-preview.png";
-import veider from "../img/256305530-removebg-preview.png";
+import interactive from "../img/248052998-removebg-preview.png";
 import set5in1 from "../img/256305483-removebg-preview.png";
 import set6in1 from "../img/256305498-removebg-preview.png";
-import interactive from "../img/248052998-removebg-preview.png";
+import soldier from "../img/256305519.jpeg";
+import veider from "../img/256305530-removebg-preview.png";
+import yoda from "../img/141304833-removebg-preview.png";
 
 export interface IServerdata {
   id: number;

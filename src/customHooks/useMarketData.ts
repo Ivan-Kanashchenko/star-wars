@@ -1,8 +1,8 @@
 import * as React from "react";
-import { useEffect } from "react";
-import { data, IServerdata } from "../market/data/data";
 import { getFilteredData } from "../market/utils/getFilteredData";
+import { useEffect } from "react";
 import { useQueryStringParams } from "./useQueryStringParams";
+import { IServerdata, data } from "../market/data/data";
 
 export interface IDatafilters {
   price?: string;

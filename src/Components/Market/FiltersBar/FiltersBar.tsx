@@ -1,7 +1,9 @@
 import * as React from "react";
+import { CheckboxFiltersForm } from "../../Forms/Market/CheckboxFiltersForm/CheckboxFiltersForm";
+import { FiltersBlock } from "./FiltersBlock/FiltersBlock";
 import { PriceForm } from "../../Forms/Market/PriceForm/PriceForm";
+import { Styled } from "../styles";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
-import { Styled } from "./styles";
 import {
   companies,
   countries,
@@ -9,8 +11,6 @@ import {
   statuses,
   types,
 } from "../../../market/config/filtersConfig";
-import { FiltersBlock } from "./FiltersBlock/FiltersBlock";
-import { CheckboxFiltersForm } from "../../Forms/Market/CheckboxFiltersForm/CheckboxFiltersForm";
 
 export const FiltersBar: React.FC = () => {
   return (
