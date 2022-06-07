@@ -13,6 +13,7 @@ import { Navigation } from "../Navigation/Navigation";
 import { People } from "../Content/People";
 import { Planets } from "../Content/Planets";
 import { Portal } from "../Portal/Portal";
+import { ProductPage } from "../ProductPage/ProductPage";
 import { Providers } from "../../providers/Providers";
 import { Register } from "../Register/Register";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
@@ -29,11 +30,11 @@ export const App = () => {
         <Content>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registration" element={<Register />} />
-            <Route path="/films" element={<Films />} />
+            <Route path="login" element={<Login />} />
+            <Route path="registration" element={<Register />} />
+            <Route path="films" element={<Films />} />
             <Route
-              path="/people"
+              path="people"
               element={
                 <RequireAuth>
                   <People />
@@ -41,14 +42,15 @@ export const App = () => {
               }
             />
             <Route
-              path="/planets"
+              path="planets"
               element={
                 <RequireAuth>
                   <Planets />
                 </RequireAuth>
               }
             />
-            <Route path="/market" element={<Market />} />
+            <Route path="market" element={<Market />}></Route>
+            <Route path="market/:id" element={<ProductPage />} />
           </Routes>
         </Content>
         <Chat />

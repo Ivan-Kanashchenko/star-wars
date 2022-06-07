@@ -3,6 +3,7 @@ import { Styled } from "./styles";
 import { getDiscountValue } from "../../../../helpers/getDiscountValue/getDiscountValue";
 
 interface MarketCardProps {
+  id: number;
   title: string;
   image: string;
   price: number;
@@ -11,6 +12,7 @@ interface MarketCardProps {
 }
 
 export const MarketCard: React.FC<MarketCardProps> = ({
+  id,
   title,
   image,
   price,
@@ -26,9 +28,9 @@ export const MarketCard: React.FC<MarketCardProps> = ({
           <Styled.Image src={image} inStock={inStock} />
         </Styled.ImageContainer>
         <Styled.Title>
-          <Styled.Link href="#" inStock={inStock}>
+          <Styled.RouterLink to={`${id}`} inStock={inStock}>
             {title}
-          </Styled.Link>
+          </Styled.RouterLink>
         </Styled.Title>
         {!!discount && <Styled.OldPrice>{price}$</Styled.OldPrice>}
         <Styled.Price discount={!!discount}>{salePrice}$</Styled.Price>
