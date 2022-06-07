@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import loading from "../../../assets/loading/loader_empire.png";
+import styled from "styled-components";
 
 const Loading = styled.div`
   background: url(${loading}) 0 0/100% 100% no-repeat;

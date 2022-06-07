@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useMemo } from "react";
 import { CustomNavLink } from "../StyledComponents/CustomNavLink/CustomNavLink";
 import { Styled } from "./styles";
 
@@ -11,7 +10,7 @@ type LinksTypes = {
 }[];
 
 export const Navigation = () => {
-  const links = useMemo((): LinksTypes => {
+  const links = React.useMemo((): LinksTypes => {
     return [
       {
         id: 1,
@@ -30,7 +29,7 @@ export const Navigation = () => {
         link: "/planets",
       },
       {
-        id: 3,
+        id: 4,
         name: "market",
         link: "/market",
       },

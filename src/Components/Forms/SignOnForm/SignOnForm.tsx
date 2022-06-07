@@ -1,17 +1,16 @@
 import * as React from "react";
-import { FC } from "react";
 import { Formik } from "formik";
+import { Styled } from "./styles";
+import { StyledElement } from "../../StyledComponents/Elements/Elements";
+import { useAuth } from "../../../auth/AuthContext";
 import {
   isValidEmail,
   isValidPassword,
   isValidPasswordConfirm,
   isValidUserName,
 } from "../../../helpers/validators/validators";
-import { Styled } from "./styles";
-import { StyledElement } from "../../StyledComponents/Elements/Elements";
-import { useAuth } from "../../../auth/AuthContext";
 
-export const SignOnForm: FC<{ message?: string }> = ({ message }) => {
+export const SignOnForm: React.FC<{ message?: string }> = ({ message }) => {
   const { emailRegistration } = useAuth();
 
   return (

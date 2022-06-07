@@ -1,24 +1,23 @@
 import * as React from "react";
-import { Content } from "../Content/Content";
-import { Navigation } from "../Navigation/Navigation";
-import { Header } from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 import { Chat } from "../Chat/Chat";
-import { Route, Routes } from "react-router-dom";
-import { Register } from "../Register/Register";
+import { Content } from "../Content/Content";
+import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
 import { Films } from "../Content/Films";
-import { People } from "../Content/People";
-import { Planets } from "../Content/Planets";
+import { Footer } from "../Footer/Footer";
+import { Header } from "../Header/Header";
 import { Home } from "../Home/Home";
 import { Login } from "../Login/Login";
-import { RequireAuth } from "../RequireAuth/RequireAuth";
-import { Providers } from "../../providers/Providers";
-import { Styled } from "./styles";
-import { Modal } from "../Modal/Modal";
-import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
-import { Portal } from "../Portal/Portal";
 import { Market } from "../Market/Market";
-
+import { Modal } from "../Modal/Modal";
+import { Navigation } from "../Navigation/Navigation";
+import { People } from "../Content/People";
+import { Planets } from "../Content/Planets";
+import { Portal } from "../Portal/Portal";
+import { Providers } from "../../providers/Providers";
+import { Register } from "../Register/Register";
+import { RequireAuth } from "../RequireAuth/RequireAuth";
+import { Styled } from "./styles";
+import { Route, Routes } from "react-router-dom";
 
 export const App = () => {
   return (

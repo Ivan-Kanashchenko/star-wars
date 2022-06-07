@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Formik, FormikValues, Field } from "formik";
-import { useChat } from "../../../chat/useChat";
 import { Styled } from "./styles";
+import { useChat } from "../../../chat/useChat";
+import { Field, Formik, FormikValues } from "formik";
 
 const ChatForm: React.FC = () => {
   const { sendMessage } = useChat();

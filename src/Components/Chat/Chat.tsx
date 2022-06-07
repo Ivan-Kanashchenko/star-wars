@@ -1,17 +1,16 @@
 import * as React from "react";
-import { useState } from "react";
-import { ChatHeader } from "./ChatHeader/ChatHeader";
-import { useAuth } from "../../auth/AuthContext";
 import { ChatForm } from "../Forms";
+import { ChatHeader } from "./ChatHeader/ChatHeader";
 import { ChatWindow } from "./ChatWindow/ChatWindow";
-import { useChat } from "../../chat/useChat";
 import { Styled } from "./styles";
+import { useAuth } from "../../auth/AuthContext";
+import { useChat } from "../../chat/useChat";
 
 export const Chat = () => {
   const { userId } = useAuth();
   const { messagesList } = useChat();
 
-  const [openChat, setOpenChat] = useState(false);
+  const [openChat, setOpenChat] = React.useState(false);
 
   const chatToggle = () => {
     setOpenChat(!openChat);

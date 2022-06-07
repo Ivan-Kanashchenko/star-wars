@@ -1,14 +1,13 @@
 import * as React from "react";
-import { FC } from "react";
 import { Formik } from "formik";
+import { Styled } from "./styles";
+import { useAuth } from "../../../auth/AuthContext";
 import {
   isValidEmail,
   isValidPassword,
 } from "../../../helpers/validators/validators";
-import { Styled } from "./styles";
-import { useAuth } from "../../../auth/AuthContext";
 
-export const SignInForm: FC = () => {
+export const SignInForm: React.FC = () => {
   const { emailAuth } = useAuth();
 
   return (

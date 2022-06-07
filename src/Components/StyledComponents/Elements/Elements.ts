@@ -12,6 +12,7 @@ const H3 = styled.h3`
 `;
 const H4 = styled.h4`
   font-size: 20px;
+  padding-bottom: 10px;
   color: var(--primary3);
 `;
 
@@ -109,6 +110,17 @@ const Button = styled.button`
   }
 `;
 
+const Section = styled.div<{ borderTop?: boolean; borderBottom?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 10px;
+  padding-bottom: 10px; */
+
+  ${({ borderTop }) => borderTop && `border-top: 1px solid var(--accent4);`}
+  ${({ borderBottom }) =>
+    borderBottom && `border-bottom: 1px solid var(--accent4);`}
+`;
+
 export const StyledElement = {
   H2,
   H3,
@@ -120,4 +132,5 @@ export const StyledElement = {
   Paragraph,
   Container,
   Button,
+  Section,
 };

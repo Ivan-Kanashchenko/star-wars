@@ -1,8 +1,7 @@
 import * as React from "react";
-import { FC } from "react";
-import { useLocation } from "react-router-dom";
 import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
+import { useLocation } from "react-router-dom";
 
 type PeopleItemTypes = {
   name: string;
@@ -14,7 +13,7 @@ type PeopleItemTypes = {
   gender: string;
 };
 
-export const PeopleItem: FC<PeopleItemTypes> = ({
+export const PeopleItem: React.FC<PeopleItemTypes> = ({
   name,
   mass,
   hair_color,

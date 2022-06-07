@@ -1,40 +1,26 @@
 import * as React from "react";
-import styled from "styled-components";
+import { FormControlLabel } from "@material-ui/core";
+import { FormikValues } from "formik";
+import { StyledCheckbox } from "./styles";
 
-interface CustomCheckboxProps {
+interface CustomProps {
   label: string;
   name: string;
+  active: boolean;
 }
 
-export const CustomCheckbox: React.FC<CustomCheckboxProps> = ({
+export const CustomCheckbox: React.FC<CustomProps & FormikValues> = ({
   label,
   name,
+  field,
+  ...props
 }) => {
   return (
-    <Styled.Container>
-      <Styled.Input type="checkbox" name={name} />
-      <Styled.Label>{label}</Styled.Label>
-    </Styled.Container>
+    <FormControlLabel
+      control={
+        <StyledCheckbox size="medium" name={name} {...field} {...props} />
+      }
+      label={label}
+    />
   );
-};
-
-const Container = styled.div`
-  margin: 5px 0;
-  justify-content: center;
-`;
-
-const Input = styled.input`
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-`;
-
-const Label = styled.label`
-  margin-left: 5px;
-`;
-
-const Styled = {
-  Container,
-  Input,
-  Label,
 };

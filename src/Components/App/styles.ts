@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle, css } from "styled-components";
 import { theme } from "../../theme";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 *{
@@ -26,6 +26,14 @@ html, body {
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 input,button,textarea {font-family: inherit;}
 input::-ms-clear{display: none;}
@@ -55,6 +63,7 @@ const App = styled.div(() => {
     --primary1: ${theme.primary1};
     --primary2: ${theme.primary2};
     --primary3: ${theme.primary3};
+    --primary4: ${theme.primary4};
     --secondary: ${theme.secondary};
     --secondary2: ${theme.secondary2};
     --accent1: ${theme.accent1};
@@ -64,6 +73,7 @@ const App = styled.div(() => {
     --accent5: ${theme.accent5};
     --accent6: ${theme.accent6};
     --accent7: ${theme.accent7};
+    --accent8: ${theme.accent8};
     background-color: var(--primary2);
     transition: 0.2s;
     display: flex;
