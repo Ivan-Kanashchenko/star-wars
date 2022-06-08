@@ -1,6 +1,9 @@
 import * as React from "react";
 import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
 import BusinessIcon from "@material-ui/icons/Business";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import { IconButton } from "@material-ui/core";
 import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import SecurityOutlinedIcon from "@material-ui/icons/SecurityOutlined";
@@ -21,6 +24,8 @@ export const ProductBuySection: React.FC<ProductBuySectionProps> = ({
   company,
   country,
 }) => {
+  const [favorite, setFavorite] = React.useState<boolean>(false);
+
   const isDiscount = salePrice < price;
   return (
     <Styled.BuyContainer>
@@ -44,7 +49,13 @@ export const ProductBuySection: React.FC<ProductBuySectionProps> = ({
           </Styled.BuyButton>
         </div>
         <div>
-          <Styled.BuyButton>add to favorites</Styled.BuyButton>
+          <IconButton onClick={() => setFavorite(!favorite)}>
+            {favorite ? (
+              <FavoriteIcon color="error" fontSize="large" />
+            ) : (
+              <FavoriteBorderIcon fontSize="large" />
+            )}
+          </IconButton>
         </div>
       </Styled.BuySection>
       <Styled.BuySection flexStart>
