@@ -22,7 +22,11 @@ const H5 = styled.h5`
   margin: 10px 0;
 `;
 
-const Ul = styled.ul<{ loginList?: boolean }>`
+const Ul = styled.ul<{
+  loginList?: boolean;
+  productCard?: boolean;
+  commentsList?: boolean;
+}>`
   padding-left: 30px;
   ${({ loginList }) =>
     loginList &&
@@ -32,9 +36,16 @@ const Ul = styled.ul<{ loginList?: boolean }>`
     justify-content: left;
     aligh-items: left;
     text-align: left;`}
+  ${({ productCard }) => productCard && `padding: 20px 0px`}
+
+  ${({ commentsList }) => commentsList && `padding: 20px 0px`}
 `;
 
-const Li = styled.li<{ loginList?: boolean; logoutButton?: boolean }>`
+const Li = styled.li<{
+  loginList?: boolean;
+  productCard?: boolean;
+  commentsList?: boolean;
+}>`
   ${({ loginList }) =>
     loginList &&
     `padding: 15px;
@@ -42,6 +53,16 @@ const Li = styled.li<{ loginList?: boolean; logoutButton?: boolean }>`
       background-color: var(--accent4);
     }
 `}
+
+  ${({ productCard }) => productCard && `padding: 5px 10px;`}
+  
+  ${({ commentsList }) =>
+    commentsList &&
+    `padding: 10px 10px;
+    border: 1px solid var(--primary3);
+    border-radius: 3px;
+    margin: 0 0 10px 0;
+    `}
 `;
 const Span = styled.span`
   ${({ theme }) => theme === "/people" && `color: var(--accent2);`}
@@ -113,8 +134,6 @@ const Button = styled.button`
 const Section = styled.div<{ borderTop?: boolean; borderBottom?: boolean }>`
   display: flex;
   flex-direction: column;
-  /* margin-top: 10px;
-  padding-bottom: 10px; */
 
   ${({ borderTop }) => borderTop && `border-top: 1px solid var(--accent4);`}
   ${({ borderBottom }) =>
