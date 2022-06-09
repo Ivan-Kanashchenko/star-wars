@@ -1,5 +1,5 @@
-import { Info } from "./Info";
 import { Image } from "./Image";
+import { Info } from "./Info";
 import styled from "styled-components";
 
 interface Props {

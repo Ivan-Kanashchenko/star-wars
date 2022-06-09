@@ -1,7 +1,7 @@
 import * as React from "react";
-import { useModal } from "../../context/ModalContext";
-import { StyledElement } from "../StyledComponents/Elements/Elements";
 import { Styled } from "./styles";
+import { StyledElement } from "../StyledComponents/Elements/Elements";
+import { useModal } from "../../context/ModalContext";
 
 interface ModalProps {
   title: string;

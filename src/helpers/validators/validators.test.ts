@@ -1,9 +1,9 @@
 import { formError } from "./../../consts/forms.errors";
 import {
-  isValidUserName,
   isValidEmail,
   isValidPassword,
   isValidPasswordConfirm,
+  isValidUserName,
 } from "./validators";
 
 describe("username validation", () => {

@@ -1,22 +1,24 @@
 import * as React from "react";
-import { Content } from "../Content/Content";
-import { Navigation } from "../Navigation/Navigation";
-import { Header } from "../Header/Header";
-import { Footer } from "../Footer/Footer";
 import { Chat } from "../Chat/Chat";
-import { Route, Routes } from "react-router-dom";
-import { Register } from "../Register/Register";
+import { Content } from "../Content/Content";
+import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
 import { Films } from "../Content/Films";
-import { People } from "../Content/People";
-import { Planets } from "../Content/Planets";
+import { Footer } from "../Footer/Footer";
+import { Header } from "../Header/Header";
 import { Home } from "../Home/Home";
 import { Login } from "../Login/Login";
-import { RequireAuth } from "../RequireAuth/RequireAuth";
-import { Providers } from "../../providers/Providers";
-import { Styled } from "./styles";
+import { Market } from "../Market/Market";
 import { Modal } from "../Modal/Modal";
-import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
+import { Navigation } from "../Navigation/Navigation";
+import { People } from "../Content/People";
+import { Planets } from "../Content/Planets";
 import { Portal } from "../Portal/Portal";
+import { ProductPage } from "../ProductPage/ProductPage";
+import { Providers } from "../../providers/Providers";
+import { Register } from "../Register/Register";
+import { RequireAuth } from "../RequireAuth/RequireAuth";
+import { Styled } from "./styles";
+import { Route, Routes } from "react-router-dom";
 
 export const App = () => {
   return (
@@ -28,11 +30,11 @@ export const App = () => {
         <Content>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registration" element={<Register />} />
-            <Route path="/films" element={<Films />} />
+            <Route path="login" element={<Login />} />
+            <Route path="registration" element={<Register />} />
+            <Route path="films" element={<Films />} />
             <Route
-              path="/people"
+              path="people"
               element={
                 <RequireAuth>
                   <People />
@@ -40,13 +42,15 @@ export const App = () => {
               }
             />
             <Route
-              path="/planets"
+              path="planets"
               element={
                 <RequireAuth>
                   <Planets />
                 </RequireAuth>
               }
             />
+            <Route path="market" element={<Market />} />
+            <Route path="market/:id" element={<ProductPage />} />
           </Routes>
         </Content>
         <Chat />

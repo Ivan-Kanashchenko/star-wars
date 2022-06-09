@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import noImage from "../../../../assets/images/no-image.png";
+import styled from "styled-components";
 
 export const Image = styled.div`
   width: 410px;

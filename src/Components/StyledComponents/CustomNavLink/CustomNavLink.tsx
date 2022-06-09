@@ -1,25 +1,25 @@
 import * as React from "react";
-import { LinkProps, useMatch, useResolvedPath } from "react-router-dom";
 import { Styled } from "./styles";
+import { LinkProps, useMatch, useResolvedPath } from "react-router-dom";
 
 type OtherProps = {
   content?: string;
 };
 
-export const CustomNavLink = ({
+export const CustomNavLink: React.FC<LinkProps & OtherProps> = ({
   children,
   to,
   content,
-}: LinkProps & OtherProps) => {
+}) => {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
 
   return (
     <div>
-      <Styled.CustomLink to={to} content={content} match={match}>
+      <Styled.CustomLink to={to} match={match}>
         {children}
       </Styled.CustomLink>
-      <Styled.LightSpan to={to} match={match} content={content} />
+      <Styled.LightSpan match={match} content={content} />
     </div>
   );
 };

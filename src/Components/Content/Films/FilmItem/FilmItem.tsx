@@ -1,11 +1,9 @@
 import * as React from "react";
-import { FC } from "react";
-import { useState } from "react";
-import { useActorsData } from "../../../../customHooks/apiHooks";
-import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
-import { StyledActorsCard } from "../../../StyledComponents/Cards/ActorsCard";
-import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { Loading } from "../../../StyledComponents/Loading/Loading";
+import { StyledActorsCard } from "../../../StyledComponents/Cards/ActorsCard";
+import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
+import { StyledElement } from "../../../StyledComponents/Elements/Elements";
+import { useActorsData } from "../../../../customHooks/apiHooks";
 import { useLocation } from "react-router-dom";
 
 type FilmItemType = {
@@ -18,7 +16,7 @@ type FilmItemType = {
   release_date: string;
 };
 
-export const FilmItem: FC<FilmItemType> = ({
+export const FilmItem: React.FC<FilmItemType> = ({
   title,
   episode_id,
   opening_crawl,
@@ -26,7 +24,7 @@ export const FilmItem: FC<FilmItemType> = ({
   producer,
   release_date,
 }) => {
-  const [actors, setActors] = useState<boolean>(false);
+  const [actors, setActors] = React.useState<boolean>(false);
 
   const toggleActors = (): void => {
     setActors((prevState) => {
@@ -37,7 +35,7 @@ export const FilmItem: FC<FilmItemType> = ({
   };
   const location = useLocation();
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const toggleLoading = (loading: boolean) => {
     setIsLoading(loading);
@@ -98,7 +96,7 @@ type ActorsTypes = {
   toggleLoading: (arg0: boolean) => void;
 };
 
-const Actors: FC<ActorsTypes> = ({ episode_id, toggleLoading }) => {
+const Actors: React.FC<ActorsTypes> = ({ episode_id, toggleLoading }) => {
   const { status, data, error } = useActorsData(episode_id);
 
   const { pathname } = useLocation();
