@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 export const useLocalStorage = (key: string) => {
   const storage = window.localStorage;
 
-  const initialData = storage.getItem(key).split(",");
+  const initialData = storage.getItem(key);
 
   const [state, setState] = useState<{ [x: string]: string } | null>({
-    [key]: initialData.toString(),
+    [key]: initialData,
   });
 
   useEffect(() => {
