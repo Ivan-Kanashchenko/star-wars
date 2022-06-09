@@ -49,7 +49,7 @@ export const App = () => {
                 </RequireAuth>
               }
             />
-            <Route path="market" element={<Market />}></Route>
+            <Route path="market" element={<Market />} />
             <Route path="market/:id" element={<ProductPage />} />
           </Routes>
         </Content>
