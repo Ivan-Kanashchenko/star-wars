@@ -6,6 +6,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import { IconButton } from "@material-ui/core";
 import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
+import { ProductBuySectionBlock } from "./ProductBuySectionBlock/ProductBySectionBlock";
 import SecurityOutlinedIcon from "@material-ui/icons/SecurityOutlined";
 import { Styled } from "./styles";
 import { useLocalStorage } from "../../../customHooks/useLocalStorage";
@@ -74,35 +75,32 @@ export const ProductBuySection: React.FC<ProductBuySectionProps> = ({
           </IconButton>
         </div>
       </Styled.BuySection>
-      <Styled.BuySection flexStart>
-        <BusinessIcon fontSize="large" />
-        <Styled.Span>Reseller:</Styled.Span>
-        <Styled.Span>{company}</Styled.Span>
-      </Styled.BuySection>
-      <Styled.BuySection flexStart>
-        <LocationOnOutlinedIcon fontSize="large" />
-        <Styled.Span>Location:</Styled.Span>
-        <Styled.Span>{country}</Styled.Span>
-      </Styled.BuySection>
-      <Styled.BuySection flexStart>
-        <LocalShippingOutlinedIcon fontSize="large" />
-        <Styled.Span>Deliver in:</Styled.Span>
-        <Styled.Span>Choose your Country</Styled.Span>
-      </Styled.BuySection>
-      <Styled.BuySection flexStart>
-        <AccountBalanceWalletOutlinedIcon fontSize="large" />
-        <Styled.Span>
-          {`Payment upon receipt of the goods, Google Pay,
-          Online card, Cashless for legal entities, Pay online with the "Pakunok Malyuka" social card,
-          Cashless for individuals, PrivatPay, Apple Pay.`}
-        </Styled.Span>
-      </Styled.BuySection>
-      <Styled.BuySection flexStart>
-        <SecurityOutlinedIcon fontSize="large" />
-        <Styled.Span>
-          Guarantee. Exchange / return of goods within 14 days.
-        </Styled.Span>
-      </Styled.BuySection>
+
+      <ProductBuySectionBlock
+        title="Seller:"
+        data={company}
+        icon={<BusinessIcon fontSize="large" />}
+      />
+      <ProductBuySectionBlock
+        title="Location:"
+        data={country}
+        icon={<LocationOnOutlinedIcon fontSize="large" />}
+      />
+      <ProductBuySectionBlock
+        title="Deliver in:"
+        data="Choose your Country"
+        icon={<LocalShippingOutlinedIcon fontSize="large" />}
+      />
+      <ProductBuySectionBlock
+        data={`Payment upon receipt of the goods, Google Pay,
+        Online card, Cashless for legal entities, Pay online with the "Pakunok Malyuka" social card,
+        Cashless for individuals, PrivatPay, Apple Pay.`}
+        icon={<AccountBalanceWalletOutlinedIcon fontSize="large" />}
+      />
+      <ProductBuySectionBlock
+        data="Guarantee. Exchange / return of goods within 14 days."
+        icon={<SecurityOutlinedIcon fontSize="large" />}
+      />
     </Styled.BuyContainer>
   );
 };
