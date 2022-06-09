@@ -8,8 +8,10 @@ import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined"
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import SecurityOutlinedIcon from "@material-ui/icons/SecurityOutlined";
 import { Styled } from "./styles";
+import { useLocalStorage } from "../../../customHooks/useLocalStorage";
 
 interface ProductBuySectionProps {
+  id: number;
   salePrice: number;
   price: number;
   inStock: boolean;
@@ -18,15 +20,29 @@ interface ProductBuySectionProps {
 }
 
 export const ProductBuySection: React.FC<ProductBuySectionProps> = ({
+  id,
   salePrice,
   price,
   inStock,
   company,
   country,
 }) => {
-  const [favorite, setFavorite] = React.useState<boolean>(false);
+  const favorites = "favorites";
+
+  const { state, setData, removeData } = useLocalStorage(favorites);
+
+  const toggleFavorites = () => {
+    if (!isFavorites) {
+      setData(favorites, id);
+    } else {
+      removeData(favorites, id);
+    }
+  };
+
+  const isFavorites = state[favorites]?.includes(id.toString());
 
   const isDiscount = salePrice < price;
+
   return (
     <Styled.BuyContainer>
       <Styled.BuySection spaceEvenly>
@@ -49,8 +65,8 @@ export const ProductBuySection: React.FC<ProductBuySectionProps> = ({
           </Styled.BuyButton>
         </div>
         <div>
-          <IconButton onClick={() => setFavorite(!favorite)}>
-            {favorite ? (
+          <IconButton onClick={toggleFavorites}>
+            {isFavorites ? (
               <FavoriteIcon color="error" fontSize="large" />
             ) : (
               <FavoriteBorderIcon fontSize="large" />

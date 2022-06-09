@@ -5,7 +5,7 @@ import { ProductInfoSection } from "./ProductInfoSection/ProductInfoSection";
 import { ProductPreviewSection } from "./ProductPreviewSection/ProductPreviewSection";
 import { Styled } from "./styles";
 import { StyledElement } from "../StyledComponents/Elements/Elements";
-import { useCommentsData } from "../../customHooks/useProductData copy";
+import { useCommentsData } from "../../customHooks/useCommentsData";
 import { useParams } from "react-router-dom";
 import { useProductData } from "../../customHooks/useProductData";
 
@@ -19,6 +19,7 @@ export const ProductPage: React.FC = () => {
       <Styled.Container>
         <ProductPreviewSection image={productData[0].image} />
         <ProductBuySection
+          id={productData[0].id}
           salePrice={productData[0].salePrice}
           price={productData[0].price}
           inStock={productData[0].inStock}
