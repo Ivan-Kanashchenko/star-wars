@@ -20,6 +20,7 @@ export const Market: React.FC = () => {
         {marketData.map((card) => (
           <MarketCard
             key={card.id}
+            id={card.id}
             title={card.title}
             image={card.image}
             price={card.price}

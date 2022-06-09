@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -22,7 +23,7 @@ const Card = styled.div`
   position: relative;
 `;
 
-const Link = styled.a<{ inStock: boolean }>`
+const RouterLink = styled(Link)<{ inStock: boolean }>`
   color: var(--primary1);
 
   &::before {
@@ -94,5 +95,5 @@ export const Styled = {
   Price,
   OldPrice,
   Stock,
-  Link,
+  RouterLink,
 };

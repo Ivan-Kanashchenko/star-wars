@@ -2,7 +2,7 @@ import * as React from "react";
 import { getFilteredData } from "../market/utils/getFilteredData";
 import { useEffect } from "react";
 import { useQueryStringParams } from "./useQueryStringParams";
-import { IServerdata, data } from "../market/data/data";
+import { IServerdata, productsData } from "../market/data/productsData";
 
 export interface IDatafilters {
   price?: string;
@@ -14,13 +14,13 @@ export interface IDatafilters {
 
 export const useMarketData = () => {
   const { searchParams } = useQueryStringParams();
-  const [state, setState] = React.useState(data);
+  const [state, setState] = React.useState(productsData);
 
   useEffect(() => {
     if (!searchParams) {
-      setState(data);
+      setState(productsData);
     } else {
-      setState(filter(searchParams, data));
+      setState(filter(searchParams, productsData));
     }
   }, [searchParams]);
 

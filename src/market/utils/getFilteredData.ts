@@ -1,5 +1,5 @@
 import { IDatafilters } from "../../customHooks/useMarketData";
-import { IServerdata } from "../data/data";
+import { IServerdata } from "../data/productsData";
 
 export const getFilteredData = (
   element: IServerdata,
