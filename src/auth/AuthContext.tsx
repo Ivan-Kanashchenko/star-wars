@@ -46,8 +46,10 @@ const AuthProvider: React.FC = ({ children }) => {
 
   const facebookAuth = async (): Promise<void> => {
     try {
-      const { user } = await signInWithPopup(auth, facebookProvider);
-      Login(user);
+      const response = await signInWithPopup(auth, facebookProvider);
+      // eslint-disable-next-line no-console
+      console.log(response);
+      Login(response.user);
     } catch (error) {
       throw new Error(
         `Error in facebookAuth. errorCode: ${error.code}, errorMessage: ${error.message}, errorEmail: ${error.email}`
