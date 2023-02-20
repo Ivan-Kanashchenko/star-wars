@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Styled } from "./styles";
-import { useChat } from "../../../chat/useChat";
+import { useChat } from "../../../customHooks/useChat";
 import { Field, Formik, FormikValues } from "formik";
 
 const ChatForm: FC = () => {

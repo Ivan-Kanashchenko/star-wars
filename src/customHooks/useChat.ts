@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../firebase/firebaseConfig";
-import { useAuth } from "./../auth/AuthContext";
+import { useAuth } from "../auth/AuthContext";
 import {
   DocumentData,
   Timestamp,
