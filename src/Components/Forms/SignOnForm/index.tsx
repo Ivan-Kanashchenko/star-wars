@@ -8,7 +8,7 @@ import {
   isValidPassword,
   isValidPasswordConfirm,
   isValidUserName,
-} from "../../../helpers/validators/validators";
+} from "../../../helpers/validators";
 
 export const SignOnForm: FC<{ message?: string }> = ({ message }) => {
   const { emailRegistration } = useAuth();

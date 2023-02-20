@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { CheckboxFiltersForm } from "../../Forms/Market/CheckboxFiltersForm/CheckboxFiltersForm";
+import { CheckboxFiltersForm } from "../../Forms/Market/CheckboxFiltersForm";
 import { FiltersBlock } from "./FiltersBlock/FiltersBlock";
-import { PriceForm } from "../../Forms/Market/PriceForm/PriceForm";
+import { PriceForm } from "../../Forms/Market/PriceForm";
 import { Styled } from "./styles";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
 import {

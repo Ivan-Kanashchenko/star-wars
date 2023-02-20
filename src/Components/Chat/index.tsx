@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { ChatForm } from "../Forms";
-import { ChatHeader } from "./ChatHeader/ChatHeader";
-import { ChatWindow } from "./ChatWindow/ChatWindow";
-import { Styled } from "./styles";
+
 import { useAuth } from "../../auth/AuthContext";
 import { useChat } from "../../customHooks/useChat";
+import { ChatHeader, ChatWindow } from "./components";
+import { Styled } from "./styles";
 
 export const Chat = () => {
   const { userId } = useAuth();

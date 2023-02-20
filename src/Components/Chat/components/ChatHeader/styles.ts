@@ -1,6 +1,7 @@
-import closeIconGray from "../../../assets/chat/close.png";
-import closeIconRed from "../../../assets/chat/closeRed.png";
 import styled from "styled-components";
+
+import closeIconGray from "assets/chat/close.png";
+import closeIconRed from "assets/chat/closeRed.png";
 
 const Header = styled.div`
   color: var(--primary3);

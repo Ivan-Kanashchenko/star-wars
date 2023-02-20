@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Styled } from "./styles";
-import { useModal } from "../../context/ModalContext";
+import { useModal } from "../../../../context/ModalContext";
 
 export const Footer: FC = () => {
   const { setIsOpenFeedback } = useModal();

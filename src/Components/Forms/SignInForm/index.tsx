@@ -2,10 +2,7 @@ import React, { FC } from "react";
 import { Formik } from "formik";
 import { Styled } from "./styles";
 import { useAuth } from "../../../auth/AuthContext";
-import {
-  isValidEmail,
-  isValidPassword,
-} from "../../../helpers/validators/validators";
+import { isValidEmail, isValidPassword } from "../../../helpers/validators";
 
 export const SignInForm: FC = () => {
   const { emailAuth } = useAuth();

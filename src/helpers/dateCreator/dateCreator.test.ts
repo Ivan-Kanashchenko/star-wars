@@ -1,5 +1,5 @@
 import { Timestamp } from "firebase/firestore";
-import { dateCreator } from "./dateCreator";
+import { dateCreator } from ".";
 
 describe("date creating", () => {
   const time = new Timestamp(1652105581, 622000000);

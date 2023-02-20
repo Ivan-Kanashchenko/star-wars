@@ -1,8 +1,10 @@
 import React, { FC, useRef, useEffect } from "react";
 import { DocumentData } from "firebase/firestore";
+
+import { useAuth } from "auth/AuthContext";
+import { dateCreator } from "helpers";
+
 import { Styled } from "./styles";
-import { dateCreator } from "../../../helpers/dateCreator/dateCreator";
-import { useAuth } from "../../../auth/AuthContext";
 
 export const ChatWindow: FC<{ messagesList: DocumentData[] }> = ({
   messagesList,

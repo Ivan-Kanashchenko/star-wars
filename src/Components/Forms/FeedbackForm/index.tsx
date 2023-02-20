@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Styled } from "./styles";
-import { isValidUserName } from "../../../helpers/validators/validators";
+import { isValidUserName } from "../../../helpers/validators";
 import { Field, Formik, FormikValues } from "formik";
 
 export const FeedbackForm: FC = () => {

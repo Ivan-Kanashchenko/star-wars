@@ -1,5 +1,5 @@
 import React, { FC, useEffect } from "react";
-import { SignInForm } from "../Forms/SignInForm/SignInForm";
+import { SignInForm } from "../Forms/SignInForm";
 import { Styled } from "./styles";
 import bgImage from "../../assets/backgrounds/rey.png";
 import facebookIcon from "../../assets/icons/facebook.png";

@@ -3,7 +3,7 @@ import { Styled } from "./styles";
 import { useChat } from "../../../customHooks/useChat";
 import { Field, Formik, FormikValues } from "formik";
 
-const ChatForm: FC = () => {
+export const ChatForm: FC = () => {
   const { sendMessage } = useChat();
 
   return (
@@ -43,5 +43,3 @@ const ChatForm: FC = () => {
 const CustomInputComponent: FC<FormikValues> = ({ field, ...props }) => (
   <Styled.FormInput type="text" {...field} {...props} />
 );
-
-export default ChatForm;

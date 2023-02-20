@@ -1,4 +1,4 @@
-import { getFormatedTime } from "./getFormatedTime";
+import { getFormatedTime } from ".";
 
 describe("Time formatting", () => {
   const error =

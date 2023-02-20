@@ -1,4 +1,4 @@
-import { formError } from "./../../consts/forms.errors";
+import { formError } from "../../consts/forms.errors";
 
 export const isValidUserName = (userName: string): string | undefined =>
   !userName ? formError.requiredField : undefined;

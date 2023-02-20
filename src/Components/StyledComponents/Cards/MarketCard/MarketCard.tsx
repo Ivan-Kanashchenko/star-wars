@@ -1,6 +1,8 @@
 import React, { FC } from "react";
+
+import { getDiscountValue } from "helpers";
+
 import { Styled } from "./styles";
-import { getDiscountValue } from "../../../../helpers/getDiscountValue/getDiscountValue";
 
 interface MarketCardProps {
   id: number;

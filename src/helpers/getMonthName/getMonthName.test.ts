@@ -1,4 +1,4 @@
-import { getMonthName } from "./getMonthName";
+import { getMonthName } from ".";
 
 describe("getMonthValidation", () => {
   describe("valid values", () => {
