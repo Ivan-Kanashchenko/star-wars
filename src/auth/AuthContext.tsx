@@ -47,8 +47,7 @@ const AuthProvider: React.FC = ({ children }) => {
   const facebookAuth = async (): Promise<void> => {
     try {
       const response = await signInWithPopup(auth, facebookProvider);
-      // eslint-disable-next-line no-console
-      console.log(response);
+
       Login(response.user);
     } catch (error) {
       throw new Error(
