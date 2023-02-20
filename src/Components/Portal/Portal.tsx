@@ -1,13 +1,13 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import { FC, useState, useEffect } from "react";
+import ReactDOM from "react-dom";
 
 interface PortalProps {
   el?: string;
 }
 
-export const Portal: React.FC<PortalProps> = ({ children, el = "div" }) => {
-  const [element] = React.useState(() => document.createElement(el));
-  React.useEffect(() => {
+export const Portal: FC<PortalProps> = ({ children, el = "div" }) => {
+  const [element] = useState(() => document.createElement(el));
+  useEffect(() => {
     document.getElementById("root").firstChild.appendChild(element);
     return () => {
       document.getElementById("root").firstChild.removeChild(element);

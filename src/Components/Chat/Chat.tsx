@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { ChatForm } from "../Forms";
 import { ChatHeader } from "./ChatHeader/ChatHeader";
 import { ChatWindow } from "./ChatWindow/ChatWindow";
@@ -10,7 +10,7 @@ export const Chat = () => {
   const { userId } = useAuth();
   const { messagesList } = useChat();
 
-  const [openChat, setOpenChat] = React.useState(false);
+  const [openChat, setOpenChat] = useState(false);
 
   const chatToggle = () => {
     setOpenChat(!openChat);

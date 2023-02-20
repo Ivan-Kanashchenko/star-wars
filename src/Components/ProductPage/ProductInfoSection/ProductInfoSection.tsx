@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
 
@@ -8,7 +8,7 @@ interface IProductInfoSectionProps {
   characteristics: { heigth: string; width: string; weight: string };
 }
 
-export const ProductInfoSection: React.FC<IProductInfoSectionProps> = ({
+export const ProductInfoSection: FC<IProductInfoSectionProps> = ({
   title,
   description,
   characteristics,

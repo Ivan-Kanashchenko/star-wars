@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, { FC } from "react";
 import AuthProvider from "../auth/AuthContext";
 import ModalProvider from "../context/ModalContext";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient();
 
-export const Providers: React.FC = ({ children }) => {
+export const Providers: FC = ({ children }) => {
   return (
     <ModalProvider>
       <AuthProvider>

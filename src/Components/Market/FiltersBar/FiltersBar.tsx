@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { CheckboxFiltersForm } from "../../Forms/Market/CheckboxFiltersForm/CheckboxFiltersForm";
 import { FiltersBlock } from "./FiltersBlock/FiltersBlock";
 import { PriceForm } from "../../Forms/Market/PriceForm/PriceForm";
@@ -12,7 +12,7 @@ import {
   types,
 } from "../../../market/config/filtersConfig";
 
-export const FiltersBar: React.FC = () => {
+export const FiltersBar: FC = () => {
   return (
     <Styled.Container>
       <StyledElement.H4>Filters</StyledElement.H4>

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
 import { LinkProps, useMatch, useResolvedPath } from "react-router-dom";
 
@@ -6,7 +6,7 @@ type OtherProps = {
   content?: string;
 };
 
-export const CustomNavLink: React.FC<LinkProps & OtherProps> = ({
+export const CustomNavLink: FC<LinkProps & OtherProps> = ({
   children,
   to,
   content,

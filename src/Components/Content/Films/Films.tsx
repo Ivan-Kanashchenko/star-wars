@@ -1,10 +1,10 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { FilmItem } from "./FilmItem/FilmItem";
 import { Loading } from "../../StyledComponents/Loading/Loading";
 import { StyledCard } from "../../StyledComponents/Cards/MainCard";
 import { useFilmsData } from "../../../customHooks/apiHooks";
 
-export const Films: React.FC = () => {
+export const Films: FC = () => {
   const { status, data, error } = useFilmsData();
 
   return (

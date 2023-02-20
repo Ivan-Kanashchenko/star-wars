@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
 import BusinessIcon from "@material-ui/icons/Business";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
@@ -20,7 +20,7 @@ interface ProductBuySectionProps {
   country: string;
 }
 
-export const ProductBuySection: React.FC<ProductBuySectionProps> = ({
+export const ProductBuySection: FC<ProductBuySectionProps> = ({
   id,
   salePrice,
   price,

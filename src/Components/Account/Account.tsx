@@ -1,10 +1,9 @@
-import * as React from "react";
+import React, { useState, FC } from "react";
 import Styled from "./styles";
 import { StyledElement } from "../StyledComponents/Elements/Elements";
 import { useAuth } from "../../auth/AuthContext";
-import { useState } from "react";
 
-export const Account: React.FC = () => {
+export const Account: FC = () => {
   const { Logout, userId, userName, userEmail, userPhoto } = useAuth();
 
   const [menuOpen, setMenuOpen] = useState(false);

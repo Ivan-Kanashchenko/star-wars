@@ -1,9 +1,9 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
 import { useChat } from "../../../chat/useChat";
 import { Field, Formik, FormikValues } from "formik";
 
-const ChatForm: React.FC = () => {
+const ChatForm: FC = () => {
   const { sendMessage } = useChat();
 
   return (
@@ -40,7 +40,7 @@ const ChatForm: React.FC = () => {
   );
 };
 
-const CustomInputComponent: React.FC<FormikValues> = ({ field, ...props }) => (
+const CustomInputComponent: FC<FormikValues> = ({ field, ...props }) => (
   <Styled.FormInput type="text" {...field} {...props} />
 );
 

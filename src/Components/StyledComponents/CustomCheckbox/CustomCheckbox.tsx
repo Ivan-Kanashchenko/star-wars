@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { FormControlLabel } from "@material-ui/core";
 import { FormikValues } from "formik";
 import { StyledCheckbox } from "./styles";
@@ -9,7 +9,7 @@ interface CustomProps {
   active: boolean;
 }
 
-export const CustomCheckbox: React.FC<CustomProps & FormikValues> = ({
+export const CustomCheckbox: FC<CustomProps & FormikValues> = ({
   label,
   name,
   field,

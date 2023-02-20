@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC, useState } from "react";
 import { Loading } from "../../../StyledComponents/Loading/Loading";
 import { StyledActorsCard } from "../../../StyledComponents/Cards/ActorsCard";
 import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
@@ -16,7 +16,7 @@ type FilmItemType = {
   release_date: string;
 };
 
-export const FilmItem: React.FC<FilmItemType> = ({
+export const FilmItem: FC<FilmItemType> = ({
   title,
   episode_id,
   opening_crawl,
@@ -24,7 +24,7 @@ export const FilmItem: React.FC<FilmItemType> = ({
   producer,
   release_date,
 }) => {
-  const [actors, setActors] = React.useState<boolean>(false);
+  const [actors, setActors] = useState<boolean>(false);
 
   const toggleActors = (): void => {
     setActors((prevState) => {
@@ -35,7 +35,7 @@ export const FilmItem: React.FC<FilmItemType> = ({
   };
   const location = useLocation();
 
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleLoading = (loading: boolean) => {
     setIsLoading(loading);

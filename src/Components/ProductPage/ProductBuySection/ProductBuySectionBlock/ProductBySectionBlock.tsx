@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "../styles";
 
 interface IProductBuySectionBlock {
@@ -7,7 +7,7 @@ interface IProductBuySectionBlock {
   icon: React.ReactChild;
 }
 
-export const ProductBuySectionBlock: React.FC<IProductBuySectionBlock> = ({
+export const ProductBuySectionBlock: FC<IProductBuySectionBlock> = ({
   title,
   data,
   icon,

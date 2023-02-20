@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { useLocation } from "react-router-dom";
@@ -13,7 +13,7 @@ type PeopleItemTypes = {
   gender: string;
 };
 
-export const PeopleItem: React.FC<PeopleItemTypes> = ({
+export const PeopleItem: FC<PeopleItemTypes> = ({
   name,
   mass,
   hair_color,

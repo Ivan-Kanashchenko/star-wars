@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { CustomCheckbox } from "../../../StyledComponents/CustomCheckbox/CustomCheckbox";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
@@ -17,7 +17,7 @@ interface FormProps {
   };
 }
 
-export const CheckboxFiltersForm: React.FC<FormProps> = ({ data }) => {
+export const CheckboxFiltersForm: FC<FormProps> = ({ data }) => {
   const { searchParams, setParams } = useQueryStringParams();
 
   const isData = searchParams.has(data.type);

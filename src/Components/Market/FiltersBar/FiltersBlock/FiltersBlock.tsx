@@ -1,18 +1,18 @@
-import * as React from "react";
+import React, { FC, useState } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Styled } from "./styles";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
 import { CheckboxBlockProps, PriceBlockProps } from "./FiltersBlockTypes";
 
-export const FiltersBlock: React.FC<CheckboxBlockProps | PriceBlockProps> = ({
+export const FiltersBlock: FC<CheckboxBlockProps | PriceBlockProps> = ({
   data,
   title,
   children,
 }) => {
   const { searchParams } = useQueryStringParams();
 
-  const [expanded, setExpanded] = React.useState(
+  const [expanded, setExpanded] = useState(
     searchParams.has(data.type) || false
   );
 

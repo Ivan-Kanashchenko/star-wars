@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Formik } from "formik";
 import { Styled } from "./styles";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
@@ -10,7 +10,7 @@ import {
   isValidUserName,
 } from "../../../helpers/validators/validators";
 
-export const SignOnForm: React.FC<{ message?: string }> = ({ message }) => {
+export const SignOnForm: FC<{ message?: string }> = ({ message }) => {
   const { emailRegistration } = useAuth();
 
   return (

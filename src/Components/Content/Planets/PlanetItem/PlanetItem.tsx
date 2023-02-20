@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC, useState } from "react";
 import { Loading } from "../../../StyledComponents/Loading/Loading";
 import { StyledActorsCard } from "../../../StyledComponents/Cards/ActorsCard";
 import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
@@ -15,7 +15,7 @@ type PlanetItemTypes = {
   url: string;
 };
 
-export const PlanetItem: React.FC<PlanetItemTypes> = ({
+export const PlanetItem: FC<PlanetItemTypes> = ({
   climate,
   created,
   diameter,
@@ -23,7 +23,7 @@ export const PlanetItem: React.FC<PlanetItemTypes> = ({
   name,
   url,
 }) => {
-  const [residents, setResidents] = React.useState(false);
+  const [residents, setResidents] = useState(false);
 
   const toggleDetails = () => {
     setResidents((prevState) => {
@@ -35,7 +35,7 @@ export const PlanetItem: React.FC<PlanetItemTypes> = ({
 
   const { pathname } = useLocation();
 
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const toggleLoading = (loading: boolean) => {
     setIsLoading(loading);

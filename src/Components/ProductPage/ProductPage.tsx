@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { ProductBuySection } from "./ProductBuySection/ProductBuySection";
 import { ProductCommentsSection } from "./ProductCommentsSection/ProductCommentsSection";
 import { ProductInfoSection } from "./ProductInfoSection/ProductInfoSection";
@@ -9,7 +9,7 @@ import { useCommentsData } from "../../customHooks/useCommentsData";
 import { useParams } from "react-router-dom";
 import { useProductData } from "../../customHooks/useProductData";
 
-export const ProductPage: React.FC = () => {
+export const ProductPage: FC = () => {
   const params = useParams();
   const { productData } = useProductData(params.id);
   const { comments } = useCommentsData(params.id);

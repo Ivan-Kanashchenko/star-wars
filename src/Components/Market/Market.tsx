@@ -1,15 +1,15 @@
-import * as React from "react";
+import React, { FC, useEffect, useState } from "react";
 import { FiltersBar } from "./FiltersBar/FiltersBar";
 import { MarketCard } from "../StyledComponents/Cards/MarketCard/MarketCard";
 import { Styled } from "./styles";
 import { useMarketData } from "../../customHooks/useMarketData";
 
-export const Market: React.FC = () => {
+export const Market: FC = () => {
   const { state } = useMarketData();
 
-  const [marketData, setMarketData] = React.useState(state);
+  const [marketData, setMarketData] = useState(state);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setMarketData(state);
   }, [state]);
 

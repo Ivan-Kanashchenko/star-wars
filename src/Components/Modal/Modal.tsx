@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
 import { StyledElement } from "../StyledComponents/Elements/Elements";
 import { useModal } from "../../context/ModalContext";
@@ -7,7 +7,7 @@ interface ModalProps {
   title: string;
 }
 
-export const Modal: React.FC<ModalProps> = ({ children, title }) => {
+export const Modal: FC<ModalProps> = ({ children, title }) => {
   const { isOpenFeedback, setIsOpenFeedback } = useModal();
 
   if (!isOpenFeedback) return null;

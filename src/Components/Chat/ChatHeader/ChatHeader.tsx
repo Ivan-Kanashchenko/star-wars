@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
 
@@ -6,7 +6,7 @@ interface ChatProps {
   chatToggle: () => void;
 }
 
-export const ChatHeader: React.FC<ChatProps> = ({ chatToggle }) => {
+export const ChatHeader: FC<ChatProps> = ({ chatToggle }) => {
   return (
     <Styled.Header>
       <StyledElement.H4>Chat</StyledElement.H4>

@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { SignOnForm } from "../Forms/SignOnForm/SignOnForm";
 import { Styled } from "./styles";
 import { StyledElement } from "../StyledComponents/Elements/Elements";
 import { useAuth } from "../../auth/AuthContext";
 import { Navigate, useLocation } from "react-router-dom";
 
-export const Register = () => {
+export const Register: FC = () => {
   const { userId } = useAuth();
   const location = useLocation();
 

@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 import { Chat } from "../Chat/Chat";
 import { Content } from "../Content/Content";
 import { FeedbackForm } from "../Forms/FeedbackForm/FeedbackForm";
@@ -18,7 +19,6 @@ import { Providers } from "../../providers/Providers";
 import { Register } from "../Register/Register";
 import { RequireAuth } from "../RequireAuth/RequireAuth";
 import { Styled } from "./styles";
-import { Route, Routes } from "react-router-dom";
 
 export const App = () => {
   return (

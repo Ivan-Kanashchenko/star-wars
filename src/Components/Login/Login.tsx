@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC, useEffect } from "react";
 import { SignInForm } from "../Forms/SignInForm/SignInForm";
 import { Styled } from "./styles";
 import bgImage from "../../assets/backgrounds/rey.png";
@@ -14,7 +14,7 @@ interface LocationState {
   };
 }
 
-export const Login = () => {
+export const Login: FC = () => {
   const { googleAuth, facebookAuth, gitHubAuth, userId } = useAuth();
 
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export const Login = () => {
   //react-router-dom don`t have this interface
   const from = (location.state as LocationState)?.from?.pathname || "/";
 
-  React.useEffect(() => {
+  useEffect(() => {
     userId && navigate(from, { replace: true });
   }, [userId, from, navigate]);
 

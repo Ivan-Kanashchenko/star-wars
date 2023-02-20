@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Rating } from "@material-ui/lab";
 import { Styled } from "./styles";
 import { StyledElement } from "../../StyledComponents/Elements/Elements";
@@ -12,7 +12,7 @@ interface IProductCommentsSectionProps {
   }[];
 }
 
-export const ProductCommentsSection: React.FC<IProductCommentsSectionProps> = ({
+export const ProductCommentsSection: FC<IProductCommentsSectionProps> = ({
   comments,
 }) => {
   return (

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { theme } from "../../../theme";
 import { Slider, withStyles } from "@material-ui/core/";
 
@@ -41,7 +41,7 @@ const CustomSlider = withStyles({
   },
 })(Slider);
 
-export const MultiRangeSlider: React.FC<{
+export const MultiRangeSlider: FC<{
   maxValue: number | null;
   minValue: number | null;
   setMinValue: (arg: number) => void;

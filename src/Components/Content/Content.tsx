@@ -1,7 +1,7 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
 
-export const Content: React.FC = ({ children }) => {
+export const Content: FC = ({ children }) => {
   return (
     <Styled.ContentContainer>
       <Styled.BackgroundLeft />

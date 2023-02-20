@@ -1,9 +1,9 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Account } from "../Account/Account";
 import { Styled } from "./styles";
 import { useAuth } from "../../auth/AuthContext";
 
-export const Header: React.FC = () => {
+export const Header: FC = () => {
   const { userId } = useAuth();
 
   return (

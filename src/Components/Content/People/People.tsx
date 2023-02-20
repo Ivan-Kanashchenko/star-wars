@@ -1,10 +1,10 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Loading } from "../../StyledComponents/Loading/Loading";
 import { PeopleItem } from "./PeopleItem/PeopleItem";
 import { StyledCard } from "../../StyledComponents/Cards/MainCard";
 import { usePeopleData } from "../../../customHooks/apiHooks";
 
-export const People: React.FC = () => {
+export const People: FC = () => {
   const { status, data, error } = usePeopleData();
 
   return (

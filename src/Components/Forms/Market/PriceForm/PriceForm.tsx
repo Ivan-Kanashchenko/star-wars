@@ -1,17 +1,17 @@
-import * as React from "react";
+import React, { FC, useState, useEffect } from "react";
 import { MultiRangeSlider } from "../../../StyledComponents/MultiRangeSlider/MultiRangeSlider";
 import { PriceBlockProps } from "../../../Market/FiltersBar/FiltersBlock/FiltersBlockTypes";
 import { Styled } from "./styles";
 import { StyledElement } from "../../../StyledComponents/Elements/Elements";
 import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
 
-export const PriceForm: React.FC<PriceBlockProps> = ({ data }) => {
+export const PriceForm: FC<PriceBlockProps> = ({ data }) => {
   const { searchParams, setParams } = useQueryStringParams();
 
-  const [minValue, setMinValue] = React.useState<number | null>(100);
-  const [maxValue, setMaxValue] = React.useState<number | null>(500);
+  const [minValue, setMinValue] = useState<number | null>(100);
+  const [maxValue, setMaxValue] = useState<number | null>(500);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const isValue = searchParams.has(data.type);
     if (isValue) {
       const values: string[] = searchParams.get(data.type).split("-");

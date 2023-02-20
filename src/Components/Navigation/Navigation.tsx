@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { FC, useMemo } from "react";
 import { CustomNavLink } from "../StyledComponents/CustomNavLink/CustomNavLink";
 import { Styled } from "./styles";
 
@@ -9,8 +9,8 @@ type LinksTypes = {
   type?: string;
 }[];
 
-export const Navigation = () => {
-  const links = React.useMemo((): LinksTypes => {
+export const Navigation: FC = () => {
+  const links = useMemo((): LinksTypes => {
     return [
       {
         id: 1,

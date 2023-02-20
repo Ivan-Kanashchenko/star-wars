@@ -1,9 +1,9 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
 import { isValidUserName } from "../../../helpers/validators/validators";
 import { Field, Formik, FormikValues } from "formik";
 
-export const FeedbackForm: React.FC = () => {
+export const FeedbackForm: FC = () => {
   return (
     <Formik
       initialValues={{
@@ -36,6 +36,6 @@ export const FeedbackForm: React.FC = () => {
   );
 };
 
-const CustomTextArea: React.FC<FormikValues> = ({ field, ...props }) => (
+const CustomTextArea: FC<FormikValues> = ({ field, ...props }) => (
   <Styled.TextArea type="text" {...field} {...props} />
 );

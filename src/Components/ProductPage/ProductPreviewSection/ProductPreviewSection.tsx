@@ -1,8 +1,6 @@
-import * as React from "react";
+import React, { FC } from "react";
 import { Styled } from "./styles";
 
-export const ProductPreviewSection: React.FC<{ image: string }> = ({
-  image,
-}) => {
+export const ProductPreviewSection: FC<{ image: string }> = ({ image }) => {
   return <Styled.ImageSection image={image} />;
 };

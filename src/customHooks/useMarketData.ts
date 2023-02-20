@@ -1,6 +1,6 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import { getFilteredData } from "../market/utils/getFilteredData";
-import { useEffect } from "react";
+
 import { useQueryStringParams } from "./useQueryStringParams";
 import { IServerdata, productsData } from "../market/data/productsData";
 
@@ -14,7 +14,7 @@ export interface IDatafilters {
 
 export const useMarketData = () => {
   const { searchParams } = useQueryStringParams();
-  const [state, setState] = React.useState(productsData);
+  const [state, setState] = useState(productsData);
 
   useEffect(() => {
     if (!searchParams) {
