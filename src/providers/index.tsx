@@ -1,7 +1,8 @@
 import React, { FC } from "react";
-import AuthProvider from "../auth/AuthContext";
-import ModalProvider from "../context/ModalContext";
 import { QueryClient, QueryClientProvider } from "react-query";
+
+import AuthProvider from "auth/AuthContext";
+import ModalProvider from "context/ModalContext";
 
 const queryClient = new QueryClient();
 

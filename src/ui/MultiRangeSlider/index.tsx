@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import { theme } from "../../theme";
+
 import { Slider, withStyles } from "@material-ui/core/";
+
+import { theme } from "theme";
 
 const CustomSlider = withStyles({
   root: {

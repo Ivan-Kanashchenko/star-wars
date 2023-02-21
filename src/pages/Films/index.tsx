@@ -1,8 +1,8 @@
 import React, { FC } from "react";
+import { Loading, StyledCard } from "ui";
+import { useFilmsData } from "customHooks/apiHooks";
+
 import { FilmItem } from "./FilmItem/FilmItem";
-import { Loading } from "../../ui/Loading";
-import { StyledCard } from "../../ui/Cards/MainCard";
-import { useFilmsData } from "../../customHooks/apiHooks";
 
 export const Films: FC = () => {
   const { status, data, error } = useFilmsData();

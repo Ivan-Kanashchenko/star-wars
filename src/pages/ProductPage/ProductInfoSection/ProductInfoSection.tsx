@@ -1,6 +1,8 @@
 import React, { FC } from "react";
+
+import { StyledElement } from "ui";
+
 import { Styled } from "./styles";
-import { StyledElement } from "../../../ui/Elements";
 
 interface IProductInfoSectionProps {
   title: string;

@@ -1,6 +1,7 @@
+import styled from "styled-components";
+
 import backgroundLeft from "assets/backgrounds/bg_starsLeft.jpeg";
 import backgroundRigth from "assets/backgrounds/bg_starsRight.jpeg";
-import styled from "styled-components";
 
 const ContentContainer = styled.div`
   width: 100%;

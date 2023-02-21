@@ -1,6 +1,6 @@
 import React, { useState, FC } from "react";
 
-import { StyledElement } from "ui/Elements";
+import { StyledElement } from "ui";
 import { useAuth } from "auth/AuthContext";
 
 import Styled from "./styles";

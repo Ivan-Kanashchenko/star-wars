@@ -1,13 +1,15 @@
 import React, { FC } from "react";
+import { useParams } from "react-router-dom";
 import { ProductBuySection } from "./ProductBuySection/ProductBuySection";
 import { ProductCommentsSection } from "./ProductCommentsSection/ProductCommentsSection";
 import { ProductInfoSection } from "./ProductInfoSection/ProductInfoSection";
 import { ProductPreviewSection } from "./ProductPreviewSection/ProductPreviewSection";
+
+import { StyledElement } from "ui";
+import { useCommentsData } from "customHooks/useCommentsData";
+import { useProductData } from "customHooks/useProductData";
+
 import { Styled } from "./styles";
-import { StyledElement } from "../../ui/Elements";
-import { useCommentsData } from "../../customHooks/useCommentsData";
-import { useParams } from "react-router-dom";
-import { useProductData } from "../../customHooks/useProductData";
 
 export const ProductPage: FC = () => {
   const params = useParams();

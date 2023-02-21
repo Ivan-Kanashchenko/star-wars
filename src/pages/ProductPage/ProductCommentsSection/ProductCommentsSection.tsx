@@ -1,7 +1,9 @@
 import React, { FC } from "react";
 import { Rating } from "@material-ui/lab";
+
+import { StyledElement } from "ui";
+
 import { Styled } from "./styles";
-import { StyledElement } from "../../../ui/Elements";
 
 interface IProductCommentsSectionProps {
   comments: {

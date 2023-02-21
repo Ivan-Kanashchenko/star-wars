@@ -1,9 +1,10 @@
 import React, { FC, useState } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { Styled } from "./styles";
-import { StyledElement } from "../../../../ui/Elements";
-import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
+import { StyledElement } from "ui";
+import { useQueryStringParams } from "customHooks/useQueryStringParams";
 import { CheckboxBlockProps, PriceBlockProps } from "./FiltersBlockTypes";
+
+import { Styled } from "./styles";
 
 export const FiltersBlock: FC<CheckboxBlockProps | PriceBlockProps> = ({
   data,

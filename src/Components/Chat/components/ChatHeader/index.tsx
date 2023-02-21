@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { StyledElement } from "ui/Elements";
+import { StyledElement } from "ui";
 
 import { Styled } from "./styles";
 

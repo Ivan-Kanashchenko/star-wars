@@ -2,8 +2,8 @@ import React, { FC, useState, useEffect } from "react";
 
 import { useQueryStringParams } from "customHooks/useQueryStringParams";
 
-import { MultiRangeSlider } from "ui/MultiRangeSlider";
-import { StyledElement } from "ui/Elements";
+import { MultiRangeSlider, StyledElement } from "ui";
+
 import { PriceBlockProps } from "../../../../pages/Market/FiltersBar/FiltersBlock/FiltersBlockTypes";
 
 import { Styled } from "./styles";

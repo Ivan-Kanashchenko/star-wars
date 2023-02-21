@@ -1,5 +1,7 @@
 import React, { FC, useMemo } from "react";
-import { CustomNavLink } from "ui/CustomNavLink";
+
+import { CustomNavLink } from "ui";
+
 import { Styled } from "./styles";
 
 type LinksTypes = {

@@ -1,9 +1,10 @@
 import React, { FC } from "react";
-import { SignOnForm } from "../../components/Forms/SignOnForm";
-import { Styled } from "./styles";
-import { StyledElement } from "../../ui/Elements";
-import { useAuth } from "../../auth/AuthContext";
 import { Navigate, useLocation } from "react-router-dom";
+
+import { SignOnForm } from "components/Forms/SignOnForm";
+import { Styled } from "./styles";
+import { StyledElement } from "ui";
+import { useAuth } from "auth/AuthContext";
 
 export const Register: FC = () => {
   const { userId } = useAuth();

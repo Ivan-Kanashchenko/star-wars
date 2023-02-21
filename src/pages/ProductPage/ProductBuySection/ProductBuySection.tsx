@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import SecurityOutlinedIcon from "@material-ui/icons/SecurityOutlined";
 import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
 import BusinessIcon from "@material-ui/icons/Business";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
@@ -7,9 +8,10 @@ import { IconButton } from "@material-ui/core";
 import LocalShippingOutlinedIcon from "@material-ui/icons/LocalShippingOutlined";
 import LocationOnOutlinedIcon from "@material-ui/icons/LocationOnOutlined";
 import { ProductBuySectionBlock } from "./ProductBuySectionBlock/ProductBySectionBlock";
-import SecurityOutlinedIcon from "@material-ui/icons/SecurityOutlined";
+
+import { useLocalStorage } from "customHooks/useLocalStorage";
+
 import { Styled } from "./styles";
-import { useLocalStorage } from "../../../customHooks/useLocalStorage";
 
 interface ProductBuySectionProps {
   id: number;

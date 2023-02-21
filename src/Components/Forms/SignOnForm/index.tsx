@@ -10,7 +10,7 @@ import {
   isValidUserName,
 } from "helpers/validators";
 
-import { StyledElement } from "ui/Elements";
+import { StyledElement } from "ui";
 
 import { Styled } from "./styles";
 

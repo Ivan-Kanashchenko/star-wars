@@ -1,12 +1,14 @@
 import React, { FC, useEffect } from "react";
-import { SignInForm } from "../../components/Forms/SignInForm";
-import { Styled } from "./styles";
-import bgImage from "../../assets/backgrounds/rey.png";
-import facebookIcon from "../../assets/icons/facebook.png";
-import gitIcon from "../../assets/icons/github.png";
-import googleIcon from "../../assets/icons/google.png";
-import { useAuth } from "../../auth/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
+
+import { SignInForm } from "components/Forms/SignInForm";
+import bgImage from "assets/backgrounds/rey.png";
+import facebookIcon from "assets/icons/facebook.png";
+import gitIcon from "assets/icons/github.png";
+import googleIcon from "assets/icons/google.png";
+import { useAuth } from "auth/AuthContext";
+
+import { Styled } from "./styles";
 
 interface LocationState {
   from?: {

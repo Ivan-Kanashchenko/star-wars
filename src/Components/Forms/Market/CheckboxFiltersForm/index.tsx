@@ -3,8 +3,7 @@ import { Field, Form, Formik } from "formik";
 
 import { useQueryStringParams } from "customHooks/useQueryStringParams";
 
-import { CustomCheckbox } from "ui/CustomCheckbox";
-import { StyledElement } from "ui/Elements";
+import { CustomCheckbox, StyledElement } from "ui";
 
 interface FormProps {
   data: {
