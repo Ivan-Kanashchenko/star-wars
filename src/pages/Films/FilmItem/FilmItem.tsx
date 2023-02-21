@@ -1,9 +1,9 @@
 import React, { FC, useState } from "react";
-import { Loading } from "../../../../ui/Loading";
-import { StyledActorsCard } from "../../../../ui/Cards/ActorsCard";
-import { StyledCard } from "../../../../ui/Cards/MainCard";
-import { StyledElement } from "../../../../ui/Elements";
-import { useActorsData } from "../../../../customHooks/apiHooks";
+import { Loading } from "../../../ui/Loading";
+import { StyledActorsCard } from "../../../ui/Cards/ActorsCard";
+import { StyledCard } from "../../../ui/Cards/MainCard";
+import { StyledElement } from "../../../ui/Elements";
+import { useActorsData } from "../../../customHooks/apiHooks";
 import { useLocation } from "react-router-dom";
 
 type FilmItemType = {

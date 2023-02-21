@@ -4,7 +4,7 @@ import { useQueryStringParams } from "customHooks/useQueryStringParams";
 
 import { MultiRangeSlider } from "ui/MultiRangeSlider";
 import { StyledElement } from "ui/Elements";
-import { PriceBlockProps } from "../../../Market/FiltersBar/FiltersBlock/FiltersBlockTypes";
+import { PriceBlockProps } from "../../../../pages/Market/FiltersBar/FiltersBlock/FiltersBlockTypes";
 
 import { Styled } from "./styles";
 

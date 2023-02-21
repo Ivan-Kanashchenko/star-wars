@@ -1,10 +1,10 @@
 import React, { FC, useState } from "react";
-import { Loading } from "../../../../ui/Loading";
-import { StyledActorsCard } from "../../../../ui/Cards/ActorsCard";
-import { StyledCard } from "../../../../ui/Cards/MainCard";
-import { StyledElement } from "../../../../ui/Elements";
+import { Loading } from "../../../ui/Loading";
+import { StyledActorsCard } from "../../../ui/Cards/ActorsCard";
+import { StyledCard } from "../../../ui/Cards/MainCard";
+import { StyledElement } from "../../../ui/Elements";
 import { useLocation } from "react-router-dom";
-import { usePlanetsData } from "../../../../customHooks/apiHooks";
+import { usePlanetsData } from "../../../customHooks/apiHooks";
 
 type PlanetItemTypes = {
   climate: string;

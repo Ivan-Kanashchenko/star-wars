@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { SignOnForm } from "../Forms/SignOnForm";
+import { SignOnForm } from "../../components/Forms/SignOnForm";
 import { Styled } from "./styles";
 import { StyledElement } from "../../ui/Elements";
 import { useAuth } from "../../auth/AuthContext";

@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import { Loading } from "../../../ui/Loading";
+import { Loading } from "../../ui/Loading";
 import { PlanetItem } from "./PlanetItem/PlanetItem";
-import { StyledCard } from "../../../ui/Cards/MainCard";
-import { usePlanetData } from "../../../customHooks/apiHooks";
+import { StyledCard } from "../../ui/Cards/MainCard";
+import { usePlanetData } from "../../customHooks/apiHooks";
 
 export const Planets: FC = () => {
   const { status, data, error } = usePlanetData();
