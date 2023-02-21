@@ -1,8 +1,10 @@
 import React, { FC } from "react";
-import { CustomCheckbox } from "../../../StyledComponents/CustomCheckbox/CustomCheckbox";
-import { StyledElement } from "../../../StyledComponents/Elements/Elements";
-import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
 import { Field, Form, Formik } from "formik";
+
+import { useQueryStringParams } from "customHooks/useQueryStringParams";
+
+import { CustomCheckbox } from "ui/CustomCheckbox";
+import { StyledElement } from "ui/Elements";
 
 interface FormProps {
   data: {

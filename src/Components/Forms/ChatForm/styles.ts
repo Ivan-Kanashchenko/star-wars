@@ -1,7 +1,8 @@
 import { Form } from "formik";
-import sendMessageGray from "../../../assets/chat/sendMessage.png";
-import sendMessageYellow from "../../../assets/chat/sendMessageYellow.png";
 import styled from "styled-components";
+
+import sendMessageGray from "assets/chat/sendMessage.png";
+import sendMessageYellow from "assets/chat/sendMessageYellow.png";
 
 const FormContainer = styled(Form)`
   display: flex;

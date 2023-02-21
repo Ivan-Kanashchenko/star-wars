@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Styled } from "./styles";
-import { StyledElement } from "../../../StyledComponents/Elements/Elements";
+import { StyledElement } from "../../../../ui/Elements";
 import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
 import { CheckboxBlockProps, PriceBlockProps } from "./FiltersBlockTypes";
 

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { Loading } from "../../StyledComponents/Loading/Loading";
+import { Loading } from "../../../ui/Loading";
 import { PeopleItem } from "./PeopleItem/PeopleItem";
-import { StyledCard } from "../../StyledComponents/Cards/MainCard";
+import { StyledCard } from "../../../ui/Cards/MainCard";
 import { usePeopleData } from "../../../customHooks/apiHooks";
 
 export const People: FC = () => {

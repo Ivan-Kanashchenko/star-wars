@@ -1,7 +1,9 @@
 import React, { FC } from "react";
-import { Styled } from "./styles";
-import { isValidUserName } from "../../../helpers/validators";
 import { Field, Formik, FormikValues } from "formik";
+
+import { isValidUserName } from "helpers/validators";
+
+import { Styled } from "./styles";
 
 export const FeedbackForm: FC = () => {
   return (

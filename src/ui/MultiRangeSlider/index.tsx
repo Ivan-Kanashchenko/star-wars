@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { theme } from "../../../theme";
+import { theme } from "../../theme";
 import { Slider, withStyles } from "@material-ui/core/";
 
 const CustomSlider = withStyles({
@@ -11,8 +11,8 @@ const CustomSlider = withStyles({
   thumb: {
     height: 10,
     width: 10,
-    backgroundColor: theme.primary4,
-    border: `1px solid ${theme.primary3} `,
+    backgroundColor: theme.color.primary4,
+    border: `1px solid ${theme.color.primary3} `,
     marginTop: -3.5,
     marginLeft: -3.5,
     boxShadow: "#ebebeb 0 2px 2px",
@@ -20,7 +20,7 @@ const CustomSlider = withStyles({
       boxShadow: "#ccc 0 2px 3px 1px",
     },
     "&:hover": {
-      border: `1px solid ${theme.primary1}`,
+      border: `1px solid ${theme.color.primary1}`,
     },
     "& .bar": {
       height: 9,

@@ -1,4 +1,4 @@
-import noImage from "../../../../assets/images/no-image.png";
+import noImage from "assets/images/no-image.png";
 import styled from "styled-components";
 
 export const Image = styled.div`

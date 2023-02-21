@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Styled } from "./styles";
-import { StyledElement } from "../StyledComponents/Elements/Elements";
+import { StyledElement } from "../../ui/Elements";
 import { useModal } from "../../context/ModalContext";
 
 interface ModalProps {

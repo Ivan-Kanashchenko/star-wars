@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import { Loading } from "../../StyledComponents/Loading/Loading";
+import { Loading } from "../../../ui/Loading";
 import { PlanetItem } from "./PlanetItem/PlanetItem";
-import { StyledCard } from "../../StyledComponents/Cards/MainCard";
+import { StyledCard } from "../../../ui/Cards/MainCard";
 import { usePlanetData } from "../../../customHooks/apiHooks";
 
 export const Planets: FC = () => {

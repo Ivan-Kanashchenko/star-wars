@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+
 import { ChatForm } from "../Forms";
 
-import { useAuth } from "../../auth/AuthContext";
-import { useChat } from "../../customHooks/useChat";
+import { useAuth } from "auth/AuthContext";
+import { useChat } from "customHooks/useChat";
+
 import { ChatHeader, ChatWindow } from "./components";
 import { Styled } from "./styles";
 

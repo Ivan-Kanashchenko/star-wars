@@ -1,4 +1,4 @@
-import loading from "../../../assets/loading/loader_empire.png";
+import loading from "assets/loading/loader_empire.png";
 import styled from "styled-components";
 
 const Loading = styled.div`

@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { FiltersBar } from "./FiltersBar/FiltersBar";
-import { MarketCard } from "../StyledComponents/Cards/MarketCard/MarketCard";
+import { MarketCard } from "../../ui/Cards/MarketCard";
 import { Styled } from "./styles";
 import { useMarketData } from "../../customHooks/useMarketData";
 

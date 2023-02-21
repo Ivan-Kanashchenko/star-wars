@@ -4,7 +4,7 @@ import { ProductCommentsSection } from "./ProductCommentsSection/ProductComments
 import { ProductInfoSection } from "./ProductInfoSection/ProductInfoSection";
 import { ProductPreviewSection } from "./ProductPreviewSection/ProductPreviewSection";
 import { Styled } from "./styles";
-import { StyledElement } from "../StyledComponents/Elements/Elements";
+import { StyledElement } from "../../ui/Elements";
 import { useCommentsData } from "../../customHooks/useCommentsData";
 import { useParams } from "react-router-dom";
 import { useProductData } from "../../customHooks/useProductData";

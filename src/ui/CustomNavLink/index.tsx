@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import { Styled } from "./styles";
+
 import { LinkProps, useMatch, useResolvedPath } from "react-router-dom";
+
+import { Styled } from "./styles";
 
 type OtherProps = {
   content?: string;

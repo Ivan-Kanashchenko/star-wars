@@ -1,7 +1,9 @@
 import React, { useState, FC } from "react";
+
+import { StyledElement } from "ui/Elements";
+import { useAuth } from "auth/AuthContext";
+
 import Styled from "./styles";
-import { StyledElement } from "../StyledComponents/Elements/Elements";
-import { useAuth } from "../../auth/AuthContext";
 
 export const Account: FC = () => {
   const { Logout, userId, userName, userEmail, userPhoto } = useAuth();

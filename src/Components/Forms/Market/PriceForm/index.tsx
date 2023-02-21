@@ -1,9 +1,12 @@
 import React, { FC, useState, useEffect } from "react";
-import { MultiRangeSlider } from "../../../StyledComponents/MultiRangeSlider/MultiRangeSlider";
+
+import { useQueryStringParams } from "customHooks/useQueryStringParams";
+
+import { MultiRangeSlider } from "ui/MultiRangeSlider";
+import { StyledElement } from "ui/Elements";
 import { PriceBlockProps } from "../../../Market/FiltersBar/FiltersBlock/FiltersBlockTypes";
+
 import { Styled } from "./styles";
-import { StyledElement } from "../../../StyledComponents/Elements/Elements";
-import { useQueryStringParams } from "../../../../customHooks/useQueryStringParams";
 
 export const PriceForm: FC<PriceBlockProps> = ({ data }) => {
   const { searchParams, setParams } = useQueryStringParams();

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
-import { StyledElement } from "../../../StyledComponents/Elements/Elements";
+import { StyledCard } from "../../../../ui/Cards/MainCard";
+import { StyledElement } from "../../../../ui/Elements";
 import { useLocation } from "react-router-dom";
 
 type PeopleItemTypes = {

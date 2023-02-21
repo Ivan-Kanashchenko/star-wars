@@ -24,12 +24,10 @@ export const ROUTES: IRoutes[] = [
   },
   {
     path: "registration",
-
     Component: Register,
   },
   {
     path: "films",
-
     Component: Films,
   },
   {
@@ -44,12 +42,10 @@ export const ROUTES: IRoutes[] = [
   },
   {
     path: "market",
-
     Component: Market,
   },
   {
     path: "market/:id",
-
     Component: ProductPage,
   },
 ];

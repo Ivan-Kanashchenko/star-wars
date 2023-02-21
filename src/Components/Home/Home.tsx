@@ -1,6 +1,8 @@
 import React, { FC } from "react";
+
+import { StyledElement } from "ui/Elements";
+
 import { Styled } from "./styles";
-import { StyledElement } from "../StyledComponents/Elements/Elements";
 
 export const Home: FC = () => {
   return (

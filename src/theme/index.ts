@@ -1,4 +1,4 @@
-export const theme = {
+const color = {
   primary1: "#000",
   primary2: "rgb(21, 21, 21)",
   primary3: "gray",
@@ -13,4 +13,8 @@ export const theme = {
   accent6: "orange",
   accent7: "white",
   accent8: "#EA5949",
+};
+
+export const theme = {
+  color,
 };

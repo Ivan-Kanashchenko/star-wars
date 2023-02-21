@@ -1,8 +1,8 @@
 import React, { FC, useState } from "react";
-import { Loading } from "../../../StyledComponents/Loading/Loading";
-import { StyledActorsCard } from "../../../StyledComponents/Cards/ActorsCard";
-import { StyledCard } from "../../../StyledComponents/Cards/MainCard";
-import { StyledElement } from "../../../StyledComponents/Elements/Elements";
+import { Loading } from "../../../../ui/Loading";
+import { StyledActorsCard } from "../../../../ui/Cards/ActorsCard";
+import { StyledCard } from "../../../../ui/Cards/MainCard";
+import { StyledElement } from "../../../../ui/Elements";
 import { useActorsData } from "../../../../customHooks/apiHooks";
 import { useLocation } from "react-router-dom";
 

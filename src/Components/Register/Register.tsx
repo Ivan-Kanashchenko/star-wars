@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { SignOnForm } from "../Forms/SignOnForm";
 import { Styled } from "./styles";
-import { StyledElement } from "../StyledComponents/Elements/Elements";
+import { StyledElement } from "../../ui/Elements";
 import { useAuth } from "../../auth/AuthContext";
 import { Navigate, useLocation } from "react-router-dom";
 

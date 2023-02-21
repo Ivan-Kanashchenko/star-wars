@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-import { useAuth } from "../../../../auth/AuthContext";
-import { Account } from "components/Account/Account";
+import { useAuth } from "auth/AuthContext";
+import { Account } from "components/Account";
 
 import { Styled } from "./styles";
 

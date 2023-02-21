@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { FilmItem } from "./FilmItem/FilmItem";
-import { Loading } from "../../StyledComponents/Loading/Loading";
-import { StyledCard } from "../../StyledComponents/Cards/MainCard";
+import { Loading } from "../../../ui/Loading";
+import { StyledCard } from "../../../ui/Cards/MainCard";
 import { useFilmsData } from "../../../customHooks/apiHooks";
 
 export const Films: FC = () => {

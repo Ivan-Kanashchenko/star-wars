@@ -1,5 +1,6 @@
-import chatIcon from "../../assets/chat/chat.png";
 import styled from "styled-components";
+
+import chatIcon from "assets/chat/chat.png";
 
 const Icon = styled.div`
   transition: 0.4s;
