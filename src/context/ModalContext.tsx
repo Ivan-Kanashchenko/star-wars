@@ -1,9 +1,9 @@
-import * as React from "react";
+import React, { FC, createContext, useContext, useState } from "react";
 
-const ModalContext = React.createContext(null);
+const ModalContext = createContext(null);
 
-const ModalProvider: React.FC = ({ children }) => {
-  const [isOpenFeedback, setIsOpenFeedback] = React.useState<boolean>(false);
+const ModalProvider: FC = ({ children }) => {
+  const [isOpenFeedback, setIsOpenFeedback] = useState<boolean>(false);
 
   return (
     <ModalContext.Provider value={{ isOpenFeedback, setIsOpenFeedback }}>
@@ -18,7 +18,7 @@ export interface ContextType {
 }
 
 export const useModal = () => {
-  const context = React.useContext<ContextType>(ModalContext);
+  const context = useContext<ContextType>(ModalContext);
 
   if (context === undefined) {
     throw new Error("useModal: context undefined");

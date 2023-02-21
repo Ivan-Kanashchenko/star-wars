@@ -4,7 +4,7 @@ import {
   isValidPassword,
   isValidPasswordConfirm,
   isValidUserName,
-} from "./validators";
+} from ".";
 
 describe("username validation", () => {
   test("valid username", () => expect(isValidUserName("John")).toBeUndefined());

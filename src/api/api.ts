@@ -8,19 +8,19 @@ import {
   ResponsePlanetData,
 } from "./apiTypes";
 
-const swapi = "https://swapi.dev/api";
+const baseUrl = process.env.REACT_APP_BASE_API_URL;
 
 export const api = {
   async fetchFilmsData(): Promise<ResponseFilmsData> {
-    const { data } = await axios.get<ResponseFilmsData>(`${swapi}/films/`);
+    const { data } = await axios.get<ResponseFilmsData>(`${baseUrl}/films/`);
     return data;
   },
   async fetchPeopleData(): Promise<ResponsePeopleData> {
-    const { data } = await axios.get<ResponsePeopleData>(`${swapi}/people/`);
+    const { data } = await axios.get<ResponsePeopleData>(`${baseUrl}/people/`);
     return data;
   },
   async fetchPlanetData(): Promise<ResponsePlanetData> {
-    const { data } = await axios.get<ResponsePlanetData>(`${swapi}/planets/`);
+    const { data } = await axios.get<ResponsePlanetData>(`${baseUrl}/planets/`);
     return data;
   },
 
@@ -28,7 +28,7 @@ export const api = {
     actorsList: PeopleData[];
   }> {
     const { data } = await axios.get<ResponseActorsData>(
-      `${swapi}/films/${id}/`
+      `${baseUrl}/films/${id}/`
     );
     const actorsList: Array<PeopleData> = await this.getData(data.characters);
     return { actorsList };

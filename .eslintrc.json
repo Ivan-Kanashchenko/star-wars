@@ -31,13 +31,7 @@
         }
     },
     "rules": {
-        "sort-imports": ["error", {
-            "ignoreCase": false,
-            "ignoreDeclarationSort": false,
-            "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": ["all", "single", "multiple", "none"],
-            "allowSeparatedGroups": false
-        }],
+        
         "no-console": ["error", { "allow": ["warn", "error"] }],
         "no-alert":"error",
         "no-debugger":"error",

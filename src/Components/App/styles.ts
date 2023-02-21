@@ -1,4 +1,4 @@
-import { theme } from "../../theme";
+import { theme } from "theme";
 import styled, { createGlobalStyle, css } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
@@ -60,20 +60,20 @@ button{
 
 const App = styled.div(() => {
   return css`
-    --primary1: ${theme.primary1};
-    --primary2: ${theme.primary2};
-    --primary3: ${theme.primary3};
-    --primary4: ${theme.primary4};
-    --secondary: ${theme.secondary};
-    --secondary2: ${theme.secondary2};
-    --accent1: ${theme.accent1};
-    --accent2: ${theme.accent2};
-    --accent3: ${theme.accent3};
-    --accent4: ${theme.accent4};
-    --accent5: ${theme.accent5};
-    --accent6: ${theme.accent6};
-    --accent7: ${theme.accent7};
-    --accent8: ${theme.accent8};
+    --primary1: ${theme.color.primary1};
+    --primary2: ${theme.color.primary2};
+    --primary3: ${theme.color.primary3};
+    --primary4: ${theme.color.primary4};
+    --secondary: ${theme.color.secondary};
+    --secondary2: ${theme.color.secondary2};
+    --accent1: ${theme.color.accent1};
+    --accent2: ${theme.color.accent2};
+    --accent3: ${theme.color.accent3};
+    --accent4: ${theme.color.accent4};
+    --accent5: ${theme.color.accent5};
+    --accent6: ${theme.color.accent6};
+    --accent7: ${theme.color.accent7};
+    --accent8: ${theme.color.accent8};
     background-color: var(--primary2);
     transition: 0.2s;
     display: flex;

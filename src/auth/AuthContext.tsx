@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext, useState, createContext, FC } from "react";
 import {
   FacebookAuthProvider,
   GithubAuthProvider,
@@ -10,11 +10,10 @@ import {
   signInWithPopup,
   signOut,
 } from "firebase/auth";
-import { useContext, useState } from "react";
 
-const AuthContext = React.createContext(null);
+const AuthContext = createContext(null);
 
-const AuthProvider: React.FC = ({ children }) => {
+const AuthProvider: FC = ({ children }) => {
   const [userName, setUserName] = useState<string>("");
   const [userId, setUserId] = useState<string>("");
   const [userEmail, setUserEmail] = useState<string>("");
